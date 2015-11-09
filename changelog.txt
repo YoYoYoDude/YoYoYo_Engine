@@ -1,0 +1,113 @@
+v1.20 (11/9/15):
+-Rewrote save system to use lists for saving instead of bytes
+-Rewrote config system to use ini files
+-Changed in-game timer to use delta_time for better accuracy
+-Added scrStopMusic() to more easily stop current music
+-Tweaked save system to not always load data from the file when pressing "R" to improve performance
+-A bunch of minor tweaks/fixes
+
+v1.15 (10/21/15):
+-Fixed some buggy platform behavior when gravity is flipped
+
+v1.14 (10/18/15):
+-Tweaked vines to fix weird behavior when directly above/below a block with a vine on it
+-Tweaked vines to fix getting stuck while on the ground
+-Added saving the player's xscale to the save file
+-Changed default jump refresher refresh time to 100
+-Changed objKillerBlock to be visible
+-Changed the way blood snaps to walls to look better (Thanks to patrickgh3!)
+-Added "scrSetPlayerMask" which sets the player's mask_index according to the current gravity
+-Tweaked scripts for better readability
+-Other minor tweaks/fixes
+
+v1.13 (10/4/15):
+-Enabled being able to stretch the game window (Window size can be reset to the default by pressing F5)
+-Changed screen smoothing from always changing when toggling fullscreen into an option to turn it off/on whenever (using the options menu or F3 to toggle)
+-Tweaked the player draw to not round the player's position
+-Renamed "scrInitializeVariables" to "scrInitializeGlobals"
+-Renamed "scrConfigVariables" to "scrSetGlobalOptions"
+-Organized scripts into folders
+-Tweaked "scrPlayerJump" to give the player a djump if touching objWater3
+-Added "refreshTime" variable to jump refreshers to customize how long until you can use them again
+-Removed idle swaying movement for jump refreshers
+-Changed save points to have a depth of 1
+-Some other minor changes
+
+v1.12 (9/29/15):
+-Fixed a small saving exploit
+-Added global.autosave variable for easily doing autosaves when the player is created
+-Added objWarpAutosaveNext which goes to the next room and autosaves
+-Added being able to use -2 in scrGetMusic in case you don't want it to affect a room's music at all (useful for bosses where you want other objects to control music)
+-Changed player draw code to include image_xscale and image_yscale in case they're changed
+
+v1.11 (9/22/15):
+-Moved some pieces of code to scripts (scrFlipGrav, scrRestartGame, scrSetFullscreen, scrToggleMusic)
+-Renamed scrGetControl to scrGetKeybind
+-Disabled showing the splash screen by default
+-Changed the bow so that it doesn't lag behind the player by a frame (there's a setting in scrConfigVariables to make it delay if you want it to)
+
+v1.10 (9/20/15):
+-Updated collision code to work better with the new version of GM Studio (v1.4.1657)
+-Added showing current binds in controls menu
+-Fixed another possible case of saving in a wall
+-Changed key rebinding so that if you bind to a shift key, it still works for both shift keys
+-Changed platform objects to have a depth of 1
+-Added more comments to scripts
+
+v1.03 (9/12/15):
+-Fixed part of the difficulty select not using global.menuSound
+-Fixed another rare bug involving music variables not getting initialized properly
+
+v1.02 (9/8/15):
+-Enlarged the save point hitbox so touch saves work on edges of blocks
+-Fixed a very rare bug involving music variables not getting initialized properly
+
+v1.01 (9/6/15):
+-Fixed warp room mode for file difficulty select not working properly
+-Tweaked game muting/unmuting using Ctrl+M to work properly when using objPlayMusic
+
+v1.0 (9/4/15):
+-Added debug overlay (toggle with backspace)
+-Updated objSign to display text instead of using show_message
+-Added configurable variable for which sound to use for navigating the menu
+-Added volume control to the options menu
+-Added randomize() when the game is started to start with a random seed for RNG (Studio starts with the same initial seed every time you run the game)
+-Added scrPlayMusic script to make it easier to change songs
+-Added objPlayMusic for people who don't want to use the scrGetMusic method of playing music
+-Added example Miku avoidance (Thanks to Stinkycheeseone890 for designing it!)
+-Some other minor changes/fixes
+
+v0.9 (9/1/15):
+-Added main menu system based off the KS engine that has options and rebindable controls
+-Added saving fullscreen mode in the config file
+
+v0.8 (8/31/15):
+-Fixed the player sometimes getting stuck on the sides of objSlideBlocks
+-Fixed game not restarting properly when pressing R and F2 on the same frame
+-Fixed texture interpolation setting bugging out when pressing F2+F4 on the same frame
+-Changed it so that you can't switch between fullscreen on/off when the game is paused (this caused the pause surface to be lost)
+-Added a variable to customize the speed of objSmoothCamera
+-Changed default case for scrGetMusic to play nothing instead of musGuyRock
+-Changed font naming
+-Fixed the player occasionally drawing abnormally
+-Set debug mode off by default
+-Added a variable for whether or not to show the debug player visual changes when inf jump/god mode are toggled
+-Some other minor changes/fixes
+
+v0.7 (8/29/15):
+-Implemented save verification system with MD5 hash checks to make saves harder to hack
+
+v0.65 (8/27/15):
+-Fixed a bug where right vines wouldn't always work properly
+
+v0.6 (8/26/15):
+-Implemented pause screen that shows deaths/time
+-Implemented volume control in the pause menu (Updated config file to save the volume level)
+-Made objGameClear autosave when touched
+-Optimized objMovingPlatform performance
+-Merged objMusicFade into objWorld
+-Fixed the player moving when standing still for a long time on objSlipBlock
+-Fixed a case where the player could save inside of a wall
+
+v0.5 (8/23/15):
+-Initial release
