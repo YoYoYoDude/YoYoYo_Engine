@@ -4,7 +4,7 @@ if (instance_exists(objPlayer) && !global.noDeath)
 {
     if (global.gameStarted) //normal death
     {
-        audio_play_sound(sndDeath,0,0);
+        global.deathSound = audio_play_sound(sndDeath,0,0);
         
         if (!global.muteMusic)  //play death music
         {

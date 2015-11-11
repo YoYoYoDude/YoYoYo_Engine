@@ -100,7 +100,8 @@ if (global.gameStarted)
     {
         if (keyboard_check_pressed(global.restartbutton))
         {
-            //stop death music
+            //stop death sound/music
+            audio_stop_sound(global.deathSound);
             audio_stop_sound(global.gameOverMusic);
             
             //resume room music

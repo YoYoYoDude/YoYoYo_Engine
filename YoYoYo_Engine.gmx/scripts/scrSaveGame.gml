@@ -1,4 +1,4 @@
-///scrSaveGame(savelocation)
+///scrSaveGame(saveposition)
 ///saves the game
 ///argument0 - sets whether the game should save the player's current location or just save the deaths/time
 
