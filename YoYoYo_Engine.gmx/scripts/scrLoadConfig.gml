@@ -13,6 +13,9 @@ scrSetFullscreen();
 
 global.smoothingMode = ini_read_real("Settings","Smoothing_mode",false);
 
+global.vsyncMode = ini_read_real("Settings","Vsync_mode",false);
+display_reset(0,global.vsyncMode);
+
 //controls
 global.leftbutton = ini_read_real("Controls","Left",vk_left);
 global.rightbutton = ini_read_real("Controls","Right",vk_right);

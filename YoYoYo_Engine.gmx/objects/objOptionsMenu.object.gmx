@@ -26,16 +26,20 @@
           <argument>
             <kind>1</kind>
             <string>select = 1;
+
 xSelector = 124;
 ySelector = 164;
 xSeperation = 550;
 ySeperation = 48;
 
+optionsNum = 6; //sets number of separate options available
+
 strSelect[0] = "Music";
 strSelect[1] = "Volume Level";
 strSelect[2] = "Screen Mode";
 strSelect[3] = "Smoothing Mode";
-strSelect[4] = "Set Controls";
+strSelect[4] = "Vsync";
+strSelect[5] = "Set Controls";
 
 playerIndex = 0;
 </string>
@@ -68,13 +72,13 @@ if (keyboard_check_pressed(vk_up))    //global.upbutton
     audio_play_sound(global.menuSound,0,0);
     select -= 1;
     if(select &lt; 1)
-        select = 5;
+        select = optionsNum;
 }
 else if (keyboard_check_pressed(vk_down))   //global.downbutton
 {
     audio_play_sound(global.menuSound,0,0);
     select += 1;
-    if(select &gt; 5)
+    if(select &gt; optionsNum)
         select = 1;
 }
 else if (keyboard_check_pressed(ord("Z"))) //global.shotbutton
@@ -100,7 +104,13 @@ else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
     {
         global.smoothingMode = !global.smoothingMode;
     }
-    else if (select == 5)   //go to the controls menu
+    else if (select == 5)   //toggle vsync mode
+    {
+        global.vsyncMode = !global.vsyncMode;
+        
+        display_reset(0,global.vsyncMode);
+    }
+    else if (select == 6)   //go to the controls menu
     {
         scrSaveConfig();    //save changes
         instance_create(x,y,objControlsMenu);
@@ -155,7 +165,7 @@ else if (keyboard_check(vk_left))    //global.leftbutton
 draw_set_font(fDefault30);
 draw_set_halign(fa_left);
 
-for(var i = 0; i &lt; 5;i++)
+for(var i = 0; i &lt; optionsNum; i++)
     draw_text(xSelector,ySelector+(ySeperation*i),strSelect[i]);
 
 draw_set_halign(fa_right);
@@ -176,6 +186,11 @@ if (global.smoothingMode)
     draw_text(xSelector+xSeperation,ySelector+(ySeperation*3),"On");
 else
     draw_text(xSelector+xSeperation,ySelector+(ySeperation*3),"Off");
+
+if (global.vsyncMode)
+    draw_text(xSelector+xSeperation,ySelector+(ySeperation*4),"On");
+else
+    draw_text(xSelector+xSeperation,ySelector+(ySeperation*4),"Off");
 
 draw_sprite(sprPlayerIdle,playerIndex,xSelector-16,ySelector+(ySeperation*select)-22);
 
