@@ -1,3 +1,8 @@
+v1.21 (11/20/15):
+-Added vsync option
+-Added stopping death sound when pressing "R"
+-Some minor tweaks
+
 v1.20 (11/9/15):
 -Rewrote save system to use lists for saving instead of bytes
 -Rewrote config system to use ini files
