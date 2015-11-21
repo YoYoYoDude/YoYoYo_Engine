@@ -136,6 +136,7 @@
       <script>scripts\scrToggleMusic.gml</script>
       <script>scripts\scrRestartGame.gml</script>
       <script>scripts\scrSetFullscreen.gml</script>
+      <script>scripts\scrSetVsync.gml</script>
       <script>scripts\scrResetWindowSize.gml</script>
       <script>scripts\scrGetMusic.gml</script>
       <script>scripts\scrPlayMusic.gml</script>

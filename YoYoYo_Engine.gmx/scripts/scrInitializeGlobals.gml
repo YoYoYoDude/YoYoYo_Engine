@@ -51,6 +51,12 @@ global.currentGain = 0;     //keeps track of current track gain when a song is b
 global.windowWidth = view_wview[0];
 global.windowHeight = view_hview[0];
 
+//keeps track of previous window position/size when display_reset is used for setting vsync
+global.windowXPrev = 0;
+global.windowYPrev = 0;
+global.windowWidthPrev = 0;
+global.windowHeightPrev = 0;
+
 display_set_gui_size(view_wview[0],view_hview[0]);  //set the correct gui size for the Draw GUI event
 
 randomize();    //make sure the game starts with a random seed for RNG

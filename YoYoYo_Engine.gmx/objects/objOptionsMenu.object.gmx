@@ -108,7 +108,7 @@ else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
     {
         global.vsyncMode = !global.vsyncMode;
         
-        display_reset(0,global.vsyncMode);
+        scrSetVsync();
     }
     else if (select == 6)   //go to the controls menu
     {
