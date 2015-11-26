@@ -83,9 +83,9 @@ if (loadFile)
 with (objPlayer) //destroy player if it exists
     instance_destroy();
 
-global.gameStarted = 1; //sets game in progress (enables saving, restarting, etc.)
-global.noPause = 0;
-global.autosave = 0;
+global.gameStarted = true; //sets game in progress (enables saving, restarting, etc.)
+global.noPause = false;
+global.autosave = false;
 
 global.player_xscale = global.savePlayerXScale;
 global.grav = global.saveGrav;

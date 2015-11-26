@@ -97,7 +97,7 @@ if (global.gameStarted)
             {
                 if (!global.noPause)
                 {
-                    global.gamePaused = 1;  //set the game to paused
+                    global.gamePaused = true;  //set the game to paused
                     global.pauseDelay = global.pauseDelayLength; //set pause delay
                     
                     instance_deactivate_all(true);  //deactivate everything
@@ -108,7 +108,7 @@ if (global.gameStarted)
             }
             else    //game currently paused, unpause the game
             {
-                global.gamePaused = 0;  //set the game to unpaused
+                global.gamePaused = false;  //set the game to unpaused
                 global.pauseDelay = global.pauseDelayLength;     //set pause delay
                 
                 instance_activate_all();    //reactivate objects
@@ -139,7 +139,7 @@ if (global.gameStarted)
             ///return to old gain if music is being faded out
             if (global.musicFading)
             {
-                global.musicFading = 0;
+                global.musicFading = false;
                 audio_sound_gain(global.currentMusic,global.currentGain,0);
                 alarm[0] = -1;   //reset alarm that pauses music
             }
@@ -344,7 +344,7 @@ if (keyboard_check(vk_control) &amp;&amp; keyboard_check_pressed(ord("M")) &amp;
           <argument>
             <kind>1</kind>
             <string>///fade current music out
-global.musicFading = 1;
+global.musicFading = true;
 global.currentGain = audio_sound_get_gain(global.currentMusic);     //get current gain
 audio_sound_gain(global.currentMusic,0,1000);                       //fade out music over 1 second
 

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//this boss uses its own internal timer to coordinate attacks, you could also use timelines to set attack timing instead of this method
 timer = 0;
-curve = 0;
+curve = false;
 
 scrPlayMusic(musMiku,false);    //song is "Hatsune Miku - Tho (ニナ)"
 
@@ -118,7 +118,7 @@ global.noPause = true;  //make it so that the player can't pause during the boss
     }
     else if (timer &gt; 540 &amp;&amp; timer &lt; 875)
     {
-        curve = 1;  //make the apples curve
+        curve = true;  //make the apples curve
     
         if (timer mod 15 == 1)
         {
@@ -127,7 +127,7 @@ global.noPause = true;  //make it so that the player can't pause during the boss
     }
     else if (timer &gt; 1058 &amp;&amp; timer &lt; 1110)
     {
-        curve = 0;  //make the apples stop curving
+        curve = false;  //make the apples stop curving
     
         instance_create(random_range(0,800),random_range(0,128),objCherryRandomCol);
     }
@@ -210,7 +210,7 @@ global.noPause = true;  //make it so that the player can't pause during the boss
     }
     else if (timer &gt; 2675 &amp;&amp; timer &lt; 2950)
     {
-        curve = 1;
+        curve = true;
         if (timer mod 18 == 1)
         {
             scrMakeCircle(random_range(0,800),0,random(360),12,choose(6,7,8),objCherryRandomCol);
@@ -233,7 +233,7 @@ global.noPause = true;  //make it so that the player can't pause during the boss
     }
     else if (timer &gt; 3684 &amp;&amp; timer &lt; 3750)
     {
-        curve = 0;
+        curve = false;
         
         var a = instance_create(x,y,objCherryRandomCol);
         a.direction = random_range(170,280);

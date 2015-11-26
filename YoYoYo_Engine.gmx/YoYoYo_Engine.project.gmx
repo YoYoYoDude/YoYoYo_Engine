@@ -188,6 +188,7 @@
     <objects name="platforms">
       <object>objects\objPlatform</object>
       <object>objects\objMovingPlatform</object>
+      <object>objects\objMovingPlatformNoBounce</object>
       <object>objects\objBlockFall</object>
       <object>objects\objBlockRise</object>
     </objects>

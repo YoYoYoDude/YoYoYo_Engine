@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>visible = 1;
+            <string>visible = true;
 </string>
           </argument>
         </arguments>
@@ -99,7 +99,7 @@
     with (objPlayer)
         djump = 1;
     
-    visible = 0;
+    visible = false;
     alarm[0] = refreshTime;
 }
 </string>

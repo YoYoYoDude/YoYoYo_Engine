@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>frozen = 0; //sets if player can move or not
+            <string>frozen = false; //sets if player can move or not
 
 jump = 8.5 * global.grav; //set how fast the player jumps
 jump2 = 7 * global.grav; //sets how fast the player double jumps
@@ -35,7 +35,7 @@ djump = global.player_djump; //allow the player to double jump as soon as he spa
 maxSpeed = 3;   //max horizontal speed
 maxVspeed = 9;  //max vertical speed
 image_speed = 0.2; //initial speed of animation
-onPlatform = 0; //sets if player is currently standing on a platform
+onPlatform = false; //sets if player is currently standing on a platform
 
 scrSetPlayerMask(); //set the player's hitbox
 
@@ -45,7 +45,7 @@ if (global.difficulty == 0 &amp;&amp; global.gameStarted)   //create bow
 if (global.autosave) //save the game if currently set to autosave
 {
     scrSaveGame(true);
-    global.autosave = 0;
+    global.autosave = false;
 }
 </string>
           </argument>
@@ -165,7 +165,7 @@ if (!onPlatform)    //check if standing on a platform
 }
 else
 {
-    if (!place_meeting(x,y+(4*global.grav),objPlatform)) {onPlatform = 0;}
+    if (!place_meeting(x,y+(4*global.grav),objPlatform)) {onPlatform = false;}
 }
 
 var slideBlockTouching = instance_place(x,y+(global.grav),objSlideBlock);   //check if on a slide block
@@ -287,8 +287,8 @@ if (onVineL || onVineR)
             vspeed = other.vspeed;
         }
         
-        onPlatform = 1;
-        djump = true;
+        onPlatform = true;
+        djump = 1;
     }
 }
 else    //flipped
@@ -301,8 +301,8 @@ else    //flipped
             vspeed = other.yspeed;
         }
         
-        onPlatform = 1;
-        djump = true;
+        onPlatform = true;
+        djump = 1;
     }
 }
 </string>

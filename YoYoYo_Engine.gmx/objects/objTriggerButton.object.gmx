@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//set in creation code
+            <string>//set trg in creation code
+
 trg = 0;
 
 image_speed = 0;
@@ -54,7 +55,7 @@ image_speed = 0;
             <string>if (image_index == 0)   //sets trigger when shot
 {
     image_index = 1;
-    global.trigger[trg] = 1;
+    global.trigger[trg] = true;
 }
 </string>
           </argument>
@@ -78,7 +79,7 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.trigger[trg] = 0;    //reset the trigger
+            <string>global.trigger[trg] = false;    //reset the trigger
 </string>
           </argument>
         </arguments>

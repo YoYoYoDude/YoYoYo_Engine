@@ -30,7 +30,7 @@ image_speed = 0;
 
 image_blend = make_color_hsv(irandom(255),255,255); //set a random color
 
-curve = 0;
+curve = false;
 
 if (instance_exists(objMiku))
 {

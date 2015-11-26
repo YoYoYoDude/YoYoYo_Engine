@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//initiailze menu variables
 
-difSelect = 0;
+difSelect = false;
 select = 1;
 select2 = 0;
 str[1] = "Save 1";
@@ -152,7 +152,7 @@ if (!difSelect)
         }
         else    //use the menu to select difficulty
         {
-            difSelect = 1;
+            difSelect = true;
             if (exists[select]) //check if there is a save in the current slot
                 select2 = -1;   //default to load game
             else
@@ -183,7 +183,7 @@ else
     }
     else if (keyboard_check_pressed(ord("Z"))) //global.shotbutton
     {
-        difSelect = 0;
+        difSelect = false;
     }
     else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
     {
@@ -196,12 +196,12 @@ else
         }
         else    //starts new game
         {
-            global.gameStarted = 1; //sets game in progress (enables saving, restarting, etc.)
-            global.autosave = 1;
+            global.gameStarted = true; //sets game in progress (enables saving, restarting, etc.)
+            global.autosave = true;
             
             global.difficulty = select2;
             
-            if(file_exists("Data\save"+string(global.savenum)))
+            if (file_exists("Data\save"+string(global.savenum)))
                 file_delete("Data\save"+string(global.savenum));
             
             room_goto(global.startRoom);
@@ -254,7 +254,7 @@ else
         else if(select2==3) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Impossible &gt;");
     }
     
-    if(exists[i])
+    if (exists[i])
     {        
         if ((!difSelect) || (difSelect &amp;&amp; i != select))
         {
@@ -285,7 +285,7 @@ else
         }
     }
     
-    if(i == select)
+    if (i == select)
     {
         draw_sprite(sprCherry,appleIndex,x+(i-1)*239+5,y+310);
         draw_sprite(sprCherry,appleIndex,x+(i-1)*239+25,y+310);

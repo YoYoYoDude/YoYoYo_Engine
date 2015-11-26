@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-canSave = 1;
+canSave = true;
 grav = 1;       //sets which player gravity this save works with
 
 if (global.difficulty &gt; 1)  //destroy if on a higher difficulty than hard
@@ -53,7 +53,7 @@ if (global.difficulty &gt; 1)  //destroy if on a higher difficulty than hard
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canSave = 1;
+            <string>canSave = true;
 </string>
           </argument>
         </arguments>
@@ -129,7 +129,7 @@ if (global.difficulty &gt; 1)  //destroy if on a higher difficulty than hard
 
 if (canSave &amp;&amp; instance_exists(objPlayer) &amp;&amp; global.grav == grav)
 {
-    canSave = 0;    //make it so that the player can't save again immediately
+    canSave = false;    //make it so that the player can't save again immediately
     alarm[0] = 30;  //set alarm so the player can save again
     image_index = 1;
     image_speed = 0.017;

@@ -59,8 +59,8 @@ difName = "Load Game";
 }
 else    //start new game
 {
-    global.gameStarted = 1; //sets game in progress (enables saving, restarting, etc.)
-    global.autosave = 1;
+    global.gameStarted = true; //sets game in progress (enables saving, restarting, etc.)
+    global.autosave = true;
     
     global.difficulty = dif;
     

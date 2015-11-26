@@ -50,7 +50,7 @@ trg = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.trigger[trg] = 1;    //set trigger when touched by player
+            <string>global.trigger[trg] = true;    //set trigger when touched by player
 </string>
           </argument>
         </arguments>
@@ -73,7 +73,7 @@ trg = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.trigger[trg] = 0;    //reset the trigger
+            <string>global.trigger[trg] = false;    //reset the trigger
 </string>
           </argument>
         </arguments>

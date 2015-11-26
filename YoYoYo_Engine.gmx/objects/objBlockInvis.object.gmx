@@ -28,7 +28,7 @@
             <string>if (!visible &amp;&amp; distance_to_object(objPlayer) &lt;= 1)
 {
     audio_play_sound(sndBlockChange,0,0);
-    visible = 1;
+    visible = true;
 }
 </string>
           </argument>
