@@ -7,6 +7,6 @@ global.windowHeightPrev = window_get_height();
 
 display_reset(0,global.vsyncMode);
 
-//set alarm for returning to the previous window position/size (using display_reset resets it)
+//set an alarm for returning to the previous window position/size (using display_reset resets the window's location and size)
 with (objWorld)
     alarm[1] = 1;

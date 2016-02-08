@@ -8,7 +8,6 @@ global.timeMicro = 0;
 global.saveRoom = 0;
 global.savePlayerX = 0;
 global.savePlayerY = 0;
-global.savePlayerXScale = 1;
 global.grav = 1;
 global.saveGrav = 1;
 
@@ -29,9 +28,6 @@ for (var i = 100; i >= 0; i--)
 {
     global.trigger[i] = false;
 }
-
-global.player_djump = 1;
-global.player_xscale = 1;
 
 global.gameStarted = false;     //determines whether the game is in progress (enables saving, restarting, etc.)
 global.noPause = false;         //sets whether or not to allow pausing (useful for bosses to prevent desync)

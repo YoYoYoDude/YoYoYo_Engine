@@ -43,7 +43,7 @@ for (var i  = 1; i &lt;= 3; i++)
 {
     if (file_exists("Data\save"+string(i)))  //check if current save exists
     {
-        //load save data        
+        //load save data
         exists[i] = 1;
         
         var f = file_text_open_read("Data\save"+string(i));
@@ -54,7 +54,7 @@ for (var i  = 1; i &lt;= 3; i++)
         file_text_close(f);
         
         death[i] = ds_list_find_value(list,0);
-        if (!is_real(death[i])) //check for undefined value in case the save was messed with
+        if (!is_real(death[i])) //check for undefined value in case the save was messed with or got corrupted
             death[i] = 0;
         
         time[i] = ds_list_find_value(list,1);
@@ -67,12 +67,12 @@ for (var i  = 1; i &lt;= 3; i++)
         
         for (var j = 1; j &lt;= 8; j++)
         {
-            boss[j,i] = ds_list_find_value(list,16+j);
+            boss[j,i] = ds_list_find_value(list,15+j);
             if (!is_real(boss[j,i]))
                 boss[j,i] = 0;
         }
         
-        clear[i] = ds_list_find_value(list,25);
+        clear[i] = ds_list_find_value(list,24);
         if (!is_real(clear[i]))
             clear[i] = 0;
         

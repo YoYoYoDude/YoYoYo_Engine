@@ -38,9 +38,6 @@ if (instance_exists(objPlayer) && !global.noDeath)
     {
         with(objPlayer)
             instance_destroy();
-        
-        global.player_djump = 1;
-        global.player_xscale = 1;
             
         room_restart();
     }

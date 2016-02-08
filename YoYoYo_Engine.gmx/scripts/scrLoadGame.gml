@@ -4,7 +4,7 @@
 
 var loadFile = argument0;
 
-//only load save data from the save file if it's set to
+//only load save data from the save file if the script is currently set to (we don't need to load these normally since the game already has them stored)
 if (loadFile)
 {
     //load the save list
@@ -31,8 +31,6 @@ if (loadFile)
     global.savePlayerX = ds_list_find_value(list,ind);
     ind += 1;
     global.savePlayerY = ds_list_find_value(list,ind);
-    ind += 1;
-    global.savePlayerXScale = ds_list_find_value(list,ind);
     ind += 1;
     global.saveGrav = ds_list_find_value(list,ind);
     ind += 1;
@@ -78,7 +76,7 @@ if (loadFile)
     }
 }
 
-//set game variables and set player position
+//set game variables and set the player's position
 
 with (objPlayer) //destroy player if it exists
     instance_destroy();
@@ -87,7 +85,6 @@ global.gameStarted = true; //sets game in progress (enables saving, restarting, 
 global.noPause = false;
 global.autosave = false;
 
-global.player_xscale = global.savePlayerXScale;
 global.grav = global.saveGrav;
 
 for (var i = 1; i <= 8; i++)
@@ -97,8 +94,6 @@ for (var i = 1; i <= 8; i++)
 }
 
 global.gameClear = global.saveGameClear;
-
-global.player_djump = 1;    //make sure to give djump when spawning
 
 instance_create(global.savePlayerX,global.savePlayerY,objPlayer);
 

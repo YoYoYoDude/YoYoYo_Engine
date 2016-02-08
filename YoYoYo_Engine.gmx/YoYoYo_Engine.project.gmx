@@ -143,6 +143,7 @@
       <script>scripts\scrStopMusic.gml</script>
     </scripts>
     <scripts name="functions">
+      <script>scripts\scrDrawTextOutline.gml</script>
       <script>scripts\scrMakeShapes.gml</script>
       <script>scripts\scrMakeCircle.gml</script>
     </scripts>

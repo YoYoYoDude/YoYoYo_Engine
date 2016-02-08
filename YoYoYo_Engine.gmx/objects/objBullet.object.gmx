@@ -25,7 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hspeed = global.player_xscale * 16;
+            <string>//get the bullet's direction based off the direction the player is facing
+
+var bulletDir;
+if (instance_exists(objPlayer))
+    bulletDir = objPlayer.xScale;
+else
+    bulletDir = 1;
+
+//set the bullet's speed
+hspeed = bulletDir * 16;
+
 alarm[0] = 40;
 </string>
           </argument>

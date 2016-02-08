@@ -31,15 +31,17 @@ jump = 8.5 * global.grav; //set how fast the player jumps
 jump2 = 7 * global.grav; //sets how fast the player double jumps
 gravity = 0.4 * global.grav; //player gravity
 
-djump = global.player_djump; //allow the player to double jump as soon as he spawns
+djump = 1; //allow the player to double jump as soon as he spawns
 maxSpeed = 3;   //max horizontal speed
 maxVspeed = 9;  //max vertical speed
 image_speed = 0.2; //initial speed of animation
 onPlatform = false; //sets if player is currently standing on a platform
 
+xScale = 1; //sets the direction the player is facing (1 is facing right, -1 is facing left)
+
 scrSetPlayerMask(); //set the player's hitbox
 
-if (global.difficulty == 0 &amp;&amp; global.gameStarted)   //create bow
+if (global.difficulty == 0 &amp;&amp; global.gameStarted)   //create the player's bow
     instance_create(x,y,objBow);
 
 if (global.autosave) //save the game if currently set to autosave
@@ -47,32 +49,6 @@ if (global.autosave) //save the game if currently set to autosave
     scrSaveGame(true);
     global.autosave = false;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.player_djump = djump;    //set global variable for when player respawns (this stores whether or not player can djump during a room transition)
-
-with (objBow)
-    instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -115,7 +91,7 @@ if (h != 0)  //player is moving
 {
     if (!onVineR &amp;&amp; !onVineL)   //make sure not currently touching a vine
     {
-        global.player_xscale = h;
+        xScale = h;
     }
     if ((h == -1 &amp;&amp; !onVineR) || (h == 1 &amp;&amp; !onVineL))
     {
@@ -199,9 +175,9 @@ if (global.adAlign &amp;&amp; place_meeting(x,y+(global.grav),objBlock) &amp;&am
 if (onVineL || onVineR)
 {
     if (onVineR)
-        global.player_xscale = -1;
+        xScale = -1;
     else
-        global.player_xscale = 1;
+        xScale = 1;
     
     vspeed = 2 * global.grav;
     sprite_index = sprPlayerSliding;
@@ -412,9 +388,9 @@ var drawY = y;
 if (global.grav == -1)      //need to draw the player a pixel off in the y-axis when flipped for some reason
     drawY += 1;
 
-draw_sprite_ext(sprite_index,image_index,drawX,drawY,image_xscale*global.player_xscale,image_yscale*global.grav,image_angle,image_blend,image_alpha);
+draw_sprite_ext(sprite_index,image_index,drawX,drawY,image_xscale*xScale,image_yscale*global.grav,image_angle,image_blend,image_alpha);
 
-//draw the hitbox
+//draw the player's hitbox
 if (global.showHitbox)
     draw_sprite_ext(mask_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha*0.8);
 </string>

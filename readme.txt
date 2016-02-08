@@ -13,7 +13,7 @@ Features
 -Includes gravity flipping, vines, jump refreshers, and other frequently used gimmicky objects
 -Built-in save verification system with MD5 hash checks to make saves harder to hack
 -Mute/unmute music with Ctrl+M
--Toggle screen smoothing with F3
+-Stretchable window size (reset with F5)
 -Pause screen that shows deaths/time with volume controls
 -Includes toggleable debug keys ("Tab" to drag player to mouse, "Backspace" to toggle debug overlay, "Ins" to save, "Del" to toggle showing the hitbox, "Home" to toggle god mode, "End" to toggle infinite jump, "Page Up" to go to next room, "Page Down" to go to previous room)
 -Several options for many things you might want to change for your game (such as enabling/disabling death music) in the "scrSetGlobalOptions" script

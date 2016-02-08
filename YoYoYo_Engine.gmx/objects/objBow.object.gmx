@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///snap to the player after he moves this frame
 
-if (!global.delayBow)   //only snap to the player if bow delay is off
+if (!global.delayBow)   //only snap to the player if bow delay setting is off
     event_user(0);
 </string>
           </argument>
@@ -82,7 +82,7 @@ if (instance_exists(objPlayer))
 {
     x = objPlayer.x;
     y = objPlayer.y;
-    image_xscale = global.player_xscale;
+    image_xscale = objPlayer.xScale;
     
     if (global.grav == 1)   //normal
     {

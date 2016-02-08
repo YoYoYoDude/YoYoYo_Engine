@@ -4,13 +4,12 @@
 
 var savePosition = argument0;
 
-//saves player's current location variables if it's set to
+//save the player's current location variables if the script is currently set to (we don't want to save the player's location if we're just updating death/time)
 if (savePosition)
 {    
     global.saveRoom = room;
     global.savePlayerX = objPlayer.x;    
     global.savePlayerY = objPlayer.y;
-    global.savePlayerXScale = global.player_xscale;
     global.saveGrav = global.grav;
     
     //check if player is saving inside of a wall or in the ceiling when the player's position is floored
@@ -57,7 +56,6 @@ ds_list_add(list,global.difficulty);
 ds_list_add(list,global.saveRoom);
 ds_list_add(list,global.savePlayerX);
 ds_list_add(list,global.savePlayerY);
-ds_list_add(list,global.savePlayerXScale);
 ds_list_add(list,global.saveGrav);
 
 for (var i = 1; i <= 8; i++)
