@@ -53,7 +53,7 @@ if (loadFile)
     //load md5 string from the save list
     var listMd5 = ds_list_find_value(list,ind);
     
-    //check if md5 is not a string in case the save was messed with
+    //check if md5 is not a string in case the save was messed with or got corrupted
     if (!is_string(listMd5))
         listMd5 = "";   //make it a string for the md5 comparison
     
@@ -82,8 +82,8 @@ with (objPlayer) //destroy player if it exists
     instance_destroy();
 
 global.gameStarted = true; //sets game in progress (enables saving, restarting, etc.)
-global.noPause = false;
-global.autosave = false;
+global.noPause = false;     //disable no pause mode
+global.autosave = false;    //disable autosaving since we're loading the game
 
 global.grav = global.saveGrav;
 

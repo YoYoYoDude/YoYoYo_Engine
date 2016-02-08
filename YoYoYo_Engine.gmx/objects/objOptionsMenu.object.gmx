@@ -85,7 +85,7 @@ else if (keyboard_check_pressed(ord("Z"))) //global.shotbutton
 {
     //save changes and go back
     scrSaveConfig();
-    room_goto(rTitle);
+    room_goto(rMenu);
     exit;
 }
 else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
@@ -194,12 +194,7 @@ else
 
 draw_sprite(sprPlayerIdle,playerIndex,xSelector-16,ySelector+(ySeperation*select)-22);
 
-//button info
-draw_set_font(fDefault12);
-draw_set_halign(fa_left);
-draw_text(34,556,"[Z] Back");
-draw_set_halign(fa_right);
-draw_text(766,556,"[Shift] Accept");
+scrDrawButtonInfo();
 </string>
           </argument>
         </arguments>

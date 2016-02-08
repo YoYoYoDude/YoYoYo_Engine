@@ -76,7 +76,8 @@ gravity = (0.1+random(0.2)) * global.grav;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_contact_solid(direction,speed);
+            <string>///snap to the block
+move_contact_solid(direction,speed);
 
 speed = 0;
 gravity = 0;

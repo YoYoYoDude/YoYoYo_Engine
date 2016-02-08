@@ -25,20 +25,44 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>select = 1;
-xTitle = 400;
-yTitle = 112;
-xSelector = 400;
-ySelector = 384;
-ySeperation = 48;
+            <string>xTitle = 400;
+yTitle = 136;
+xShiftText = 400;
+yShiftText = 408;
 
-strTitle = "I Wanna Be The Studio Engine#YoYoYo Edition v1.21";
+strTitle = "I Wanna Be The Studio Engine#YoYoYo Edition v1.22";
+strShiftText = "Press Shift to Start";
 
-strSelect[0] = "Start Game";
-strSelect[1] = "Options";
-strSelect[2] = "Quit Game";
+showShiftText = true;
 
-playerIndex = 0;
+alarm[0] = 40;  //swaps between showing the shift text so it animates
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///swap between showing the press shift text
+
+showShiftText = !showShiftText;
+
+alarm[0] = 40;
 </string>
           </argument>
         </arguments>
@@ -61,38 +85,8 @@ playerIndex = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//animate player sprite
-playerIndex = (playerIndex + 1/5) mod 4;
-
-if (keyboard_check_pressed(vk_up))    //global.upbutton
-{
-    audio_play_sound(global.menuSound,0,0);
-    select -= 1;
-    if(select &lt; 1)
-        select = 3;
-}
-else if (keyboard_check_pressed(vk_down))  //global.downbutton
-{
-    audio_play_sound(global.menuSound,0,0);
-    select += 1;
-    if(select &gt; 3)
-        select = 1;
-}
-else if (keyboard_check_pressed(vk_shift))  //global.jumpbutton
-{
-    if (select == 1)    //go to file select
-    {
-        room_goto(rMenu);
-    }
-    else if (select == 2)   //go to options menu
-    {
-        room_goto(rOptions);
-    }
-    else if (select == 3)   //exit the game
-    {
-        game_end();
-    }
-}
+            <string>if (keyboard_check_pressed(vk_shift))  //global.jumpbutton
+    room_goto(rMenu);
 </string>
           </argument>
         </arguments>
@@ -121,17 +115,14 @@ draw_set_halign(fa_center);
 
 draw_text(xTitle,yTitle,strTitle);
 
-for (var i = 0; i &lt; 3; i++)
-    draw_text(xSelector,ySelector+(ySeperation*i),strSelect[i]);
+if (showShiftText)
+{
+    draw_set_font(fDefault24);
+    
+    draw_text(xShiftText,yShiftText,strShiftText);
+}
 
-draw_sprite(sprPlayerIdle,playerIndex,xSelector-128,ySelector+(ySeperation*select)-22);
-
-//button info
-draw_set_font(fDefault12);
-draw_set_halign(fa_left);
-draw_text(34,556,"[Z] Back");
-draw_set_halign(fa_right);
-draw_text(766,556,"[Shift] Accept");
+scrDrawButtonInfo();
 </string>
           </argument>
         </arguments>

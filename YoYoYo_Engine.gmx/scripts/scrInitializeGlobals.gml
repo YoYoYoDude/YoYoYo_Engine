@@ -57,4 +57,4 @@ display_set_gui_size(view_wview[0],view_hview[0]);  //set the correct gui size f
 
 randomize();    //make sure the game starts with a random seed for RNG
 
-scrSetGlobalOptions();       //initialize variables that can be changed
+scrSetGlobalOptions();       //initialize global game options

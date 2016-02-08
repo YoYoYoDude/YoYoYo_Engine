@@ -123,88 +123,95 @@ for (var i  = 1; i &lt;= 3; i++)
 appleIndex = (appleIndex + 1/15) mod 2;
 playerIndex = (playerIndex + 1/5) mod 4;
 
-if (!difSelect)
+if (keyboard_check_pressed(vk_f3))
 {
-    if (keyboard_check_pressed(vk_left))    //global.leftbutton
-    {
-        audio_play_sound(global.menuSound,0,0);
-        select -= 1;
-        if(select &lt; 1)
-            select = 3;
-    }
-    else if (keyboard_check_pressed(vk_right))  //global.rightbutton
-    {
-        audio_play_sound(global.menuSound,0,0);
-        select += 1;
-        if(select &gt; 3)
-            select = 1;
-    }
-    else if (keyboard_check_pressed(ord("Z"))) //global.shotbutton
-    {
-        room_goto(rTitle);  //go back
-    }
-    else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
-    {
-        if (global.menuMode == 0)   //use the difficulty select room to select difficulty
-        {
-            global.savenum = select;
-            room_goto(rDifficultySelect);
-        }
-        else    //use the menu to select difficulty
-        {
-            difSelect = true;
-            if (exists[select]) //check if there is a save in the current slot
-                select2 = -1;   //default to load game
-            else
-                select2 = 0;    //default to medium
-        }
-    }
+    room_goto(rOptions);
 }
 else
 {
-    if (keyboard_check_pressed(vk_left))    //global.leftbutton
+    if (!difSelect)
     {
-        audio_play_sound(global.menuSound,0,0);
-        select2 -= 1;
-        if ((select2 == -1 &amp;&amp; !exists[select]) || (select2 &lt; -1))
-            select2 = 3;
-    }
-    else if (keyboard_check_pressed(vk_right))  //global.rightbutton
-    {
-        audio_play_sound(global.menuSound,0,0);
-        select2 += 1;
-        if (select2 &gt; 3)
+        if (keyboard_check_pressed(vk_left))    //global.leftbutton
         {
-            if (exists[select])
-                select2 = -1;
-            else
-                select2 = 0;
+            audio_play_sound(global.menuSound,0,0);
+            select -= 1;
+            if(select &lt; 1)
+                select = 3;
+        }
+        else if (keyboard_check_pressed(vk_right))  //global.rightbutton
+        {
+            audio_play_sound(global.menuSound,0,0);
+            select += 1;
+            if(select &gt; 3)
+                select = 1;
+        }
+        else if (keyboard_check_pressed(ord("Z"))) //global.shotbutton
+        {
+            room_goto(rTitle);  //go back
+        }
+        else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
+        {
+            if (global.menuMode == 0)   //use the difficulty select room to select difficulty
+            {
+                global.savenum = select;
+                room_goto(rDifficultySelect);
+            }
+            else    //use the menu to select difficulty
+            {
+                difSelect = true;
+                if (exists[select]) //check if there is a save in the current slot
+                    select2 = -1;   //default to load game
+                else
+                    select2 = 0;    //default to medium
+            }
         }
     }
-    else if (keyboard_check_pressed(ord("Z"))) //global.shotbutton
+    else
     {
-        difSelect = false;
-    }
-    else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
-    {
-        global.savenum = select;
-        
-        if (select2 == -1)  //load game
+        if (keyboard_check_pressed(vk_left))    //global.leftbutton
         {
-            if (file_exists("Data\save"+string(global.savenum)))
-                scrLoadGame(true);
+            audio_play_sound(global.menuSound,0,0);
+            select2 -= 1;
+            if ((select2 == -1 &amp;&amp; !exists[select]) || (select2 &lt; -1))
+                select2 = 3;
         }
-        else    //starts new game
+        else if (keyboard_check_pressed(vk_right))  //global.rightbutton
         {
-            global.gameStarted = true; //sets game in progress (enables saving, restarting, etc.)
-            global.autosave = true;
+            audio_play_sound(global.menuSound,0,0);
+            select2 += 1;
+            if (select2 &gt; 3)
+            {
+                if (exists[select])
+                    select2 = -1;
+                else
+                    select2 = 0;
+            }
+        }
+        else if (keyboard_check_pressed(ord("Z"))) //global.shotbutton
+        {
+            difSelect = false;
+        }
+        else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
+        {
+            global.savenum = select;
             
-            global.difficulty = select2;
-            
-            if (file_exists("Data\save"+string(global.savenum)))
-                file_delete("Data\save"+string(global.savenum));
-            
-            room_goto(global.startRoom);
+            if (select2 == -1)  //load game
+            {
+                if (file_exists("Data\save"+string(global.savenum)))
+                    scrLoadGame(true);
+            }
+            else    //starts new game
+            {
+                global.gameStarted = true; //sets game in progress (enables saving, restarting, etc.)
+                global.autosave = true;
+                
+                global.difficulty = select2;
+                
+                if (file_exists("Data\save"+string(global.savenum)))
+                    file_delete("Data\save"+string(global.savenum));
+                
+                room_goto(global.startRoom);
+            }
         }
     }
 }
@@ -297,12 +304,13 @@ else
     }
 }
 
-//button info
+scrDrawButtonInfo();
+
+//draw button info for the options menu
+
 draw_set_font(fDefault12);
-draw_set_halign(fa_left);
-draw_text(34,556,"[Z] Back");
-draw_set_halign(fa_right);
-draw_text(766,556,"[Shift] Accept");
+draw_set_halign(fa_middle);
+draw_text(400,556,"[F3] Options");
 </string>
           </argument>
         </arguments>
