@@ -1,5 +1,5 @@
 v1.22 (02/08/15):
--Rewrote save system to use maps instead of lists (they are now stored using ds_map_secure functions to improve save security)
+-Rewrote save system to use maps instead of lists (they are now stored using ds_map_secure functions to improve save security and prevent transferring between PCs)
 -Added moving platforms that don't bounce off of walls
 -Added scrDrawTextOutline for outlined text on the debug info overlay (Thanks Archee for the suggestion!)
 -Tweaked main menu layout
