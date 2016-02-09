@@ -39,48 +39,59 @@ playerIndex = 0;
 
 //load save file values
 
-for (var i  = 1; i &lt;= 3; i++)
+for (var i = 1; i &lt;= 3; i++)
 {
     if (file_exists("Data\save"+string(i)))  //check if current save exists
     {
         //load save data
-        exists[i] = 1;
+        exists[i] = true;
         
-        var f = file_text_open_read("Data\save"+string(i));
+        //load the save map
+        var saveMap = ds_map_secure_load("Data\save"+string(i));
         
-        var list = ds_list_create();
-        ds_list_read(list,base64_decode(file_text_read_string(f)));
-        
-        file_text_close(f);
-        
-        death[i] = ds_list_find_value(list,0);
-        if (!is_real(death[i])) //check for undefined value in case the save was messed with or got corrupted
-            death[i] = 0;
-        
-        time[i] = ds_list_find_value(list,1);
-        if (!is_real(time[i]))
-            time[i] = 0;
-
-        difficulty[i] = ds_list_find_value(list,3);
-        if (!is_real(difficulty[i]))
-            difficulty[i] = 0;
-        
-        for (var j = 1; j &lt;= 8; j++)
+        if (saveMap != -1)  //check if the save map loaded correctly
         {
-            boss[j,i] = ds_list_find_value(list,15+j);
-            if (!is_real(boss[j,i]))
-                boss[j,i] = 0;
+            death[i] = ds_map_find_value(saveMap,"death");
+            if (is_undefined(death[i])) //check for undefined value in case the save was messed with or got corrupted
+                death[i] = 0;
+            
+            time[i] = ds_map_find_value(saveMap,"time");
+            if (is_undefined(time[i]))
+                time[i] = 0;
+    
+            difficulty[i] = ds_map_find_value(saveMap,"difficulty");
+            if (is_undefined(difficulty[i]))
+                difficulty[i] = 0;
+            
+            for (var j = 1; j &lt;= 8; j++)
+            {
+                boss[j,i] = ds_map_find_value(saveMap,"saveBossItem["+string(j)+"]");
+                if (is_undefined(boss[j,i]))
+                    boss[j,i] = false;
+            }
+            
+            clear[i] = ds_map_find_value(saveMap,"saveGameClear");
+            if (is_undefined(clear[i]))
+                clear[i] = false;
+            
+            ds_map_destroy(saveMap);
         }
-        
-        clear[i] = ds_list_find_value(list,24);
-        if (!is_real(clear[i]))
-            clear[i] = 0;
-        
-        ds_list_destroy(list);
+        else
+        {
+            //save map didn't load correctly, set the variables to the defaults
+            death[i] = 0;
+            time[i] = 0;
+            difficulty[i] = 0;
+            for (var j = 1; j &lt;= 8; j++)
+            {
+                boss[j,i] = false;
+            }
+            clear[i] = false;
+        }
     }
     else
     {
-        exists[i] = 0;
+        exists[i] = false;
         death[i] = 0;
         time[i] = 0;
     }
@@ -273,16 +284,16 @@ else
         
         draw_set_font(fDefault24);
         
-        if(clear[i]==1){draw_text(x+(i-1)*239+63,y+215,"Clear!!")}
+        if(clear[i]){draw_text(x+(i-1)*239+63,y+215,"Clear!!")}
         
-        if(boss[1,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+0,y+128)}
-        if(boss[2,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+32,y+128)}
-        if(boss[3,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+64,y+128)}
-        if(boss[4,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+96,y+128)}
-        if(boss[5,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+0,y+160)}
-        if(boss[6,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+32,y+160)}
-        if(boss[7,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+64,y+160)}
-        if(boss[8,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+96,y+160)}
+        if(boss[1,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+0,y+128)}
+        if(boss[2,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+32,y+128)}
+        if(boss[3,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+64,y+128)}
+        if(boss[4,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+96,y+128)}
+        if(boss[5,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+0,y+160)}
+        if(boss[6,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+32,y+160)}
+        if(boss[7,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+64,y+160)}
+        if(boss[8,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+96,y+160)}
     }
     else
     {

@@ -45,41 +45,35 @@ if (savePosition)
     global.saveGameClear = global.gameClear;
 }
 
-//create a list for save data
-var list = ds_list_create();
+//create a map for save data
+var saveMap = ds_map_create();
 
-ds_list_add(list,global.death);
-ds_list_add(list,global.time);
-ds_list_add(list,global.timeMicro);
+ds_map_add(saveMap,"death",global.death);
+ds_map_add(saveMap,"time",global.time);
+ds_map_add(saveMap,"timeMicro",global.timeMicro);
 
-ds_list_add(list,global.difficulty);
-ds_list_add(list,global.saveRoom);
-ds_list_add(list,global.savePlayerX);
-ds_list_add(list,global.savePlayerY);
-ds_list_add(list,global.saveGrav);
+ds_map_add(saveMap,"difficulty",global.difficulty);
+ds_map_add(saveMap,"saveRoom",global.saveRoom);
+ds_map_add(saveMap,"savePlayerX",global.savePlayerX);
+ds_map_add(saveMap,"savePlayerY",global.savePlayerY);
+ds_map_add(saveMap,"saveGrav",global.saveGrav);
 
 for (var i = 1; i <= 8; i++)
 {
-    ds_list_add(list,global.saveSecretItem[i]);
+    ds_map_add(saveMap,"saveSecretItem["+string(i)+"]",global.saveSecretItem[i]);
 }
 
 for (var i = 1; i <= 8; i++)
 {
-    ds_list_add(list,global.saveBossItem[i]);
+    ds_map_add(saveMap,"saveBossItem["+string(i)+"]",global.saveBossItem[i]);
 }
 
-ds_list_add(list,global.saveGameClear);
+ds_map_add(saveMap,"saveGameClear",global.saveGameClear);
 
-//add md5 hash to the end to verify saves and make them harder to hack
-ds_list_add(list,md5_string_unicode(ds_list_write(list)+global.md5StrAdd));
+//add md5 hash to verify saves and make them harder to hack
+ds_map_add(saveMap,"mapMd5",md5_string_unicode(ds_map_write(saveMap)+global.md5StrAdd));
 
-//open the save file
-var f = file_text_open_write("Data\save"+string(global.savenum));
+ds_map_secure_save(saveMap,"Data\save"+string(global.savenum));
 
-//write list to the save file with base64 encoding
-file_text_write_string(f,base64_encode(ds_list_write(list)));
-
-file_text_close(f);
-
-//destroy the list
-ds_list_destroy(list);
+//destroy the map
+ds_map_destroy(saveMap);
