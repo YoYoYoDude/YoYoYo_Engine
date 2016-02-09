@@ -1,3 +1,12 @@
+v1.22 (02/08/15):
+-Rewrote save system to use maps instead of lists (they are now stored using ds_map_secure functions to improve save security)
+-Added moving platforms that don't bounce off of walls
+-Added scrDrawTextOutline for outlined text on the debug info overlay (Thanks Archee for the suggestion!)
+-Tweaked main menu layout
+-Changed a bunch of 0/1 to false/true to improve code readability
+-Removed/tweaked global.player_xscale, global.player_djump, global.savePlayerXScale, and global.debugOverlayColor to simplify code logic
+-Other minor tweaks/fixes
+
 v1.21 (11/20/15):
 -Added vsync option
 -Added stopping death sound when pressing "R"
