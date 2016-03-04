@@ -242,7 +242,7 @@ global.noPause = true;  //make it so that the player can't pause during the boss
     else if (timer == 3750)
     {
         scrStopMusic();               //stop the music
-        audio_play_sound(sndDeath,0,0);
+        audio_play_sound(sndDeath,0,false);
         
         if (!global.bossItem[1])
         {

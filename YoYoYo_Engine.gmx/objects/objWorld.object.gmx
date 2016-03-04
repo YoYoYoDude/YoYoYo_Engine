@@ -214,7 +214,7 @@ if (global.debugMode &amp;&amp; global.gameStarted &amp;&amp; !global.gamePaused
         with (objPlayer)
         {
             scrSaveGame(true);
-            audio_play_sound(sndItem,0,0);
+            audio_play_sound(sndItem,0,false);
         }
     }
     if (keyboard_check_pressed(vk_delete))  //toggles showing the hitbox
@@ -370,7 +370,7 @@ if (!instance_exists(objPlayMusic))  //make sure the play music object isn't in 
     scrGetMusic();  //find and play the proper music for the current room
 
 room_speed = 50;    //make sure game is running at the correct frame rate
-scrSetRoomCaption();    //make sure caption stays updated
+scrSetRoomCaption();    //make sure window caption stays updated
 </string>
           </argument>
         </arguments>

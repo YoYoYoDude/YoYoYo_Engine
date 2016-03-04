@@ -86,7 +86,7 @@ global.noPause = true;  //make it so that the player can't pause during the boss
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBossHit,0,0);
+            <string>audio_play_sound(sndBossHit,0,false);
 
 with (other)
     instance_destroy();

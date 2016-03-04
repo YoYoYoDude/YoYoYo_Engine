@@ -69,14 +69,14 @@ playerIndex = (playerIndex + 1/5) mod 4;
 
 if (keyboard_check_pressed(vk_up))    //global.upbutton
 {
-    audio_play_sound(global.menuSound,0,0);
+    audio_play_sound(global.menuSound,0,false);
     select -= 1;
     if(select &lt; 1)
         select = optionsNum;
 }
 else if (keyboard_check_pressed(vk_down))   //global.downbutton
 {
-    audio_play_sound(global.menuSound,0,0);
+    audio_play_sound(global.menuSound,0,false);
     select += 1;
     if(select &gt; optionsNum)
         select = 1;

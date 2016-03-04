@@ -7,7 +7,7 @@ global.noDeath = false;         //enables god mode (toggle with Home key)
 global.infJump = false;         //enables infinite jump (toggle with End key)
 global.showHitbox = false;      //enables showing the player's hitbox (toggle with Del key)
 
-global.roomCaptionDef = "I Wanna Be The Studio Engine YoYoYo Edition";  //sets default room caption (only works with the Professional version of Studio)
+global.roomCaptionDef = "I Wanna Be The Studio Engine YoYoYo Edition";  //sets default window caption (only works with the Professional version of Studio)
 global.roomCaptionLast = global.roomCaptionDef;
 window_set_caption(global.roomCaptionDef);
 

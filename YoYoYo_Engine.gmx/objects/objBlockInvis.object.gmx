@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>if (!visible &amp;&amp; distance_to_object(objPlayer) &lt;= 1)
 {
-    audio_play_sound(sndBlockChange,0,0);
+    audio_play_sound(sndBlockChange,0,false);
     visible = true;
 }
 </string>

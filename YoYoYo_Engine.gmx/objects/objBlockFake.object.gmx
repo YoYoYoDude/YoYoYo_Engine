@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBlockChange,0,0);
+            <string>audio_play_sound(sndBlockChange,0,false);
 instance_destroy();
 </string>
           </argument>

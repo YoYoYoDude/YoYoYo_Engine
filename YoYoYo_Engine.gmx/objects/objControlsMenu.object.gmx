@@ -112,14 +112,14 @@ if (!settingKey)
 {
     if (keyboard_check_pressed(vk_up))    //global.upbutton
     {
-        audio_play_sound(global.menuSound,0,0);
+        audio_play_sound(global.menuSound,0,false);
         select -= 1;
         if(select &lt; 1)
             select = 11;
     }
     else if (keyboard_check_pressed(vk_down))   //global.downbutton
     {
-        audio_play_sound(global.menuSound,0,0);
+        audio_play_sound(global.menuSound,0,false);
         select += 1;
         if(select &gt; 11)
             select = 1;
