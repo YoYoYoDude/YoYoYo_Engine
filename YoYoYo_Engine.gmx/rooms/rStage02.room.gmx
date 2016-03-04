@@ -183,7 +183,7 @@
     <instance objName="objJumpRefresher" x="1344" y="448" name="inst_93D2F551" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlockInvis" x="416" y="384" name="inst_9E2AFBC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlockInvis" x="480" y="384" name="inst_DE7C6560" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSign" x="704" y="544" name="inst_80319A97" locked="0" code="signText = &quot;You#can#make#multiple#lines#with#\##like#this&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSign" x="704" y="544" name="inst_80319A97" locked="0" code="signText = &quot;You#can#make#multiple#lines#like#this&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayMusic" x="160" y="512" name="inst_C5C94C70" locked="0" code="BGM = musGuyRock;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>

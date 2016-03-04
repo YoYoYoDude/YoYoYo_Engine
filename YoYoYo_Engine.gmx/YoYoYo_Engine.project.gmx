@@ -225,10 +225,10 @@
       <object>objects\objFreeTrigger</object>
       <object>objects\objTriggerButton</object>
       <object>objects\objKillerTrigger</object>
-      <object>objects\objSpikeTriggerDown</object>
-      <object>objects\objSpikeTriggerLeft</object>
-      <object>objects\objSpikeTriggerRight</object>
       <object>objects\objSpikeTriggerUp</object>
+      <object>objects\objSpikeTriggerRight</object>
+      <object>objects\objSpikeTriggerLeft</object>
+      <object>objects\objSpikeTriggerDown</object>
       <object>objects\objCherryTrigger</object>
     </objects>
     <objects name="misc">

@@ -4,7 +4,7 @@
 
 var loadFile = argument0;
 
-//only load save data from the save file if the script is currently set to (we don't need to load these normally since the game already has them stored)
+//only load save data from the save file if the script is currently set to (we should only need to load these on first load because the game stores them afterwards)
 if (loadFile)
 {
     //load the save map
@@ -61,7 +61,7 @@ if (loadFile)
     
     if (!saveValid) //check if the save is invalid
     {
-        //hash is invalid, restart the game
+        //save is invalid, restart the game
         
         show_message("Save invalid!");
         
@@ -76,7 +76,7 @@ if (loadFile)
 with (objPlayer) //destroy player if it exists
     instance_destroy();
 
-global.gameStarted = true; //sets game in progress (enables saving, restarting, etc.)
+global.gameStarted = true;  //sets game in progress (enables saving, restarting, etc.)
 global.noPause = false;     //disable no pause mode
 global.autosave = false;    //disable autosaving since we're loading the game
 

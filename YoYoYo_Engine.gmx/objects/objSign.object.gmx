@@ -89,7 +89,9 @@ if (showText)
     draw_set_font(fDefault12);
     draw_set_halign(fa_center);
     
-    draw_text(x+(sprite_width/2),y-string_height(signText),signText);
+    var yOffset = string_height(signText);
+    
+    draw_text(x+(sprite_width/2),y-yOffset,signText);
 }
 </string>
           </argument>
