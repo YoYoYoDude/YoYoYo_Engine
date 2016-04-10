@@ -80,7 +80,7 @@ if (moveFromPlayer)
 }
 else
 {
-    move_bounce_solid(0);
+    move_bounce_solid(false);
 }
 </string>
           </argument>

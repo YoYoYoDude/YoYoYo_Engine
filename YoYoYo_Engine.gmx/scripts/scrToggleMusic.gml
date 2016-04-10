@@ -22,7 +22,6 @@ if (!global.muteMusic)  //start playing music if the game is getting unmuted
 }
 else                    //mute music
 {
-    global.currentMusicID = 0;
-    audio_stop_sound(global.currentMusic);
+    scrStopMusic();
     audio_stop_sound(global.gameOverMusic);
 }

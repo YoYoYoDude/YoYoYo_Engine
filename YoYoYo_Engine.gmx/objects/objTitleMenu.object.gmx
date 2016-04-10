@@ -32,6 +32,35 @@ yShiftText = 408;
 
 strTitle = "I Wanna Be The Studio Engine#YoYoYo Edition v1.22";
 strShiftText = "Press Shift to Start";
+
+showShiftText = true;
+ 
+alarm[0] = 40;  //swaps between showing the shift text so it animates
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>showShiftText = !showShiftText;
+
+alarm[0] = 40;
 </string>
           </argument>
         </arguments>
@@ -84,9 +113,12 @@ draw_set_halign(fa_center);
 
 draw_text(xTitle,yTitle,strTitle);
 
-draw_set_font(fDefault24);
-
-draw_text(xShiftText,yShiftText,strShiftText);
+if (showShiftText)
+{
+    draw_set_font(fDefault24);
+    
+    draw_text(xShiftText,yShiftText,strShiftText);
+}
 
 scrDrawButtonInfo();
 </string>

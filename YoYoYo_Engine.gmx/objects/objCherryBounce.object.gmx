@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_bounce_solid(0);
+            <string>move_bounce_solid(false);
 </string>
           </argument>
         </arguments>

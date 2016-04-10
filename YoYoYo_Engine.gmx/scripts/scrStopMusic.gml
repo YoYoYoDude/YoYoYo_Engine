@@ -1,3 +1,5 @@
 ///stops any music currently playing
 
-scrPlayMusic(-1,false);
+global.currentMusicID = -1;
+
+audio_stop_sound(global.currentMusic);
