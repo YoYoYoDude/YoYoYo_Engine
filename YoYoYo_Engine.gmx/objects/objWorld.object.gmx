@@ -229,14 +229,14 @@ if (global.debugMode &amp;&amp; global.gameStarted &amp;&amp; !global.gamePaused
     {
         global.infJump = !global.infJump;
     }
-    if (keyboard_check_pressed(vk_pageup))  //goes to next room
+    if (keyboard_check_pressed(vk_pageup) &amp;&amp; room != room_last)  //goes to next room
     {        
         with (objPlayer)
             instance_destroy();
     
         room_goto_next();
     }
-    if (keyboard_check_pressed(vk_pagedown))    //goes to previous room
+    if (keyboard_check_pressed(vk_pagedown) &amp;&amp; room != room_first)    //goes to previous room
     {        
         with (objPlayer)
             instance_destroy();
