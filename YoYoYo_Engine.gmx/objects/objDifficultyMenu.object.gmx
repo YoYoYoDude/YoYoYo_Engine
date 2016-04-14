@@ -33,6 +33,8 @@ select2 = 0;
 str[1] = "Save 1";
 str[2] = "Save 2";
 str[3] = "Save 3";
+warnText = false;
+warnSelect = true;
 
 appleIndex = 0;
 playerIndex = 0;
@@ -179,49 +181,94 @@ else
     }
     else
     {
-        if (keyboard_check_pressed(vk_left))    //global.leftbutton
+        if (!warnText)
         {
-            audio_play_sound(global.menuSound,0,false);
-            select2 -= 1;
-            if ((select2 == -1 &amp;&amp; !exists[select]) || (select2 &lt; -1))
-                select2 = 3;
-        }
-        else if (keyboard_check_pressed(vk_right))  //global.rightbutton
-        {
-            audio_play_sound(global.menuSound,0,false);
-            select2 += 1;
-            if (select2 &gt; 3)
+            if (keyboard_check_pressed(vk_left))    //global.leftbutton
             {
-                if (exists[select])
-                    select2 = -1;
+                audio_play_sound(global.menuSound,0,false);
+                select2 -= 1;
+                if ((select2 == -1 &amp;&amp; !exists[select]) || (select2 &lt; -1))
+                    select2 = 3;
+            }
+            else if (keyboard_check_pressed(vk_right))  //global.rightbutton
+            {
+                audio_play_sound(global.menuSound,0,false);
+                select2 += 1;
+                if (select2 &gt; 3)
+                {
+                    if (exists[select])
+                        select2 = -1;
+                    else
+                        select2 = 0;
+                }
+            }
+            else if (keyboard_check_pressed(ord("Z"))) //global.shotbutton
+            {
+                difSelect = false;
+            }
+            else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
+            {
+                global.savenum = select;
+                
+                if (select2 == -1)  //load game
+                {
+                    if (file_exists("Data\save"+string(global.savenum)))
+                        scrLoadGame(true);
+                }
+                else    //starts new game
+                {
+                    if (!file_exists("Data\save"+string(global.savenum)))
+                    {
+                        global.gameStarted = true; //sets game in progress (enables saving, restarting, etc.)
+                        global.autosave = true;
+                        
+                        global.difficulty = select2;
+                        
+                        room_goto(global.startRoom);
+                    }
+                    else
+                    {
+                        warnText = true;
+                        warnSelect = true;
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (keyboard_check_pressed(vk_left))    //global.leftbutton
+            {
+                audio_play_sound(global.menuSound,0,false);
+                warnSelect = !warnSelect;
+            }
+            else if (keyboard_check_pressed(vk_right))  //global.rightbutton
+            {
+                audio_play_sound(global.menuSound,0,false);
+                warnSelect = !warnSelect;
+            }
+            else if (keyboard_check_pressed(ord("Z"))) //global.shotbutton
+            {
+                warnText = false;
+            }
+            else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
+            {
+                if (warnSelect)
+                {
+                    //start new game
+                    global.gameStarted = true; //sets game in progress (enables saving, restarting, etc.)
+                    global.autosave = true;
+                    
+                    global.difficulty = select2;
+                    
+                    if (file_exists("Data\save"+string(global.savenum)))
+                        file_delete("Data\save"+string(global.savenum));
+                    
+                    room_goto(global.startRoom);
+                }
                 else
-                    select2 = 0;
-            }
-        }
-        else if (keyboard_check_pressed(ord("Z"))) //global.shotbutton
-        {
-            difSelect = false;
-        }
-        else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
-        {
-            global.savenum = select;
-            
-            if (select2 == -1)  //load game
-            {
-                if (file_exists("Data\save"+string(global.savenum)))
-                    scrLoadGame(true);
-            }
-            else    //starts new game
-            {
-                global.gameStarted = true; //sets game in progress (enables saving, restarting, etc.)
-                global.autosave = true;
-                
-                global.difficulty = select2;
-                
-                if (file_exists("Data\save"+string(global.savenum)))
-                    file_delete("Data\save"+string(global.savenum));
-                
-                room_goto(global.startRoom);
+                {
+                    warnText = false;
+                }
             }
         }
     }
@@ -265,11 +312,20 @@ else
     
     if (difSelect &amp;&amp; i == select)
     {
-        if(select2==-1) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Load game &gt;");
-        else if(select2==0) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Medium &gt;");
-        else if(select2==1) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Hard &gt;");
-        else if(select2==2) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Very Hard &gt;");
-        else if(select2==3) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Impossible &gt;");
+        if (!warnText)
+        {
+            if(select2==-1) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Load game &gt;");
+            else if(select2==0) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Medium &gt;");
+            else if(select2==1) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Hard &gt;");
+            else if(select2==2) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Very Hard &gt;");
+            else if(select2==3) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Impossible &gt;");
+        }
+        else
+        {
+            draw_text(x+(i-1)*239+63,y-100,"Are you sure#you want to#overwrite this save?")
+            if(warnSelect) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Yes &gt;");
+            else draw_text(x + (i-1)*239 + 65, y+49,"&lt; No &gt;");
+        }
     }
     
     if (exists[i])
