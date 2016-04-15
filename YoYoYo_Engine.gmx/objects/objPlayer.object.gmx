@@ -214,7 +214,7 @@ if (onVineL || onVineR)
 if (instance_exists(objSlope) &amp;&amp; hspeed != 0)
 {
     var ySlope;
-    var moveLimit = abs(hspeed);
+    var moveLimit = abs(hspeed);    //this can be increased to make the player able to run over steeper slopes
     
     var slopeCheck = true;
     var hTest = hspeed;
@@ -229,16 +229,18 @@ if (instance_exists(objSlope) &amp;&amp; hspeed != 0)
         
         vspeed += gravity;
         
+        x += hspeed;
+        hspeed = 0;
+        
         if(!place_free(x,y+vspeed))
         {
-            if(vspeed &lt;= 0){move_contact_solid(90,abs(vspeed));}
-            if(vspeed &gt; 0){move_contact_solid(270,abs(vspeed));}
+            move_contact_solid(270,abs(vspeed));
             vspeed = 0;
         }
         
         y += vspeed;            
         
-        if (!place_free(x,y+(global.grav)))
+        if (!place_free(x,y+(global.grav)) &amp;&amp; place_free(x,y))
         {
             djump = 1;
             notOnBlock = false;
