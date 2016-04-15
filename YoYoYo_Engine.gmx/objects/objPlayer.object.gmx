@@ -208,6 +208,142 @@ if (onVineL || onVineR)
         }
     }
 }
+
+//slopes
+
+if (instance_exists(objSlope) &amp;&amp; hspeed != 0)
+{
+    var ySlope;
+    var moveLimit = abs(hspeed);
+    
+    var slopeCheck = true;
+    var hTest = hspeed;
+    
+    //falling onto a slope
+    if (place_meeting(x+hspeed,y+vspeed+gravity,objSlope) &amp;&amp; vspeed+gravity &gt; 0 &amp;&amp; notOnBlock)
+    {
+        var xLast = x;
+        var yLast = y;
+        var hLast = hspeed;
+        var vLast = vspeed;
+        
+        vspeed += gravity;
+        
+        if(!place_free(x,y+vspeed))
+        {
+            if(vspeed &lt;= 0){move_contact_solid(90,abs(vspeed));}
+            if(vspeed &gt; 0){move_contact_solid(270,abs(vspeed));}
+            vspeed = 0;
+        }
+        
+        y += vspeed;            
+        
+        if (!place_free(x,y+(global.grav)))
+        {
+            djump = 1;
+            notOnBlock = false;
+        }
+        else
+        {
+            x = xLast;
+            y = yLast;
+            hspeed = hLast;
+            vspeed = vLast;
+        }
+    }
+    
+    //moving down a slope
+    if (!notOnBlock)
+    {
+        while (slopeCheck)
+        {
+            ySlope = 0;
+            while (!place_meeting(x+hTest,y-ySlope+1,objSlope) &amp;&amp; ySlope &gt; -floor(moveLimit * (hTest/hspeed)))
+            {
+                ySlope -= 1;
+            }
+            
+            //check if we need to move down
+            if (ySlope != 0 &amp;&amp; place_meeting(x+hTest,y-ySlope+1,objSlope) &amp;&amp; place_free(x+hTest,y-ySlope))
+            {
+                y -= ySlope;
+                
+                x += hTest;
+                hspeed = 0;
+                
+                slopeCheck = false;
+            }
+            else
+            {
+                if (hTest &gt; 0)
+                {
+                    hTest -= 1;
+                    if (hTest &lt;= 0)
+                        slopeCheck = false;
+                }
+                else if (hTest &lt; 0)
+                {
+                    hTest += 1;
+                    if (hTest &gt;= 0)
+                        slopeCheck = false;
+                }
+                else
+                {
+                    slopeCheck = false;
+                }
+            }
+        }
+    }
+    
+    //moving up a slope
+    if (place_meeting(x+hspeed,y,objSlope))
+    {
+        slopeCheck = true;
+        hTest = hspeed;
+        
+        while (slopeCheck)
+        {
+            ySlope = 0;
+            while (place_meeting(x+hTest,y-ySlope,objSlope) &amp;&amp; ySlope &lt; floor(moveLimit * (hTest/hspeed)))
+            {
+                ySlope += 1;
+            }
+            
+            if (place_free(x+hTest,y-ySlope))
+            {            
+                y -= ySlope;
+                
+                x += hTest;
+                hspeed = 0;
+                
+                slopeCheck = false;
+            }
+            else
+            {
+                if (hTest &gt; 0)
+                {
+                    hTest -= 1;
+                    if (hTest &lt;= 0)
+                        slopeCheck = false;
+                }
+                else if (hTest &lt; 0)
+                {
+                    hTest += 1;
+                    if (hTest &gt;= 0)
+                        slopeCheck = false;
+                }
+                else
+                {
+                    slopeCheck = false;
+                }
+            }
+        }
+    }
+    
+    //set xprevious/yprevious coordinates for future solid collisions
+    xprevious = x;
+    yprevious = y;
+}
 </string>
           </argument>
         </arguments>

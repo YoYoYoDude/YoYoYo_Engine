@@ -56,6 +56,12 @@
       <sprite>sprites\sprSlideBlockL</sprite>
       <sprite>sprites\sprSaveBlocker</sprite>
     </sprites>
+    <sprites name="slopes">
+      <sprite>sprites\sprSlopeDownLeft</sprite>
+      <sprite>sprites\sprSlopeDownRight</sprite>
+      <sprite>sprites\sprSlopeUpLeft</sprite>
+      <sprite>sprites\sprSlopeUpRight</sprite>
+    </sprites>
     <sprites name="platforms">
       <sprite>sprites\sprPlatform</sprite>
       <sprite>sprites\sprMovingPlatform</sprite>
@@ -186,6 +192,13 @@
       <object>objects\objSlideBlockR</object>
       <object>objects\objBossBlock</object>
       <object>objects\objSaveBlocker</object>
+    </objects>
+    <objects name="slopes">
+      <object>objects\objSlope</object>
+      <object>objects\objSlopeDownLeft</object>
+      <object>objects\objSlopeDownRight</object>
+      <object>objects\objSlopeUpLeft</object>
+      <object>objects\objSlopeUpRight</object>
     </objects>
     <objects name="platforms">
       <object>objects\objPlatform</object>
