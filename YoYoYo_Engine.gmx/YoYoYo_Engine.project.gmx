@@ -57,6 +57,7 @@
       <sprite>sprites\sprSaveBlocker</sprite>
     </sprites>
     <sprites name="slopes">
+      <sprite>sprites\sprSlopeBlock</sprite>
       <sprite>sprites\sprSlopeDownLeft</sprite>
       <sprite>sprites\sprSlopeDownRight</sprite>
       <sprite>sprites\sprSlopeUpLeft</sprite>
