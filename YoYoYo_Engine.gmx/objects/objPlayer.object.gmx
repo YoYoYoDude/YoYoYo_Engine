@@ -244,6 +244,8 @@ if (instance_exists(objSlope) &amp;&amp; hspeed != 0)
         {
             djump = 1;
             notOnBlock = false;
+            
+            show_debug_message("snapped");
         }
         else
         {
@@ -251,6 +253,8 @@ if (instance_exists(objSlope) &amp;&amp; hspeed != 0)
             y = yLast;
             hspeed = hLast;
             vspeed = vLast;
+            
+            show_debug_message("failed snap");
         }
     }
     
@@ -266,33 +270,56 @@ if (instance_exists(objSlope) &amp;&amp; hspeed != 0)
             }
             
             //check if we need to move down
-            if (ySlope != 0 &amp;&amp; place_meeting(x+hTest,y-ySlope+1,objSlope) &amp;&amp; place_free(x+hTest,y-ySlope))
+            if (place_meeting(x+hTest,y-ySlope+1,objSlope))
             {
-                y -= ySlope;
-                
-                x += hTest;
-                hspeed = 0;
-                
-                slopeCheck = false;
-            }
-            else
-            {
-                if (hTest &gt; 0)
+                if (ySlope != 0 &amp;&amp; place_free(x+hTest,y-ySlope))
                 {
-                    hTest -= 1;
-                    if (hTest &lt;= 0)
-                        slopeCheck = false;
-                }
-                else if (hTest &lt; 0)
-                {
-                    hTest += 1;
-                    if (hTest &gt;= 0)
-                        slopeCheck = false;
+                    y -= ySlope;
+                    
+                    x += hTest;
+                    hspeed = 0;
+                    
+                    show_debug_message("moving down");
+                    show_debug_message(string(hTest));
+                    
+                    slopeCheck = false;
                 }
                 else
                 {
-                    slopeCheck = false;
+                    show_debug_message("hTest cur = " + string(hTest));
+                    
+                    if (ySlope == 0)
+                        show_debug_message("(ySlope == 0)");
+                    
+                    if !place_free(x+hTest,y-ySlope)
+                        show_debug_message("(!place_free(x+hTest,y-ySlope)))");
+                    
+                    
+                    
+                    if (hTest &gt; 0)
+                    {
+                        hTest -= 1;
+                        if (hTest &lt;= 0)
+                            slopeCheck = false;
+                    }
+                    else if (hTest &lt; 0)
+                    {
+                        hTest += 1;
+                        if (hTest &gt;= 0)
+                            slopeCheck = false;
+                    }
+                    else
+                    {
+                        slopeCheck = false;
+                    }
                 }
+            }
+            else
+            {
+                slopeCheck = false;
+                
+                if !place_meeting(x+hTest,y-ySlope+1,objSlope)
+                    show_debug_message("(!place_meeting(x+hTest,y-ySlope+1,objSlope))");
             }
         }
     }
@@ -317,6 +344,8 @@ if (instance_exists(objSlope) &amp;&amp; hspeed != 0)
                 
                 x += hTest;
                 hspeed = 0;
+                
+                show_debug_message("moving up");
                 
                 slopeCheck = false;
             }

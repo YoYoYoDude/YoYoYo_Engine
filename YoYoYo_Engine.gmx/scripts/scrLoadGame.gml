@@ -24,6 +24,9 @@ if (loadFile)
         global.savePlayerY = ds_map_find_value(saveMap,"savePlayerY");
         global.saveGrav = ds_map_find_value(saveMap,"saveGrav");
         
+        if (!room_exists(global.saveRoom))  //check if the room index in the save is valid
+            saveValid = false;
+        
         for (var i = 1; i <= 8; i++)
         {
             global.saveSecretItem[i] = ds_map_find_value(saveMap,"saveSecretItem["+string(i)+"]");
