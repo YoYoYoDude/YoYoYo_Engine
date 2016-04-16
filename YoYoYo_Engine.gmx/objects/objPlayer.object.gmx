@@ -261,16 +261,18 @@ if (instance_exists(objSlope) &amp;&amp; hspeed != 0)
     //moving down a slope
     if (!notOnBlock)
     {
+        var onSlope = (place_meeting(x,y+1,objSlope));    //treat normal blocks the same as slopes if we're standing on a slope
+        
         while (slopeCheck)
         {
             ySlope = 0;
-            while (!place_meeting(x+hTest,y-ySlope+1,objSlope) &amp;&amp; ySlope &gt; -floor(moveLimit * (hTest/hspeed)))
+            while ((!place_meeting(x+hTest,y-ySlope+1,objSlope) || (onSlope &amp;&amp; !place_meeting(x+hTest,y-ySlope+1,objBlock))) &amp;&amp; ySlope &gt; -floor(moveLimit * (hTest/hspeed)))
             {
                 ySlope -= 1;
             }
             
             //check if we need to move down
-            if (place_meeting(x+hTest,y-ySlope+1,objSlope))
+            if (place_meeting(x+hTest,y-ySlope+1,objSlope) || (onSlope &amp;&amp; place_meeting(x+hTest,y-ySlope+1,objBlock)))
             {
                 if (ySlope != 0 &amp;&amp; place_free(x+hTest,y-ySlope))
                 {
