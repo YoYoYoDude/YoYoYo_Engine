@@ -71,22 +71,8 @@ if (global.autosave) //save the game if currently set to autosave
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (x &lt; 0 || x &gt; room_width || y &lt; 0 || y &gt; room_height)  //check if player has left the room
-{
-    //check if player is colliding with objOutsideRoomChanger
-    var roomChangerTouching = instance_place(x,y,objOutsideRoomChanger);
-    if (roomChangerTouching != noone)
-    {
-        with (roomChangerTouching)  //touching room changer, warp to the set room
-        {
-            event_perform_object(object_get_parent(object_index),ev_collision,objPlayer);
-        }
-    }
-    else if (global.edgeDeath)  //not touching room changer, kill the player
-    {
-        scrKillPlayer();
-    }
-}
+            <string>if ((x &lt; 0 || x &gt; room_width || y &lt; 0 || y &gt; room_height) &amp;&amp; global.edgeDeath)  //check if player has left the room
+    scrKillPlayer();
 </string>
           </argument>
         </arguments>

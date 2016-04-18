@@ -8,6 +8,34 @@
   <parentName>objRoomChanger</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//this warp only activates when the player leaves the room, it can be used on the edges of rooms for smoother room transitions
+
+event_inherited();
+
+//can be changed in creation code
+smoothTransition = false;   //sets whether the player wraps around the screen for a smooth transition to the next room (this requires the room sizes to be the same)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objPlayer">
       <action>
         <libid>1</libid>
@@ -25,7 +53,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///do nothing, warping is handled in objPlayer End Step
+            <string>if (other.x &lt; 0 || other.x &gt; room_width || other.y &lt; 0 || other.y &gt; room_height)  //check if player has left the room
+{
+    if (!smoothTransition)  //not using smooth transition, use default warp
+    {
+        event_inherited();
+    }
+    else        //using smooth transition, wrap around the screen then warp
+    {
+        if (other.x &lt; 0)
+        {
+            other.x += room_width;
+        }
+        if (other.x &gt; room_width)
+        {
+            other.x -= room_width;
+        }
+        if (other.y &lt; 0)
+        {
+            other.y += room_height;
+        }
+        if (other.y &gt; room_height)
+        {
+            other.y -= room_height;
+        }
+        
+        room_goto(roomTo);
+    }
+}
 </string>
           </argument>
         </arguments>
