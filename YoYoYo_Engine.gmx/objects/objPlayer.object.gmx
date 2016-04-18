@@ -213,11 +213,12 @@ if (onVineL || onVineR)
 
 if (instance_exists(objSlope) &amp;&amp; hspeed != 0)
 {
-    var ySlope;
-    var moveLimit = abs(hspeed);    //this can be increased to make the player able to run over steeper slopes (ie setting it to abs(hspeed)*2 allows the player to run over slopes twice as steep)
+    var moveLimit = abs(hspeed);    //sets how high/low the player can go to snap onto a slope, this can be increased to make the player able to run over steeper slopes (ie setting it to abs(hspeed)*2 allows the player to run over slopes twice as steep)
     
-    var slopeCheck = true;
-    var hTest = hspeed;
+    var slopeCheck;
+    var hTest;
+    
+    var ySlope;
     
     //falling onto a slope
     if (place_meeting(x+hspeed,y+vspeed+gravity,objSlope) &amp;&amp; (vspeed+gravity)*global.grav &gt; 0 &amp;&amp; notOnBlock)
@@ -243,12 +244,12 @@ if (instance_exists(objSlope) &amp;&amp; hspeed != 0)
         
         y += vspeed;            
         
-        if (!place_free(x,y+(global.grav)) &amp;&amp; place_free(x,y))
+        if (!place_free(x,y+(global.grav)) &amp;&amp; place_free(x,y))  //snapped onto the slope properly
         {
             djump = 1;
             notOnBlock = false;
         }
-        else
+        else    //did not snap onto the slope, return to previous position
         {
             x = xLast;
             y = yLast;
@@ -261,6 +262,9 @@ if (instance_exists(objSlope) &amp;&amp; hspeed != 0)
     if (!notOnBlock)
     {
         var onSlope = (place_meeting(x,y+(global.grav),objSlope));    //treat normal blocks the same as slopes if we're standing on a slope
+        
+        slopeCheck = true;
+        hTest = hspeed;
         
         while (slopeCheck)
         {

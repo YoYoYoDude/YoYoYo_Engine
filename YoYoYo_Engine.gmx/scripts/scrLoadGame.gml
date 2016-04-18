@@ -24,8 +24,15 @@ if (loadFile)
         global.savePlayerY = ds_map_find_value(saveMap,"savePlayerY");
         global.saveGrav = ds_map_find_value(saveMap,"saveGrav");
         
-        if (!room_exists(global.saveRoom))  //check if the room index in the save is valid
+        if (!is_undefined(global.saveRoom))   //check if the saved room loaded properly
+        {
+            if (!room_exists(global.saveRoom))  //check if the room index in the save is valid
+                saveValid = false;
+        }
+        else
+        {
             saveValid = false;
+        }
         
         for (var i = 1; i <= 8; i++)
         {
