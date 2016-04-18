@@ -265,11 +265,12 @@
       <object>objects\objSaveVHardFlip</object>
     </objects>
     <objects name="warps">
-      <object>objects\objRoomChanger</object>
       <object>objects\objWarpStart</object>
+      <object>objects\objRoomChanger</object>
       <object>objects\objWarp</object>
       <object>objects\objWarpNext</object>
       <object>objects\objWarpAutosaveNext</object>
+      <object>objects\objOutsideRoomChanger</object>
     </objects>
     <objects name="items">
       <object>objects\objSecretItem</object>

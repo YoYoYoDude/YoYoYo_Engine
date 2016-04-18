@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_user(0);
+            <string>leaveRoom = false;  //sets whether the camera can follow the player outside of the room's boundaries
+
+event_user(0);  //snap view to the player
 </string>
           </argument>
         </arguments>
@@ -48,7 +50,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_user(0);
+            <string>event_user(0);  //snap view to the player
 </string>
           </argument>
         </arguments>
@@ -75,8 +77,17 @@
 
 if(instance_exists(objPlayer))
 {
-    view_xview[0] = floor(objPlayer.x/view_wview[0])*view_wview[0];
-    view_yview[0] = floor(objPlayer.y/view_hview[0])*view_hview[0];
+    var xFollow = objPlayer.x;
+    var yFollow = objPlayer.y;
+    
+    if (!leaveRoom)
+    {
+        xFollow = clamp(xFollow,0,room_width-1); 
+        yFollow = clamp(yFollow,0,room_height-1);   
+    }
+    
+    view_xview[0] = floor(xFollow/view_wview[0])*view_wview[0];
+    view_yview[0] = floor(yFollow/view_hview[0])*view_hview[0];
 }
 </string>
           </argument>
