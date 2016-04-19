@@ -53,6 +53,8 @@ global.windowYPrev = 0;
 global.windowWidthPrev = 0;
 global.windowHeightPrev = 0;
 
+global.controllerMode = false;
+
 display_set_gui_size(view_wview[0],view_hview[0]);  //set the correct gui size for the Draw GUI event
 
 randomize();    //make sure the game starts with a random seed for RNG

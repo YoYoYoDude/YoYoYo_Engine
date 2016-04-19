@@ -149,6 +149,7 @@
       <script>scripts\scrGetMusic.gml</script>
       <script>scripts\scrPlayMusic.gml</script>
       <script>scripts\scrStopMusic.gml</script>
+      <script>scripts\scrButtonCheck.gml</script>
     </scripts>
     <scripts name="functions">
       <script>scripts\scrDrawTextOutline.gml</script>
@@ -299,6 +300,17 @@
     </rooms>
     <room>rooms\rTemplate</room>
   </rooms>
+  <constants number="9">
+    <constant name="LEFT_BUTTON">0</constant>
+    <constant name="RIGHT_BUTTON">1</constant>
+    <constant name="UP_BUTTON">2</constant>
+    <constant name="DOWN_BUTTON">3</constant>
+    <constant name="JUMP_BUTTON">4</constant>
+    <constant name="SHOT_BUTTON">5</constant>
+    <constant name="RESTART_BUTTON">6</constant>
+    <constant name="SKIP_BUTTON">7</constant>
+    <constant name="SUICIDE_BUTTON">8</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

@@ -157,12 +157,12 @@ if (global.gameStarted)
     }
     else    //game is paused, check for volume controls
     {
-        if (keyboard_check(global.upbutton))
+        if (scrButtonCheck(UP_BUTTON))
         {
             if (global.volumeLevel &lt; 100)
                 global.volumeLevel += 1;
         }
-        else if (keyboard_check(global.downbutton))
+        else if (scrButtonCheck(DOWN_BUTTON))
         {
             if (global.volumeLevel &gt; 0)
                 global.volumeLevel -= 1;
