@@ -150,6 +150,7 @@
       <script>scripts\scrPlayMusic.gml</script>
       <script>scripts\scrStopMusic.gml</script>
       <script>scripts\scrButtonCheck.gml</script>
+      <script>scripts\scrGetControllerButton.gml</script>
     </scripts>
     <scripts name="functions">
       <script>scripts\scrDrawTextOutline.gml</script>

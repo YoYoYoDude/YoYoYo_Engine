@@ -173,6 +173,46 @@ if (global.gameStarted)
     
     scrSetRoomCaption();    //keep caption updated
 }
+
+//controller checks
+if (global.controllerEnabled)
+{
+    if (global.controllerDelay != -1)
+    {
+        global.controllerDelay -= 1;
+        
+        if (global.controllerDelay == 0)
+        {
+            global.controllerMode = !global.controllerMode;
+            global.controllerDelay = -1;
+        }
+    }
+    
+    if (global.controllerMode)  //check if we should switch to keyboard mode
+    {
+        if (keyboard_check_pressed(vk_anykey))
+        {
+            if (global.controllerDelay == -1)
+                global.controllerDelay = global.controllerDelayLength;
+        }
+        else if (scrGetControllerButton() != -1)
+        {
+            global.controllerDelay = -1;
+        }
+    }
+    else    //check if we should to controller mode
+    {
+        if (keyboard_check_pressed(vk_anykey))
+        {
+            global.controllerDelay = -1;
+        }
+        else if (scrGetControllerButton() != -1)
+        {
+            if (global.controllerDelay == -1)
+                global.controllerDelay = global.controllerDelayLength;
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

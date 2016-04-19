@@ -32,7 +32,7 @@ global.aAlignButton = ini_read_real("Controls","Align_left",ord("A"));
 global.dAlignButton = ini_read_real("Controls","Align_right",ord("D"));
 
 //controller options
-global.controllerEnabled = ini_read_real("Controller","Enabled",false);
+global.controllerEnabled = ini_read_real("Controller","Enabled",true);
 
 global.controllerIndex = ini_read_real("Controller", "Index", 0); // -1 means no controller
 global.controllerThreshhold = ini_read_real("Controller", "Threshhold", 0.3); //how far, between 0 and 1, the move stick needs to be moved to count as pressing the direction

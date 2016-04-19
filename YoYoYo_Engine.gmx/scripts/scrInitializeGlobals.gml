@@ -54,6 +54,8 @@ global.windowWidthPrev = 0;
 global.windowHeightPrev = 0;
 
 global.controllerMode = false;
+global.controllerDelay = -1;
+global.controllerDelayLength = 5;
 
 display_set_gui_size(view_wview[0],view_hview[0]);  //set the correct gui size for the Draw GUI event
 
