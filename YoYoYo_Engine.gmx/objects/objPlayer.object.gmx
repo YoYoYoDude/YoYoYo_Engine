@@ -182,7 +182,7 @@ if (abs(vspeed) &gt; maxVspeed) {vspeed = sign(vspeed)*maxVspeed;} //check if mo
 
 if (!frozen)    //check if frozen before doing anything
 {
-    if (scrButtonCheckPressed(SHOT_BUTTON))
+    if (scrButtonCheckPressed(SHOOT_BUTTON))
         scrPlayerShoot();
     if (scrButtonCheckPressed(JUMP_BUTTON))
         scrPlayerJump();

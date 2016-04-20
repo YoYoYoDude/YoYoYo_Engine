@@ -313,7 +313,7 @@
     <constant name="UP_BUTTON">2</constant>
     <constant name="DOWN_BUTTON">3</constant>
     <constant name="JUMP_BUTTON">4</constant>
-    <constant name="SHOT_BUTTON">5</constant>
+    <constant name="SHOOT_BUTTON">5</constant>
     <constant name="RESTART_BUTTON">6</constant>
     <constant name="SKIP_BUTTON">7</constant>
     <constant name="SUICIDE_BUTTON">8</constant>

@@ -20,8 +20,8 @@ switch (buttonIn)
     case JUMP_BUTTON:
         return global.jumpgp;
         break;
-    case SHOT_BUTTON:
-        return global.shotgp;
+    case SHOOT_BUTTON:
+        return global.shootgp;
         break;
     case RESTART_BUTTON:
         return global.restartgp;

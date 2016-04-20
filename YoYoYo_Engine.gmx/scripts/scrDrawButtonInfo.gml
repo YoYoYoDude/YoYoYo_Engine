@@ -18,7 +18,7 @@ else
 {
     backButton = "Z";
     acceptButton = "Shift";
-    optionsButton = "F3";
+    optionsButton = "Enter";
 }
 
 //button info

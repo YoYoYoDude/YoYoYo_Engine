@@ -20,8 +20,8 @@ switch (buttonIn)
     case JUMP_BUTTON:
         return global.jumpbutton;
         break;
-    case SHOT_BUTTON:
-        return global.shotbutton;
+    case SHOOT_BUTTON:
+        return global.shootbutton;
         break;
     case RESTART_BUTTON:
         return global.restartbutton;
@@ -60,7 +60,7 @@ switch (buttonIn)
         return ord("Z");
         break;
     case MENU_OPTIONS_BUTTON:
-        return vk_f3;
+        return vk_enter;
         break;
     default:    //invalid button
         return -1;

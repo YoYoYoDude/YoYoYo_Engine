@@ -28,18 +28,19 @@
             <string>select = 1;
 
 xSelector = 124;
-ySelector = 164;
+ySelector = 132;
 xSeperation = 550;
 ySeperation = 48;
 
-optionsNum = 6; //sets number of separate options available
+optionsNum = 7; //sets number of separate options available
 
 strSelect[0] = "Music";
 strSelect[1] = "Volume Level";
 strSelect[2] = "Screen Mode";
 strSelect[3] = "Smoothing Mode";
 strSelect[4] = "Vsync";
-strSelect[5] = "Set Controls";
+strSelect[5] = "Set Keyboard Controls";
+strSelect[6] = "Controller Options";
 
 playerIndex = 0;
 </string>
@@ -110,28 +111,29 @@ else if (scrButtonCheckPressed(MENU_ACCEPT_BUTTON))
         
         scrSetVsync();
     }
-    else if (select == 6)   //go to the controls menu
+    else if (select == 6)   //go to the keyboard controls menu
     {
         scrSaveConfig();    //save changes
         instance_create(x,y,objControlsMenu);
         instance_destroy();
         exit;
     }
+    else if (select == 7)   //go to the controller options menu
+    {
+    }
 }
 
-if (scrButtonCheck(MENU_RIGHT_BUTTON))
+
+if (select == 2)
 {
-    if (select == 2)    //raise volume
+    if (scrButtonCheck(MENU_RIGHT_BUTTON))  //raise volume
     {
         if (global.volumeLevel &lt; 100)
-                global.volumeLevel += 1;
+            global.volumeLevel += 1;
         
         audio_master_gain(global.volumeLevel/100);  //set master gain
     }
-}
-else if (scrButtonCheck(MENU_LEFT_BUTTON))
-{
-    if (select == 2)    //lower volume
+    else if (scrButtonCheck(MENU_LEFT_BUTTON))  //lower volume
     {
         if (global.volumeLevel &gt; 0)
             global.volumeLevel -= 1;
