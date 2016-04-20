@@ -181,20 +181,20 @@ if (abs(vspeed) &gt; maxVspeed) {vspeed = sign(vspeed)*maxVspeed;} //check if mo
 
 if (!frozen)    //check if frozen before doing anything
 {
-    if(keyboard_check_pressed(global.shotbutton))
+    if (scrButtonCheckPressed(SHOT_BUTTON))
         scrPlayerShoot();
-    if(keyboard_check_pressed(global.jumpbutton))
+    if (scrButtonCheckPressed(JUMP_BUTTON))
         scrPlayerJump();
-    if(keyboard_check_released(global.jumpbutton))
+    if (scrButtonCheckReleased(JUMP_BUTTON))
         scrPlayerVJump();
-    if(keyboard_check_pressed(global.suicidebutton))
+    if (scrButtonCheckPressed(SUICIDE_BUTTON))
         scrKillPlayer();
 }
 
 if (global.adAlign &amp;&amp; place_meeting(x,y+(global.grav),objBlock) &amp;&amp; !frozen)  // A/D align
 {
-    if (keyboard_check_pressed(global.aAlignButton)) {hspeed -= 1;}
-    if (keyboard_check_pressed(global.dAlignButton)) {hspeed += 1;}
+    if (scrButtonCheckPressed(A_ALIGN_BUTTON)) {hspeed -= 1;}
+    if (scrButtonCheckPressed(D_ALIGN_BUTTON)) {hspeed += 1;}
 }
 
 
@@ -212,9 +212,9 @@ if (onVineL || onVineR)
     image_speed = 1/2;
     
     //pressed away from the vine
-    if (onVineL &amp;&amp; keyboard_check_pressed(global.rightbutton)) || (onVineR &amp;&amp; keyboard_check_pressed(global.leftbutton))
+    if (onVineL &amp;&amp; scrButtonCheckPressed(RIGHT_BUTTON)) || (onVineR &amp;&amp; scrButtonCheckPressed(LEFT_BUTTON))
     {
-        if (keyboard_check(global.jumpbutton))  //jumping off vine
+        if (scrButtonCheck(JUMP_BUTTON))  //jumping off vine
         {
             if (onVineR)
                 hspeed = -15;

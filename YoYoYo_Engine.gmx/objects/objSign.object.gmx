@@ -52,7 +52,7 @@ showText = false;
             <kind>1</kind>
             <string>if (place_meeting(x,y,objPlayer))
 {
-    if (keyboard_check_pressed(global.upbutton))
+    if (scrButtonCheckPressed(UP_BUTTON))
         showText = true;
 }
 else

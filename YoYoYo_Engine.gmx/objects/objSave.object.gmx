@@ -99,7 +99,7 @@ if (global.difficulty &gt; 1)  //destroy if on a higher difficulty than hard
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check_pressed(global.shotbutton))  //save if player is touching the save and shooting
+            <string>if (scrButtonCheckPressed(SHOT_BUTTON))  //save if player is touching the save and shooting
 {
     event_user(0);
 }
