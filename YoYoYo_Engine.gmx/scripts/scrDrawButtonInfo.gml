@@ -8,17 +8,18 @@ var backButton;
 var acceptButton;
 var optionsButton;
 
-if (global.controllerMode)
+//check whether to display keyboard or controller buttons
+if (!global.controllerMode)
 {
-    backButton = "B";
-    acceptButton = "A";
-    optionsButton = "Select";
+    backButton = scrGetKeybind(global.menuBackButton[0]);
+    acceptButton = scrGetKeybind(global.menuAcceptButton[0]);
+    optionsButton = scrGetKeybind(global.menuOptionsButton[0]);
 }
 else
 {
-    backButton = "Z";
-    acceptButton = "Shift";
-    optionsButton = "Enter";
+    backButton = scrGetControllerBind(global.menuBackButton[1]);
+    acceptButton = scrGetControllerBind(global.menuAcceptButton[1]);
+    optionsButton = scrGetControllerBind(global.menuOptionsButton[1]);
 }
 
 //button info

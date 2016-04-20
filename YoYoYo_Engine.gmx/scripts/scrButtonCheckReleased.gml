@@ -1,4 +1,4 @@
-///scrButtonCheckReleased(button)
+///scrButtonCheckReleased(buttonArray)
 ///checks whether a button is being released this frame
 ///argument0 - array containing the keyboard button in index 0 and the controller button in index 1
 

@@ -114,12 +114,16 @@ else if (scrButtonCheckPressed(global.menuAcceptButton))
     else if (select == 6)   //go to the keyboard controls menu
     {
         scrSaveConfig();    //save changes
-        instance_create(x,y,objControlsMenu);
+        instance_create(x,y,objKeyboardControlsMenu);
         instance_destroy();
         exit;
     }
     else if (select == 7)   //go to the controller options menu
     {
+        scrSaveConfig();    //save changes
+        instance_create(x,y,objControllerMenu);
+        instance_destroy();
+        exit;
     }
 }
 

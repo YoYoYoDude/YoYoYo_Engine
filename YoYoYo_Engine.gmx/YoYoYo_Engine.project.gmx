@@ -141,6 +141,7 @@
       <script>scripts\scrSetRoomCaption.gml</script>
       <script>scripts\scrDrawButtonInfo.gml</script>
       <script>scripts\scrGetKeybind.gml</script>
+      <script>scripts\scrGetControllerBind.gml</script>
       <script>scripts\scrToggleMusic.gml</script>
       <script>scripts\scrRestartGame.gml</script>
       <script>scripts\scrSetFullscreen.gml</script>
@@ -177,7 +178,8 @@
       <object>objects\objTitleMenu</object>
       <object>objects\objDifficultyMenu</object>
       <object>objects\objOptionsMenu</object>
-      <object>objects\objControlsMenu</object>
+      <object>objects\objKeyboardControlsMenu</object>
+      <object>objects\objControllerMenu</object>
     </objects>
     <objects name="player">
       <object>objects\objPlayerStart</object>
