@@ -1,8 +1,37 @@
+///scrDrawButtonInfo(optionsText)
 ///draws the button control info for menus
+///argument0 - sets whether to draw the text for entering the options menu
+
+var optionsText = argument0;
+
+var backButton;
+var acceptButton;
+var optionsButton;
+
+if (global.controllerMode)
+{
+    backButton = "B";
+    acceptButton = "A";
+    optionsButton = "Select";
+}
+else
+{
+    backButton = "Z";
+    acceptButton = "Shift";
+    optionsButton = "F3";
+}
 
 //button info
 draw_set_font(fDefault12);
 draw_set_halign(fa_left);
-draw_text(34,556,"[Z] Back");
+draw_text(34,556,"["+backButton+"] Back");
 draw_set_halign(fa_right);
-draw_text(766,556,"[Shift] Accept");
+draw_text(766,556,"["+acceptButton+"] Accept");
+
+if (optionsText)
+{
+    //draw button info for the options menu
+    
+    draw_set_halign(fa_middle);
+    draw_text(400,556,"["+optionsButton+"] Options");
+}

@@ -41,6 +41,27 @@ switch (buttonIn)
     case D_ALIGN_BUTTON:
         return global.dAligngp;
         break;
+    case MENU_LEFT_BUTTON:
+        return gp_padl;
+        break;
+    case MENU_RIGHT_BUTTON:
+        return gp_padr;
+        break;
+    case MENU_UP_BUTTON:
+        return gp_padu;
+        break;
+    case MENU_DOWN_BUTTON:
+        return gp_padd;
+        break;
+    case MENU_ACCEPT_BUTTON:
+        return gp_face1;
+        break;
+    case MENU_BACK_BUTTON:
+        return gp_face2;
+        break;
+    case MENU_OPTIONS_BUTTON:
+        return gp_select;
+        break;
     default:    //invalid button
         return -1;
         break;

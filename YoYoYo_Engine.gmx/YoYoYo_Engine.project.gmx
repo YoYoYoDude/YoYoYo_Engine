@@ -149,12 +149,14 @@
       <script>scripts\scrGetMusic.gml</script>
       <script>scripts\scrPlayMusic.gml</script>
       <script>scripts\scrStopMusic.gml</script>
-      <script>scripts\scrAnyControllerButton.gml</script>
-      <script>scripts\scrGetKeyboardButton.gml</script>
-      <script>scripts\scrGetControllerButton.gml</script>
-      <script>scripts\scrButtonCheck.gml</script>
-      <script>scripts\scrButtonCheckPressed.gml</script>
-      <script>scripts\scrButtonCheckReleased.gml</script>
+      <scripts name="controls">
+        <script>scripts\scrAnyControllerButton.gml</script>
+        <script>scripts\scrGetKeyboardButton.gml</script>
+        <script>scripts\scrGetControllerButton.gml</script>
+        <script>scripts\scrButtonCheck.gml</script>
+        <script>scripts\scrButtonCheckPressed.gml</script>
+        <script>scripts\scrButtonCheckReleased.gml</script>
+      </scripts>
     </scripts>
     <scripts name="functions">
       <script>scripts\scrDrawTextOutline.gml</script>
@@ -305,7 +307,7 @@
     </rooms>
     <room>rooms\rTemplate</room>
   </rooms>
-  <constants number="12">
+  <constants number="19">
     <constant name="LEFT_BUTTON">0</constant>
     <constant name="RIGHT_BUTTON">1</constant>
     <constant name="UP_BUTTON">2</constant>
@@ -318,6 +320,13 @@
     <constant name="PAUSE_BUTTON">9</constant>
     <constant name="A_ALIGN_BUTTON">10</constant>
     <constant name="D_ALIGN_BUTTON">11</constant>
+    <constant name="MENU_LEFT_BUTTON">12</constant>
+    <constant name="MENU_RIGHT_BUTTON">13</constant>
+    <constant name="MENU_UP_BUTTON">14</constant>
+    <constant name="MENU_DOWN_BUTTON">15</constant>
+    <constant name="MENU_ACCEPT_BUTTON">16</constant>
+    <constant name="MENU_BACK_BUTTON">17</constant>
+    <constant name="MENU_OPTIONS_BUTTON">18</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

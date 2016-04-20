@@ -67,28 +67,28 @@ playerIndex = 0;
             <string>//animate player sprite
 playerIndex = (playerIndex + 1/5) mod 4;
 
-if (keyboard_check_pressed(vk_up))    //global.upbutton
+if (scrButtonCheckPressed(MENU_UP_BUTTON))
 {
     audio_play_sound(global.menuSound,0,false);
     select -= 1;
     if(select &lt; 1)
         select = optionsNum;
 }
-else if (keyboard_check_pressed(vk_down))   //global.downbutton
+else if (scrButtonCheckPressed(MENU_DOWN_BUTTON))
 {
     audio_play_sound(global.menuSound,0,false);
     select += 1;
     if(select &gt; optionsNum)
         select = 1;
 }
-else if (keyboard_check_pressed(ord("Z"))) //global.shotbutton
+else if (scrButtonCheckPressed(MENU_BACK_BUTTON))
 {
     //save changes and go back
     scrSaveConfig();
     room_goto(rMenu);
     exit;
 }
-else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
+else if (scrButtonCheckPressed(MENU_ACCEPT_BUTTON))
 {
     if (select == 1)    //toggle mute music
     {
@@ -119,7 +119,7 @@ else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
     }
 }
 
-if (keyboard_check(vk_right))  //global.rightbutton
+if (scrButtonCheck(MENU_RIGHT_BUTTON))
 {
     if (select == 2)    //raise volume
     {
@@ -129,7 +129,7 @@ if (keyboard_check(vk_right))  //global.rightbutton
         audio_master_gain(global.volumeLevel/100);  //set master gain
     }
 }
-else if (keyboard_check(vk_left))    //global.leftbutton
+else if (scrButtonCheck(MENU_LEFT_BUTTON))
 {
     if (select == 2)    //lower volume
     {
@@ -194,7 +194,7 @@ else
 
 draw_sprite(sprPlayerIdle,playerIndex,xSelector-16,ySelector+(ySeperation*select)-22);
 
-scrDrawButtonInfo();
+scrDrawButtonInfo(false);
 </string>
           </argument>
         </arguments>

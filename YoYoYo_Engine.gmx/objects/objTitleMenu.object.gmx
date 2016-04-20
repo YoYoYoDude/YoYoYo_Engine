@@ -83,7 +83,7 @@ alarm[0] = 40;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check_pressed(vk_shift))  //global.jumpbutton
+            <string>if (scrButtonCheckPressed(MENU_ACCEPT_BUTTON))
     room_goto(rMenu);
 </string>
           </argument>
@@ -120,7 +120,7 @@ if (showShiftText)
     draw_text(xShiftText,yShiftText,strShiftText);
 }
 
-scrDrawButtonInfo();
+scrDrawButtonInfo(false);
 </string>
           </argument>
         </arguments>

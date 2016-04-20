@@ -41,6 +41,27 @@ switch (buttonIn)
     case D_ALIGN_BUTTON:
         return global.dAlignButton;
         break;
+    case MENU_LEFT_BUTTON:
+        return vk_left;
+        break;
+    case MENU_RIGHT_BUTTON:
+        return vk_right;
+        break;
+    case MENU_UP_BUTTON:
+        return vk_up;
+        break;
+    case MENU_DOWN_BUTTON:
+        return vk_down;
+        break;
+    case MENU_ACCEPT_BUTTON:
+        return vk_shift;
+        break;
+    case MENU_BACK_BUTTON:
+        return ord("Z");
+        break;
+    case MENU_OPTIONS_BUTTON:
+        return vk_f3;
+        break;
     default:    //invalid button
         return -1;
         break;
