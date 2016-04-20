@@ -110,21 +110,27 @@ playerIndex = (playerIndex + 1/5) mod 4;
 
 if (!settingKey)
 {
-    if (scrButtonCheckPressed(MENU_UP_BUTTON))
+    if (scrButtonCheckPressed(global.menuUpButton))
     {
         audio_play_sound(global.menuSound,0,false);
         select -= 1;
         if(select &lt; 1)
             select = 11;
     }
-    else if (scrButtonCheckPressed(MENU_DOWN_BUTTON))
+    else if (scrButtonCheckPressed(global.menuDownButton))
     {
         audio_play_sound(global.menuSound,0,false);
         select += 1;
         if(select &gt; 11)
             select = 1;
     }
-    else if (scrButtonCheckPressed(MENU_ACCEPT_BUTTON))
+    else if (scrButtonCheckPressed(global.menuBackButton))
+    {
+        scrSaveConfig();    //save changes
+        instance_create(x,y,objOptionsMenu);
+        instance_destroy();
+    }
+    else if (scrButtonCheckPressed(global.menuAcceptButton))
     {
         if (select != 11)
         {
@@ -147,12 +153,6 @@ if (!settingKey)
             resetPrompt = true;
             alarm[0] = 60;
         }
-    }
-    else if (scrButtonCheckPressed(MENU_BACK_BUTTON))
-    {
-        scrSaveConfig();    //save changes
-        instance_create(x,y,objOptionsMenu);
-        instance_destroy();
     }
 }
 else

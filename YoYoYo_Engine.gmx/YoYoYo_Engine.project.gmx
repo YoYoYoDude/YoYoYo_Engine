@@ -305,27 +305,6 @@
     </rooms>
     <room>rooms\rTemplate</room>
   </rooms>
-  <constants number="19">
-    <constant name="LEFT_BUTTON">global.leftButton</constant>
-    <constant name="RIGHT_BUTTON">global.rightButton</constant>
-    <constant name="UP_BUTTON">global.upButton</constant>
-    <constant name="DOWN_BUTTON">global.downButton</constant>
-    <constant name="JUMP_BUTTON">global.jumpButton</constant>
-    <constant name="SHOOT_BUTTON">global.shootButton</constant>
-    <constant name="RESTART_BUTTON">global.restartButton</constant>
-    <constant name="SKIP_BUTTON">global.skipButton</constant>
-    <constant name="SUICIDE_BUTTON">global.suicideButton</constant>
-    <constant name="PAUSE_BUTTON">global.pauseButton</constant>
-    <constant name="A_ALIGN_BUTTON">global.alignLeftButton</constant>
-    <constant name="D_ALIGN_BUTTON">global.alignRightButton</constant>
-    <constant name="MENU_LEFT_BUTTON">global.menuLeftButton</constant>
-    <constant name="MENU_RIGHT_BUTTON">global.menuRightButton</constant>
-    <constant name="MENU_UP_BUTTON">global.menuUpButton</constant>
-    <constant name="MENU_DOWN_BUTTON">global.menuDownButton</constant>
-    <constant name="MENU_ACCEPT_BUTTON">global.menuAcceptButton</constant>
-    <constant name="MENU_BACK_BUTTON">global.menuBackButton</constant>
-    <constant name="MENU_OPTIONS_BUTTON">global.menuOptionsButton</constant>
-  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

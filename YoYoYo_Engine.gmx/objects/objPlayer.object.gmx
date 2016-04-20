@@ -96,8 +96,8 @@ if (global.autosave) //save the game if currently set to autosave
           <argument>
             <kind>1</kind>
             <string>//check button presses
-var L = scrButtonCheck(LEFT_BUTTON);
-var R = scrButtonCheck(RIGHT_BUTTON);
+var L = scrButtonCheck(global.leftButton);
+var R = scrButtonCheck(global.rightButton);
 
 var h = 0;
 
@@ -182,20 +182,20 @@ if (abs(vspeed) &gt; maxVspeed) {vspeed = sign(vspeed)*maxVspeed;} //check if mo
 
 if (!frozen)    //check if frozen before doing anything
 {
-    if (scrButtonCheckPressed(SHOOT_BUTTON))
+    if (scrButtonCheckPressed(global.shootButton))
         scrPlayerShoot();
-    if (scrButtonCheckPressed(JUMP_BUTTON))
+    if (scrButtonCheckPressed(global.jumpButton))
         scrPlayerJump();
-    if (scrButtonCheckReleased(JUMP_BUTTON))
+    if (scrButtonCheckReleased(global.jumpButton))
         scrPlayerVJump();
-    if (scrButtonCheckPressed(SUICIDE_BUTTON))
+    if (scrButtonCheckPressed(global.suicideButton))
         scrKillPlayer();
 }
 
 if (global.adAlign &amp;&amp; place_meeting(x,y+(global.grav),objBlock) &amp;&amp; !frozen)  // A/D align
 {
-    if (scrButtonCheckPressed(A_ALIGN_BUTTON)) {hspeed -= 1;}
-    if (scrButtonCheckPressed(D_ALIGN_BUTTON)) {hspeed += 1;}
+    if (scrButtonCheckPressed(global.alignLeftButton)) {hspeed -= 1;}
+    if (scrButtonCheckPressed(global.alignRightButton)) {hspeed += 1;}
 }
 
 
@@ -213,9 +213,9 @@ if (onVineL || onVineR)
     image_speed = 1/2;
     
     //pressed away from the vine
-    if (onVineL &amp;&amp; scrButtonCheckPressed(RIGHT_BUTTON)) || (onVineR &amp;&amp; scrButtonCheckPressed(LEFT_BUTTON))
+    if (onVineL &amp;&amp; scrButtonCheckPressed(global.rightButton)) || (onVineR &amp;&amp; scrButtonCheckPressed(global.leftButton))
     {
-        if (scrButtonCheck(JUMP_BUTTON))  //jumping off vine
+        if (scrButtonCheck(global.jumpButton))  //jumping off vine
         {
             if (onVineR)
                 hspeed = -15;

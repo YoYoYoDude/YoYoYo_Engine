@@ -68,28 +68,28 @@ playerIndex = 0;
             <string>//animate player sprite
 playerIndex = (playerIndex + 1/5) mod 4;
 
-if (scrButtonCheckPressed(MENU_UP_BUTTON))
+if (scrButtonCheckPressed(global.menuUpButton))
 {
     audio_play_sound(global.menuSound,0,false);
     select -= 1;
     if(select &lt; 1)
         select = optionsNum;
 }
-else if (scrButtonCheckPressed(MENU_DOWN_BUTTON))
+else if (scrButtonCheckPressed(global.menuDownButton))
 {
     audio_play_sound(global.menuSound,0,false);
     select += 1;
     if(select &gt; optionsNum)
         select = 1;
 }
-else if (scrButtonCheckPressed(MENU_BACK_BUTTON))
+else if (scrButtonCheckPressed(global.menuBackButton))
 {
     //save changes and go back
     scrSaveConfig();
     room_goto(rMenu);
     exit;
 }
-else if (scrButtonCheckPressed(MENU_ACCEPT_BUTTON))
+else if (scrButtonCheckPressed(global.menuAcceptButton))
 {
     if (select == 1)    //toggle mute music
     {
@@ -126,14 +126,14 @@ else if (scrButtonCheckPressed(MENU_ACCEPT_BUTTON))
 
 if (select == 2)
 {
-    if (scrButtonCheck(MENU_RIGHT_BUTTON))  //raise volume
+    if (scrButtonCheck(global.menuRightButton))  //raise volume
     {
         if (global.volumeLevel &lt; 100)
             global.volumeLevel += 1;
         
         audio_master_gain(global.volumeLevel/100);  //set master gain
     }
-    else if (scrButtonCheck(MENU_LEFT_BUTTON))  //lower volume
+    else if (scrButtonCheck(global.menuLeftButton))  //lower volume
     {
         if (global.volumeLevel &gt; 0)
             global.volumeLevel -= 1;

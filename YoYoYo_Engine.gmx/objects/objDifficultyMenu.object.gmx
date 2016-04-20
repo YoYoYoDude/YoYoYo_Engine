@@ -136,7 +136,7 @@ for (var i = 1; i &lt;= 3; i++)
 appleIndex = (appleIndex + 1/15) mod 2;
 playerIndex = (playerIndex + 1/5) mod 4;
 
-if (scrButtonCheckPressed(MENU_OPTIONS_BUTTON))
+if (scrButtonCheckPressed(global.menuOptionsButton))
 {
     room_goto(rOptions);
 }
@@ -144,25 +144,25 @@ else
 {
     if (!difSelect)
     {
-        if (scrButtonCheckPressed(MENU_LEFT_BUTTON))
+        if (scrButtonCheckPressed(global.menuLeftButton))
         {
             audio_play_sound(global.menuSound,0,false);
             select -= 1;
             if(select &lt; 1)
                 select = 3;
         }
-        else if (scrButtonCheckPressed(MENU_RIGHT_BUTTON))
+        else if (scrButtonCheckPressed(global.menuRightButton))
         {
             audio_play_sound(global.menuSound,0,false);
             select += 1;
             if(select &gt; 3)
                 select = 1;
         }
-        else if (scrButtonCheckPressed(MENU_BACK_BUTTON))
+        else if (scrButtonCheckPressed(global.menuBackButton))
         {
             room_goto(rTitle);  //go back
         }
-        else if (scrButtonCheckPressed(MENU_ACCEPT_BUTTON))
+        else if (scrButtonCheckPressed(global.menuAcceptButton))
         {
             if (global.menuMode == 0)   //use the difficulty select room to select difficulty
             {
@@ -183,14 +183,14 @@ else
     {
         if (!warnText)
         {
-            if (scrButtonCheckPressed(MENU_LEFT_BUTTON))
+            if (scrButtonCheckPressed(global.menuLeftButton))
             {
                 audio_play_sound(global.menuSound,0,false);
                 select2 -= 1;
                 if ((select2 == -1 &amp;&amp; !exists[select]) || (select2 &lt; -1))
                     select2 = 3;
             }
-            else if (scrButtonCheckPressed(MENU_RIGHT_BUTTON))
+            else if (scrButtonCheckPressed(global.menuRightButton))
             {
                 audio_play_sound(global.menuSound,0,false);
                 select2 += 1;
@@ -202,11 +202,11 @@ else
                         select2 = 0;
                 }
             }
-            else if (scrButtonCheckPressed(MENU_BACK_BUTTON))
+            else if (scrButtonCheckPressed(global.menuBackButton))
             {
                 difSelect = false;
             }
-            else if (scrButtonCheckPressed(MENU_ACCEPT_BUTTON))
+            else if (scrButtonCheckPressed(global.menuAcceptButton))
             {
                 global.savenum = select;
                 
@@ -236,21 +236,21 @@ else
         }
         else
         {
-            if (scrButtonCheckPressed(MENU_LEFT_BUTTON))
+            if (scrButtonCheckPressed(global.menuLeftButton))
             {
                 audio_play_sound(global.menuSound,0,false);
                 warnSelect = !warnSelect;
             }
-            else if (scrButtonCheckPressed(MENU_RIGHT_BUTTON))
+            else if (scrButtonCheckPressed(global.menuRightButton))
             {
                 audio_play_sound(global.menuSound,0,false);
                 warnSelect = !warnSelect;
             }
-            else if (scrButtonCheckPressed(MENU_BACK_BUTTON))
+            else if (scrButtonCheckPressed(global.menuBackButton))
             {
                 warnText = false;
             }
-            else if (scrButtonCheckPressed(MENU_ACCEPT_BUTTON))
+            else if (scrButtonCheckPressed(global.menuAcceptButton))
             {
                 if (warnSelect)
                 {

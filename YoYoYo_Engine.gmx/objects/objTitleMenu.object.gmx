@@ -83,7 +83,7 @@ alarm[0] = 40;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (scrButtonCheckPressed(MENU_ACCEPT_BUTTON))
+            <string>if (scrButtonCheckPressed(global.menuAcceptButton))
     room_goto(rMenu);
 </string>
           </argument>

@@ -130,7 +130,7 @@ if (global.gameStarted)
     //handle pausing
     if (global.pauseDelay &lt;= 0) //check if pause delay is active
     {
-        if (scrButtonCheckPressed(PAUSE_BUTTON))
+        if (scrButtonCheckPressed(global.pauseButton))
         {
             if (!global.gamePaused)  //game currently not paused, pause the game
             {
@@ -166,7 +166,7 @@ if (global.gameStarted)
     
     if (!global.gamePaused) //check if the game is currently paused
     {
-        if (scrButtonCheckPressed(RESTART_BUTTON))
+        if (scrButtonCheckPressed(global.restartButton))
         {
             //stop death sound/music
             audio_stop_sound(global.deathSound);
@@ -196,12 +196,12 @@ if (global.gameStarted)
     }
     else    //game is paused, check for volume controls
     {
-        if (scrButtonCheck(UP_BUTTON))
+        if (scrButtonCheck(global.upButton))
         {
             if (global.volumeLevel &lt; 100)
                 global.volumeLevel += 1;
         }
-        else if (scrButtonCheck(DOWN_BUTTON))
+        else if (scrButtonCheck(global.downButton))
         {
             if (global.volumeLevel &gt; 0)
                 global.volumeLevel -= 1;
