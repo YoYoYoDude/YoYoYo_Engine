@@ -18,36 +18,54 @@ if (global.vsyncMode)   //only need to set vsync mode if it's on since it's off 
     scrSetVsync();
 
 //keyboard controls
-global.leftbutton = ini_read_real("Controls","Left",vk_left);
-global.rightbutton = ini_read_real("Controls","Right",vk_right);
-global.upbutton = ini_read_real("Controls","Up",vk_up);
-global.downbutton = ini_read_real("Controls","Down",vk_down);
-global.jumpbutton = ini_read_real("Controls","Jump",vk_shift);
-global.shootbutton = ini_read_real("Controls","Shoot",ord("Z"));
-global.restartbutton = ini_read_real("Controls","Restart",ord("R"));
-global.skipbutton = ini_read_real("Controls","Skip",ord("S"));
-global.suicidebutton = ini_read_real("Controls","Suicide",ord("Q"));
-global.pausebutton = ini_read_real("Controls","Pause",ord("P"));
-global.aAlignButton = ini_read_real("Controls","Align_left",ord("A"));
-global.dAlignButton = ini_read_real("Controls","Align_right",ord("D"));
+global.leftButton[0] = ini_read_real("Controls","Left",vk_left);
+global.rightButton[0] = ini_read_real("Controls","Right",vk_right);
+global.upButton[0] = ini_read_real("Controls","Up",vk_up);
+global.downButton[0] = ini_read_real("Controls","Down",vk_down);
+global.jumpButton[0] = ini_read_real("Controls","Jump",vk_shift);
+global.shootButton[0] = ini_read_real("Controls","Shoot",ord("Z"));
+global.restartButton[0] = ini_read_real("Controls","Restart",ord("R"));
+global.skipButton[0] = ini_read_real("Controls","Skip",ord("S"));
+global.suicideButton[0] = ini_read_real("Controls","Suicide",ord("Q"));
+global.pauseButton[0] = ini_read_real("Controls","Pause",ord("P"));
+global.alignLeftButton[0] = ini_read_real("Controls","Align_left",ord("A"));
+global.alignRightButton[0] = ini_read_real("Controls","Align_right",ord("D"));
+
+//menu keys (not rebindable)
+global.menuLeftButton[0] = vk_left;
+global.menuRightButton[0] = vk_right;
+global.menuUpButton[0] = vk_up;
+global.menuDownButton[0] = vk_down;
+global.menuAcceptButton[0] = vk_shift;
+global.menuBackButton[0] = ord("Z");
+global.menuOptionsButton[0] = vk_enter;
 
 //controller options
 global.controllerEnabled = ini_read_real("Controller","Enabled",true);
 
 global.controllerIndex = ini_read_real("Controller", "Index", 0); // -1 means no controller
 global.controllerThreshhold = ini_read_real("Controller", "Threshhold", 0.3); //how far, between 0 and 1, the move stick needs to be moved to count as pressing the direction
-global.leftgp = ini_read_real("Controller","Left",gp_padl);
-global.rightgp = ini_read_real("Controller","Right",gp_padr);
-global.upgp = ini_read_real("Controller","Up",gp_padu);
-global.downgp = ini_read_real("Controller","Down",gp_padd);
-global.jumpgp = ini_read_real("Controller","Jump",gp_face1);
-global.shootgp = ini_read_real("Controller","Shoot",gp_face3);
-global.restartgp = ini_read_real("Controller","Restart",gp_face4);
-global.skipgp = ini_read_real("Controller","Skip",gp_face2);
-global.suicidegp = ini_read_real("Controller","Suicide",gp_select);
-global.pausegp = ini_read_real("Controller","Pause",gp_start);
-global.aAligngp = ini_read_real("Controller","Align_left",gp_shoulderl);
-global.dAligngp = ini_read_real("Controller","Align_right",gp_shoulderr);
+global.leftButton[1] = ini_read_real("Controller","Left",gp_padl);
+global.rightButton[1] = ini_read_real("Controller","Right",gp_padr);
+global.upButton[1] = ini_read_real("Controller","Up",gp_padu);
+global.downButton[1] = ini_read_real("Controller","Down",gp_padd);
+global.jumpButton[1] = ini_read_real("Controller","Jump",gp_face1);
+global.shootButton[1] = ini_read_real("Controller","Shoot",gp_face3);
+global.restartButton[1] = ini_read_real("Controller","Restart",gp_face4);
+global.skipButton[1] = ini_read_real("Controller","Skip",gp_face2);
+global.suicideButton[1] = ini_read_real("Controller","Suicide",gp_select);
+global.pauseButton[1] = ini_read_real("Controller","Pause",gp_start);
+global.alignLeftButton[1] = ini_read_real("Controller","Align_left",gp_shoulderl);
+global.alignRightButton[1] = ini_read_real("Controller","Align_right",gp_shoulderr);
+
+//menu buttons (not rebindable)
+global.menuLeftButton[1] = gp_padl;
+global.menuRightButton[1] = gp_padr;
+global.menuUpButton[1] = gp_padu;
+global.menuDownButton[1] = gp_padd;
+global.menuAcceptButton[1] = gp_face1;
+global.menuBackButton[1] = gp_face2;
+global.menuOptionsButton[1] = gp_select;
 
 ini_close();
 

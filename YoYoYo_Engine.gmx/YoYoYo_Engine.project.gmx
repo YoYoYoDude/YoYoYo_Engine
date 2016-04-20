@@ -151,8 +151,6 @@
       <script>scripts\scrStopMusic.gml</script>
       <scripts name="controls">
         <script>scripts\scrAnyControllerButton.gml</script>
-        <script>scripts\scrGetKeyboardButton.gml</script>
-        <script>scripts\scrGetControllerButton.gml</script>
         <script>scripts\scrButtonCheck.gml</script>
         <script>scripts\scrButtonCheckPressed.gml</script>
         <script>scripts\scrButtonCheckReleased.gml</script>
@@ -308,25 +306,25 @@
     <room>rooms\rTemplate</room>
   </rooms>
   <constants number="19">
-    <constant name="LEFT_BUTTON">0</constant>
-    <constant name="RIGHT_BUTTON">1</constant>
-    <constant name="UP_BUTTON">2</constant>
-    <constant name="DOWN_BUTTON">3</constant>
-    <constant name="JUMP_BUTTON">4</constant>
-    <constant name="SHOOT_BUTTON">5</constant>
-    <constant name="RESTART_BUTTON">6</constant>
-    <constant name="SKIP_BUTTON">7</constant>
-    <constant name="SUICIDE_BUTTON">8</constant>
-    <constant name="PAUSE_BUTTON">9</constant>
-    <constant name="A_ALIGN_BUTTON">10</constant>
-    <constant name="D_ALIGN_BUTTON">11</constant>
-    <constant name="MENU_LEFT_BUTTON">12</constant>
-    <constant name="MENU_RIGHT_BUTTON">13</constant>
-    <constant name="MENU_UP_BUTTON">14</constant>
-    <constant name="MENU_DOWN_BUTTON">15</constant>
-    <constant name="MENU_ACCEPT_BUTTON">16</constant>
-    <constant name="MENU_BACK_BUTTON">17</constant>
-    <constant name="MENU_OPTIONS_BUTTON">18</constant>
+    <constant name="LEFT_BUTTON">global.leftButton</constant>
+    <constant name="RIGHT_BUTTON">global.rightButton</constant>
+    <constant name="UP_BUTTON">global.upButton</constant>
+    <constant name="DOWN_BUTTON">global.downButton</constant>
+    <constant name="JUMP_BUTTON">global.jumpButton</constant>
+    <constant name="SHOOT_BUTTON">global.shootButton</constant>
+    <constant name="RESTART_BUTTON">global.restartButton</constant>
+    <constant name="SKIP_BUTTON">global.skipButton</constant>
+    <constant name="SUICIDE_BUTTON">global.suicideButton</constant>
+    <constant name="PAUSE_BUTTON">global.pauseButton</constant>
+    <constant name="A_ALIGN_BUTTON">global.alignLeftButton</constant>
+    <constant name="D_ALIGN_BUTTON">global.alignRightButton</constant>
+    <constant name="MENU_LEFT_BUTTON">global.menuLeftButton</constant>
+    <constant name="MENU_RIGHT_BUTTON">global.menuRightButton</constant>
+    <constant name="MENU_UP_BUTTON">global.menuUpButton</constant>
+    <constant name="MENU_DOWN_BUTTON">global.menuDownButton</constant>
+    <constant name="MENU_ACCEPT_BUTTON">global.menuAcceptButton</constant>
+    <constant name="MENU_BACK_BUTTON">global.menuBackButton</constant>
+    <constant name="MENU_OPTIONS_BUTTON">global.menuOptionsButton</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
