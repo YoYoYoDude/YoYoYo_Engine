@@ -87,6 +87,7 @@ texture_set_interpolation(global.smoothingMode);
 
 //controller checks
 if (global.controllerEnabled)
+if (global.controllerEnabled &amp;&amp; global.controllerIndex != -1)
 {
     if (!global.controllerMode)  //check if we should to controller mode
     {
