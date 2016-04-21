@@ -25,15 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>select = 1;
+            <string>select = 0;
 xSelector = 120;
-ySelector = 48;
+ySelector = 64;
 xSeperation = 560;
 ySeperation = 40;
 
 settingButton = false;     //sets whether or not a button is getting set
 resetPrompt = false;    //shows the message that controls were reset
 
+strSelect[0] = "Controller Index";
 strSelect[1] = "Left Button";
 strSelect[2] = "Right Button";
 strSelect[3] = "Up Button";
@@ -47,6 +48,7 @@ strSelect[10] = "Pause Button";
 strSelect[11] = "Reset Controls";
 
 //get current controls
+strButton[0] = string(global.controllerIndex);
 strButton[1] = scrGetControllerBind(global.leftButton[1]);
 strButton[2] = scrGetControllerBind(global.rightButton[1]);
 strButton[3] = scrGetControllerBind(global.upButton[1]);
@@ -58,6 +60,8 @@ strButton[8] = scrGetControllerBind(global.skipButton[1]);
 strButton[9] = scrGetControllerBind(global.suicideButton[1]);
 strButton[10] = scrGetControllerBind(global.pauseButton[1]);
 strButton[11] = "";
+
+if (strButton[0] == "-1") strButton[0] = "Disabled";
 
 playerIndex = 0;
 </string>
@@ -114,7 +118,7 @@ if (!settingButton)
     {
         audio_play_sound(global.menuSound,0,false);
         select -= 1;
-        if(select &lt; 1)
+        if(select &lt; 0)
             select = 11;
     }
     else if (scrButtonCheckPressed(global.menuDownButton))
@@ -122,7 +126,7 @@ if (!settingButton)
         audio_play_sound(global.menuSound,0,false);
         select += 1;
         if(select &gt; 11)
-            select = 1;
+            select = 0;
     }
     else if (scrButtonCheckPressed(global.menuBackButton))
     {
@@ -154,6 +158,23 @@ if (!settingButton)
             alarm[0] = 60;
         }
     }
+    
+    //change controller index
+    if (select == 0)
+    {
+        if (scrButtonCheckPressed(global.menuRightButton))
+        {
+            global.controllerIndex += 1;
+            if (global.controllerIndex &gt; 3)
+                global.controllerIndex = -1;
+        }
+        else if (scrButtonCheckPressed(global.menuLeftButton))
+        {
+            global.controllerIndex -= 1;
+            if (global.controllerIndex &lt; -1)
+                global.controllerIndex = 3;
+        }
+    }
 }
 else
 {
@@ -180,6 +201,7 @@ else
 }
 
 //update controls
+strButton[0] = string(global.controllerIndex);
 strButton[1] = scrGetControllerBind(global.leftButton[1]);
 strButton[2] = scrGetControllerBind(global.rightButton[1]);
 strButton[3] = scrGetControllerBind(global.upButton[1]);
@@ -191,6 +213,8 @@ strButton[8] = scrGetControllerBind(global.skipButton[1]);
 strButton[9] = scrGetControllerBind(global.suicideButton[1]);
 strButton[10] = scrGetControllerBind(global.pauseButton[1]);
 strButton[11] = "";
+
+if (strButton[0] == "-1") strButton[0] = "Disabled";
 </string>
           </argument>
         </arguments>
@@ -216,7 +240,7 @@ strButton[11] = "";
             <string>draw_set_color(c_black);
 draw_set_font(fDefault24);
 
-for(var i = 1; i &lt;= 11; i += 1)
+for(var i = 0; i &lt;= 11; i += 1)
 {
     draw_set_halign(fa_left);
     draw_text(xSelector,ySelector+(i-1)*ySeperation+32,strSelect[i]);
@@ -242,6 +266,28 @@ for(var i = 1; i &lt;= 11; i += 1)
     {
         draw_text(xSelector+xSeperation,ySelector+(i-1)*ySeperation+32,"Controls reset!");
     }
+}
+
+if (global.controllerIndex != -1)
+{
+    draw_set_color(c_maroon);
+    draw_set_font(fDefault12);
+    draw_set_halign(fa_left);
+    
+    var controllerText = "Current controller: ";
+    
+    if (gamepad_is_connected(global.controllerIndex))//say what type of controller is connected (i.e. Xbox, Playstation)
+    { 
+        controllerText += gamepad_get_description(global.controllerIndex);
+    }
+    else
+    {
+        controllerText += "None";
+    }
+    
+    draw_text(xSelector+2,ySelector+(11)*ySeperation+34,controllerText);
+    
+    draw_set_color(c_black);
 }
 
 scrDrawButtonInfo(false);

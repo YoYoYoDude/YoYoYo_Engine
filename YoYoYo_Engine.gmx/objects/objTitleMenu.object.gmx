@@ -117,7 +117,18 @@ if (showShiftText)
 {
     draw_set_font(fDefault24);
     
-    draw_text(xShiftText,yShiftText,strShiftText);
+    var acceptButton;
+    
+    if (!global.controllerMode)
+    {
+        acceptButton = scrGetKeybind(global.menuAcceptButton[0]);
+    }
+    else
+    {
+        acceptButton = scrGetControllerBind(global.menuAcceptButton[1]);
+    }
+    
+    draw_text(xShiftText,yShiftText,"Press "+acceptButton+" to Start");
 }
 
 scrDrawButtonInfo(false);
