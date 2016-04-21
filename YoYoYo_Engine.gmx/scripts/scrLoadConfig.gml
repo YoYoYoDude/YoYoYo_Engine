@@ -40,23 +40,23 @@ global.menuAcceptButton[0] = vk_shift;
 global.menuBackButton[0] = ord("Z");
 global.menuOptionsButton[0] = vk_enter;
 
-//controller options
-global.controllerEnabled = ini_read_real("Controller","Enabled",true);
-
-global.controllerIndex = ini_read_real("Controller", "Index", 0); // -1 means no controller
-//global.controllerThreshhold = ini_read_real("Controller", "Threshhold", 0.3); //how far, between 0 and 1, the move stick needs to be moved to count as pressing the direction
-global.leftButton[1] = ini_read_real("Controller","Left",gp_padl);
-global.rightButton[1] = ini_read_real("Controller","Right",gp_padr);
-global.upButton[1] = ini_read_real("Controller","Up",gp_padu);
-global.downButton[1] = ini_read_real("Controller","Down",gp_padd);
-global.jumpButton[1] = ini_read_real("Controller","Jump",gp_face1);
-global.shootButton[1] = ini_read_real("Controller","Shoot",gp_face3);
-global.restartButton[1] = ini_read_real("Controller","Restart",gp_face4);
-global.skipButton[1] = ini_read_real("Controller","Skip",gp_face2);
-global.suicideButton[1] = ini_read_real("Controller","Suicide",gp_select);
-global.pauseButton[1] = ini_read_real("Controller","Pause",gp_start);
-global.alignLeftButton[1] = ini_read_real("Controller","Align_left",gp_shoulderl);
-global.alignRightButton[1] = ini_read_real("Controller","Align_right",gp_shoulderr);
+if (global.controllerEnabled)
+{
+    //controller options
+    global.controllerIndex = ini_read_real("Controller", "Index", -1); //-1 means no controller
+    global.leftButton[1] = ini_read_real("Controller","Left",gp_padl);
+    global.rightButton[1] = ini_read_real("Controller","Right",gp_padr);
+    global.upButton[1] = ini_read_real("Controller","Up",gp_padu);
+    global.downButton[1] = ini_read_real("Controller","Down",gp_padd);
+    global.jumpButton[1] = ini_read_real("Controller","Jump",gp_face1);
+    global.shootButton[1] = ini_read_real("Controller","Shoot",gp_face3);
+    global.restartButton[1] = ini_read_real("Controller","Restart",gp_face4);
+    global.skipButton[1] = ini_read_real("Controller","Skip",gp_face2);
+    global.suicideButton[1] = ini_read_real("Controller","Suicide",gp_select);
+    global.pauseButton[1] = ini_read_real("Controller","Pause",gp_start);
+    global.alignLeftButton[1] = ini_read_real("Controller","Align_left",gp_shoulderl);
+    global.alignRightButton[1] = ini_read_real("Controller","Align_right",gp_shoulderr);
+}
 
 //menu buttons (not rebindable)
 global.menuLeftButton[1] = gp_padl;

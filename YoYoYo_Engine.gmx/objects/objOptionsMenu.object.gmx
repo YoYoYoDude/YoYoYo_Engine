@@ -34,6 +34,12 @@ ySeperation = 48;
 
 optionsNum = 7; //sets number of separate options available
 
+if (!global.controllerEnabled)  //remove controller settings menu if controllers are disabled
+{
+    optionsNum -= 1;
+    ySelector += 32;
+}
+
 strSelect[0] = "Music";
 strSelect[1] = "Volume Level";
 strSelect[2] = "Screen Mode";
