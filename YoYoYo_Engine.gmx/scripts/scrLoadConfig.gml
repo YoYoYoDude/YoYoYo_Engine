@@ -44,7 +44,7 @@ global.menuOptionsButton[0] = vk_enter;
 global.controllerEnabled = ini_read_real("Controller","Enabled",true);
 
 global.controllerIndex = ini_read_real("Controller", "Index", 0); // -1 means no controller
-global.controllerThreshhold = ini_read_real("Controller", "Threshhold", 0.3); //how far, between 0 and 1, the move stick needs to be moved to count as pressing the direction
+//global.controllerThreshhold = ini_read_real("Controller", "Threshhold", 0.3); //how far, between 0 and 1, the move stick needs to be moved to count as pressing the direction
 global.leftButton[1] = ini_read_real("Controller","Left",gp_padl);
 global.rightButton[1] = ini_read_real("Controller","Right",gp_padr);
 global.upButton[1] = ini_read_real("Controller","Up",gp_padu);

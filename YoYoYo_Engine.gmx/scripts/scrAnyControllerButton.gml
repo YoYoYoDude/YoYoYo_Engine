@@ -23,7 +23,8 @@ list[15] = gp_shoulderlb;
 
 for (var i = 0; i < length; i++)
 {
-    if (gamepad_button_check_pressed(global.controllerIndex, list[i])) return list[i];
+    if (gamepad_button_check_pressed(global.controllerIndex, list[i]))
+        return list[i];
 }
 
 return -1;

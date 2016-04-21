@@ -88,17 +88,6 @@ texture_set_interpolation(global.smoothingMode);
 //controller checks
 if (global.controllerEnabled)
 {
-    if (global.controllerDelay != -1)
-    {
-        global.controllerDelay -= 1;
-        
-        if (global.controllerDelay == 0)
-        {
-            global.controllerMode = !global.controllerMode;
-            global.controllerDelay = -1;
-        }
-    }
-    
     if (!global.controllerMode)  //check if we should to controller mode
     {
         if (keyboard_check_pressed(vk_anykey))
@@ -121,6 +110,19 @@ if (global.controllerEnabled)
         else if (scrAnyControllerButton() != -1)
         {
             global.controllerDelay = -1;
+        }
+    }
+    
+    if (global.controllerDelay != -1)
+    {
+        if (global.controllerDelay == 0)
+        {
+            global.controllerMode = !global.controllerMode;
+            global.controllerDelay = -1;
+        }
+        else
+        {
+            global.controllerDelay -= 1;
         }
     }
 }
