@@ -1,4 +1,10 @@
-v1.30 ():
+v1.30 (04/23/16):
+-Added controller support with automatic switching between keyboard/controller (Thanks chalenged for the help!)
+-Added slopes (supports any shape)
+-Added a warning prompt before overwriting a save on the difficulty select menu
+-Added objOutsideRoomChanger which allows for smooth warp room transitions
+-Added slight title screen text animation
+-More minor tweaks/fixes
 
 v1.22 (02/08/15):
 -Rewrote save system to use maps instead of lists (they are now stored using ds_map_secure functions to improve save security and prevent transferring between PCs)

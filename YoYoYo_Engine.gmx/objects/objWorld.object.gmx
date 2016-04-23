@@ -113,9 +113,9 @@ if (global.controllerEnabled &amp;&amp; global.controllerIndex != -1)
         }
     }
     
-    if (global.controllerDelay != -1)
+    if (global.controllerDelay != -1)   //check delay for switching between keyboard/controller
     {
-        if (global.controllerDelay == 0)
+        if (global.controllerDelay == 0)    //delay over, toggle controller mode
         {
             global.controllerMode = !global.controllerMode;
             global.controllerDelay = -1;
