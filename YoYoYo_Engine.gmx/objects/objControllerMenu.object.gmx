@@ -136,26 +136,29 @@ if (!settingButton)
     }
     else if (scrButtonCheckPressed(global.menuAcceptButton))
     {
-        if (select != 11)
+        if (select != 0)
         {
-            settingButton = true;
-        }
-        else
-        {
-            //default controls
-            global.leftButton[1] = gp_padl;
-            global.rightButton[1] = gp_padr;
-            global.upButton[1] = gp_padu;
-            global.downButton[1] = gp_padd;
-            global.jumpButton[1] = gp_face1;
-            global.shootButton[1] = gp_face3;
-            global.restartButton[1] = gp_face4;
-            global.skipButton[1] = gp_face2;
-            global.suicideButton[1] = gp_select;
-            global.pauseButton[1] = gp_start;
-            
-            resetPrompt = true;
-            alarm[0] = 60;
+            if (select != 11)
+            {
+                settingButton = true;
+            }
+            else
+            {
+                //default controls
+                global.leftButton[1] = gp_padl;
+                global.rightButton[1] = gp_padr;
+                global.upButton[1] = gp_padu;
+                global.downButton[1] = gp_padd;
+                global.jumpButton[1] = gp_face1;
+                global.shootButton[1] = gp_face3;
+                global.restartButton[1] = gp_face4;
+                global.skipButton[1] = gp_face2;
+                global.suicideButton[1] = gp_select;
+                global.pauseButton[1] = gp_start;
+                
+                resetPrompt = true;
+                alarm[0] = 60;
+            }
         }
     }
     

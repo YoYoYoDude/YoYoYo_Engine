@@ -1,5 +1,5 @@
 v1.30 (04/23/16):
--Added controller support with automatic switching between keyboard/controller (Thanks chalenged for the help!)
+-Added native controller support with automatic switching between keyboard/controller (Thanks chalenged for the help!)
 -Added slopes (supports any shape)
 -Added a warning prompt before overwriting a save on the difficulty select menu
 -Added objOutsideRoomChanger which allows for smooth warp room transitions

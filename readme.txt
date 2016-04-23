@@ -11,7 +11,7 @@ Features
 -Includes a main menu system with options menu based off the KS engine
 -Includes gravity flipping, vines, jump refreshers, and other frequently used gimmicky objects
 -Includes slopes that support any shape
--Includes built-in controller support
+-Includes native controller support
 -Built-in save verification system with MD5 hash checks to make saves harder to hack
 -Mute/unmute music with Ctrl+M
 -Stretchable window size (reset with F5)
