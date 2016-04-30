@@ -1,3 +1,6 @@
+v1.31 (04/30/16):
+-Added global option for whether to use ds_map_secure functions to save (disabled by default)
+
 v1.30 (04/23/16):
 -Added native controller support with automatic switching between keyboard/controller (Thanks chalenged for the help!)
 -Added slopes (supports any shape)
