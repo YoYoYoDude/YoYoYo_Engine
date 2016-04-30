@@ -49,7 +49,21 @@ for (var i = 1; i &lt;= 3; i++)
         exists[i] = true;
         
         //load the save map
-        var saveMap = ds_map_secure_load("Data\save"+string(i));
+        var saveMap;
+        
+        if (global.extraSaveProtection) //use ds_map_secure function
+        {
+            saveMap = ds_map_secure_load("Data\save"+string(i));
+        }
+        else    //use text file
+        {
+            var f = file_text_open_read("Data\save"+string(i));
+            
+            saveMap = ds_map_create();
+            ds_map_read(saveMap,base64_decode(file_text_read_string(f)));
+            
+            file_text_close(f);
+        }
         
         if (saveMap != -1)  //check if the save map loaded correctly
         {

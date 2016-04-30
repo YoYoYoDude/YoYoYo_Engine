@@ -26,3 +26,5 @@ global.delayBow = false;            //sets whether to delay the player bow's mov
 
 global.controllerEnabled = true;    //sets whether controllers are supported
 global.controllerDelayLength = 5;   //sets the delay in frames in which the player can switch between keyboard/controller (can be set to 0 to disable delay)
+
+global.extraSaveProtection = false; //sets whether to use the ds_map_secure functions for saving/loading (improves save security and prevents transferring between PCs)

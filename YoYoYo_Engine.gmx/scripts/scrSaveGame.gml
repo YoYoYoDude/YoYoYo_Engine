@@ -73,7 +73,21 @@ ds_map_add(saveMap,"saveGameClear",global.saveGameClear);
 //add md5 hash to verify saves and make them harder to hack
 ds_map_add(saveMap,"mapMd5",md5_string_unicode(ds_map_write(saveMap)+global.md5StrAdd));
 
-ds_map_secure_save(saveMap,"Data\save"+string(global.savenum));
+//save the map to a file
+if (global.extraSaveProtection) //use ds_map_secure function
+{
+    ds_map_secure_save(saveMap,"Data\save"+string(global.savenum));
+}
+else    //use text file
+{
+    //open the save file
+    var f = file_text_open_write("Data\save"+string(global.savenum));
+    
+    //write map to the save file with base64 encoding
+    file_text_write_string(f,base64_encode(ds_map_write(saveMap)));
+    
+    file_text_close(f);
+}
 
 //destroy the map
 ds_map_destroy(saveMap);

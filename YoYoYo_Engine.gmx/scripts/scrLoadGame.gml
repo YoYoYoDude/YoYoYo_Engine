@@ -8,7 +8,21 @@ var loadFile = argument0;
 if (loadFile)
 {
     //load the save map
-    var saveMap = ds_map_secure_load("Data\save"+string(global.savenum));
+    var saveMap;
+    
+    if (global.extraSaveProtection) //use ds_map_secure function
+    {
+        saveMap = ds_map_secure_load("Data\save"+string(global.savenum));
+    }
+    else    //use text file
+    {
+        var f = file_text_open_read("Data\save"+string(global.savenum));
+        
+        saveMap = ds_map_create();
+        ds_map_read(saveMap,base64_decode(file_text_read_string(f)));
+        
+        file_text_close(f);
+    }
     
     var saveValid = true;   //keeps track of whether or not the save being loaded is valid
     
