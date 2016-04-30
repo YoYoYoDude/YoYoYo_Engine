@@ -22,9 +22,9 @@ Features
 Important notes
 -To set what music you want a room to play, change the "scrGetMusic" script. You can also place an objPlayMusic object in the room and set the variable "BGM" in its creation code. If you want something to stop music, use "scrStopMusic()".
 -A template room that has all of the correct view settings is included which can be duplicated and modified.
--If you're using slopes, it's possible that certain gimmicks such as ice blocks might not work properly with them because of how they work.
+-If you're using slopes, it's possible that certain gimmicks such as ice blocks might not work properly with them because of how they're coded.
 -Because of how GM Studio saves files, all game saves are stored in "%localappdata%\<GameName>" instead of inside the folder where the game is located. Because of this, it is very important to change your game/project name to something unique before releasing your game to ensure there aren't save conflicts with other games.
--Make sure to set the "global.debugMode" variable in the "scrSetGlobalOptions" script to 0 before releasing your game, otherwise debug keys will still work.
+-Make sure to set the "global.debugMode" variable in the "scrSetGlobalOptions" script to "false" before releasing your game, otherwise debug keys will still work.
 -Make sure to set the "global.md5StrAdd" string in the "scrSetGlobalOptions" script to something unique to your game to make saves harder to modify. This can be set to anything you want it to be, but it should be pretty hard to predict as it's kind of similar to a password.
 -When creating new objects, the order of the objects in the Objects list matters for collision/event order. Therefore, when making new objects try to keep the type of object in the corresponding folder to prevent collision issues (ie put block objects in the blocks folder, player killers in the killers folder, etc).
 -Even though the engine supports it, if you are using the free version of GM Studio, the window caption is unable to be changed.
