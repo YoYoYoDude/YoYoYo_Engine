@@ -159,7 +159,7 @@ if (global.gameStarted)
                 
                 scrSaveConfig();    //save config in case volume levels were changed
                 
-                io_clear(); //clear input states to prevent possible jump exploits
+                io_clear(); //clear input states to prevent possible pause strats/exploits
             }
         }
     }
