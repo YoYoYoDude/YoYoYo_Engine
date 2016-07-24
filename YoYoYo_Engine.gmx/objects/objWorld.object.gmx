@@ -158,6 +158,8 @@ if (global.gameStarted)
                     surface_free(global.pauseSurf);         //free the surface
                 
                 scrSaveConfig();    //save config in case volume levels were changed
+                
+                io_clear(); //clear input states to prevent possible jump exploits
             }
         }
     }
