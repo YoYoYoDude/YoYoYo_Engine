@@ -48,12 +48,12 @@ if (loadFile)
             saveValid = false;
         }
         
-        for (var i = 1; i <= 8; i++)
+        for (var i = 0; i < global.secretItemTotal; i++)
         {
             global.saveSecretItem[i] = ds_map_find_value(saveMap,"saveSecretItem["+string(i)+"]");
         }
         
-        for (var i = 1; i <= 8; i++)
+        for (var i = 0; i < global.bossItemTotal; i++)
         {
             global.saveBossItem[i] = ds_map_find_value(saveMap,"saveBossItem["+string(i)+"]");
         }
@@ -106,9 +106,13 @@ global.autosave = false;    //disable autosaving since we're loading the game
 
 global.grav = global.saveGrav;
 
-for (var i = 1; i <= 8; i++)
+for (var i = 0; i < global.secretItemTotal; i++)
 {
     global.secretItem[i] = global.saveSecretItem[i];
+}
+
+for (var i = 0; i < global.bossItemTotal; i++)
+{
     global.bossItem[i] = global.saveBossItem[i];
 }
 

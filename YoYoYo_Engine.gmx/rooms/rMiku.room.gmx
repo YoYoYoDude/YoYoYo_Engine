@@ -56,10 +56,10 @@
     <instance objName="objBlock" x="32" y="0" name="inst_6921F6D0" locked="0" code="" scaleX="23" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="576" name="inst_5C194AC9" locked="0" code="" scaleX="24" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiku" x="699" y="145" name="inst_D09FFFEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRoomChanger" x="800" y="512" name="inst_FEE4C88C" locked="0" code="roomTo = rEnd;&#xA;" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerStart" x="48" y="544" name="inst_1ED21E3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBossBlock" x="768" y="512" name="inst_71705910" locked="0" code="itemNum = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBossBlock" x="768" y="544" name="inst_3B8D9571" locked="0" code="itemNum = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBossBlock" x="768" y="512" name="inst_71705910" locked="0" code="itemNum = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBossBlock" x="768" y="544" name="inst_3B8D9571" locked="0" code="itemNum = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objOutsideRoomChanger" x="768" y="512" name="inst_941A61E2" locked="0" code="roomTo = rEnd;&#xA;" scaleX="2.06451606750488" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles" x="32" y="576" w="32" h="32" xo="0" yo="96" id="10002097" name="inst_4D18DFCF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

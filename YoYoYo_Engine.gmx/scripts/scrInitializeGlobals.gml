@@ -1,5 +1,7 @@
 ///initializes all global variables needed for the game
 
+scrSetGlobalOptions();       //initialize global game options
+
 global.savenum = 1;
 global.difficulty = 0;  //0 = medium, 1 = hard, 2 = very hard, 3 = impossible
 global.death = 0;
@@ -11,10 +13,14 @@ global.savePlayerY = 0;
 global.grav = 1;
 global.saveGrav = 1;
 
-for (var i = 8; i >= 0; i--)
+for (var i = global.secretItemTotal-1; i >= 0; i--)
 {
     global.secretItem[i] = false;
     global.saveSecretItem[i] = false;
+}
+
+for (var i = global.bossItemTotal-1; i >= 0; i--)
+{
     global.bossItem[i] = false;
     global.saveBossItem[i] = false;
 }
@@ -22,9 +28,7 @@ for (var i = 8; i >= 0; i--)
 global.gameClear = false;
 global.saveGameClear = false;
 
-global.md5StrIn = "";
-
-for (var i = 100; i >= 0; i--)
+for (var i = 99; i >= 0; i--)
 {
     global.trigger[i] = false;
 }
@@ -53,12 +57,9 @@ global.windowYPrev = 0;
 global.windowWidthPrev = 0;
 global.windowHeightPrev = 0;
 
+display_set_gui_size(view_wport[0],view_hport[0]);  //set the correct gui size for the Draw GUI event
+
 global.controllerMode = false;  //keeps track of whether to use keyboard or controller
 global.controllerDelay = -1;    //sets delay between switching between keyboard/controller so that the player can't use both at the same time
 
-
-display_set_gui_size(view_wport[0],view_hport[0]);  //set the correct gui size for the Draw GUI event
-
 randomize();    //make sure the game starts with a random seed for RNG
-
-scrSetGlobalOptions();       //initialize global game options

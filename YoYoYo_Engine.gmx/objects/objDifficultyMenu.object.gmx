@@ -79,7 +79,7 @@ for (var i = 1; i &lt;= 3; i++)
             if (is_undefined(difficulty[i]))
                 difficulty[i] = 0;
             
-            for (var j = 1; j &lt;= 8; j++)
+            for (var j = 0; j &lt; 8; j++)
             {
                 boss[j,i] = ds_map_find_value(saveMap,"saveBossItem["+string(j)+"]");
                 if (is_undefined(boss[j,i]))
@@ -356,14 +356,14 @@ else
         
         if(clear[i]){draw_text(x+(i-1)*239+63,y+215,"Clear!!")}
         
-        if(boss[1,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+0,y+128)}
-        if(boss[2,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+32,y+128)}
-        if(boss[3,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+64,y+128)}
-        if(boss[4,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+96,y+128)}
-        if(boss[5,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+0,y+160)}
-        if(boss[6,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+32,y+160)}
-        if(boss[7,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+64,y+160)}
-        if(boss[8,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+96,y+160)}
+        if(boss[0,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+0,y+128)}
+        if(boss[1,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+32,y+128)}
+        if(boss[2,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+64,y+128)}
+        if(boss[3,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+96,y+128)}
+        if(boss[4,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+0,y+160)}
+        if(boss[5,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+32,y+160)}
+        if(boss[6,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+64,y+160)}
+        if(boss[7,i]){draw_sprite(sprBossItem,-1,x+(i-1)*239+96,y+160)}
     }
     else
     {

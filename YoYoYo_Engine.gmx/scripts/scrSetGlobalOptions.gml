@@ -11,7 +11,7 @@ global.roomCaptionDef = "I Wanna Be The Studio Engine YoYoYo Edition";  //sets d
 global.roomCaptionLast = global.roomCaptionDef;
 window_set_caption(global.roomCaptionDef);
 
-global.md5StrAdd = "Put something here!!!";  //sets what to add to the end of md5 input string to make the save harder to mess with, can be changed to anything, should be set to something unique and hard to predict (like setting a password)
+global.md5StrAdd = "Put something here!";  //sets what to add to the end of md5 input string to make the save harder to mess with, can be changed to anything, should be set to something unique and hard to predict (like setting a password)
 
 global.startRoom = rStage01;    //sets which room to begin with
 
@@ -23,6 +23,9 @@ global.timeWhenDead = true;        //sets whether or not to count the in-game ti
 global.edgeDeath = true;           //sets whether to kill the player when he leaves the boundaries of the room
 global.pauseDelayLength = 40;   //sets the delay in frames in which the player can pause/unpause the game (can be set to 0 to disable pause delay)
 global.delayBow = false;            //sets whether to delay the player bow's movement by a frame or not (most engines have the bow lagging behind the player by a frame, so set this to "true" to make the bow look like it does in other engines)
+
+global.secretItemTotal = 8;     //sets how many secret items for the game to save/load
+global.bossItemTotal = 8;       //sets how many boss items for the game to save/load
 
 global.controllerEnabled = true;    //sets whether controllers are supported
 global.controllerDelayLength = 5;   //sets the delay in frames in which the player can switch between keyboard/controller (can be set to 0 to disable delay)

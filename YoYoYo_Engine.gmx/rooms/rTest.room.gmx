@@ -258,32 +258,27 @@
     <instance objName="objSecretItem" x="1024" y="1152" name="inst_955E5662" locked="0" code="itemNum = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSecretItem" x="1088" y="1152" name="inst_9672512F" locked="0" code="itemNum = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSecretItem" x="1152" y="1152" name="inst_2F3ABA9D" locked="0" code="itemNum = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSecretItem" x="1216" y="1152" name="inst_169F6D6D" locked="0" code="itemNum = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSecretItem" x="1280" y="1152" name="inst_AA4322C3" locked="0" code="itemNum = 8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSecretItem" x="1296" y="1152" name="inst_AA4322C3" locked="0" code="itemNum = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSecretIndicator" x="832" y="1056" name="inst_B04239D1" locked="0" code="itemNum = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSecretIndicator" x="896" y="1056" name="inst_51ED0970" locked="0" code="itemNum = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSecretIndicator" x="960" y="1056" name="inst_4645E71C" locked="0" code="itemNum = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSecretIndicator" x="1024" y="1056" name="inst_D95484B5" locked="0" code="itemNum = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSecretIndicator" x="1088" y="1056" name="inst_956AD8F4" locked="0" code="itemNum = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSecretIndicator" x="1152" y="1056" name="inst_1AD78DAF" locked="0" code="itemNum = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSecretIndicator" x="1216" y="1056" name="inst_F9F7E525" locked="0" code="itemNum = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSecretIndicator" x="1280" y="1056" name="inst_9DF3159C" locked="0" code="itemNum = 8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSecretIndicator" x="1296" y="1056" name="inst_9DF3159C" locked="0" code="itemNum = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossItem" x="864" y="1152" name="inst_3158AEF3" locked="0" code="itemNum = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossItem" x="928" y="1152" name="inst_5AB7A4A3" locked="0" code="itemNum = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossItem" x="992" y="1152" name="inst_F44A5086" locked="0" code="itemNum = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossItem" x="1056" y="1152" name="inst_0F063B2B" locked="0" code="itemNum = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossItem" x="1120" y="1152" name="inst_199A0F8C" locked="0" code="itemNum = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossItem" x="1184" y="1152" name="inst_C5637D32" locked="0" code="itemNum = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBossItem" x="1248" y="1152" name="inst_FBE0D984" locked="0" code="itemNum = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBossItem" x="1312" y="1152" name="inst_CC5E9EDF" locked="0" code="itemNum = 8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBossItem" x="1328" y="1152" name="inst_CC5E9EDF" locked="0" code="itemNum = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossIndicator" x="864" y="1056" name="inst_7E729178" locked="0" code="itemNum = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossIndicator" x="928" y="1056" name="inst_B8E20C68" locked="0" code="itemNum = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossIndicator" x="992" y="1056" name="inst_4B1704D8" locked="0" code="itemNum = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossIndicator" x="1056" y="1056" name="inst_82ED6E65" locked="0" code="itemNum = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossIndicator" x="1120" y="1056" name="inst_EF068E91" locked="0" code="itemNum = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBossIndicator" x="1184" y="1056" name="inst_4C35AC98" locked="0" code="itemNum = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBossIndicator" x="1248" y="1056" name="inst_19BF12AB" locked="0" code="itemNum = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBossIndicator" x="1312" y="1056" name="inst_DF7B27FD" locked="0" code="itemNum = 8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBossIndicator" x="1328" y="1056" name="inst_DF7B27FD" locked="0" code="itemNum = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSign" x="352" y="544" name="inst_4D2DF9BC" locked="0" code="signText = &quot;IDK&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlipBlock" x="1120" y="480" name="inst_15CF094B" locked="0" code="slip = 0.5;" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlipBlock" x="832" y="416" name="inst_09B45F33" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
@@ -403,6 +398,7 @@
     <instance objName="objBlock" x="416" y="672" name="inst_55C8836A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="448" y="672" name="inst_88CB4537" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="480" y="672" name="inst_D6449CDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBossIndicator" x="1184" y="1056" name="inst_3F141974" locked="0" code="itemNum = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles" x="32" y="576" w="32" h="32" xo="0" yo="0" id="10000001" name="inst_1D4C62F7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

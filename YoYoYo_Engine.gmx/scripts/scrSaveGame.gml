@@ -36,9 +36,13 @@ if (savePosition)
     global.savePlayerX = floor(global.savePlayerX);
     global.savePlayerY = floor(global.savePlayerY);
     
-    for (var i = 1; i <= 8; i++)
+    for (var i = 0; i < global.secretItemTotal; i++)
     {
         global.saveSecretItem[i] = global.secretItem[i];
+    }
+    
+    for (var i = 0; i < global.bossItemTotal; i++)
+    {
         global.saveBossItem[i] = global.bossItem[i];
     }
     
@@ -58,12 +62,12 @@ ds_map_add(saveMap,"savePlayerX",global.savePlayerX);
 ds_map_add(saveMap,"savePlayerY",global.savePlayerY);
 ds_map_add(saveMap,"saveGrav",global.saveGrav);
 
-for (var i = 1; i <= 8; i++)
+for (var i = 0; i < global.secretItemTotal; i++)
 {
     ds_map_add(saveMap,"saveSecretItem["+string(i)+"]",global.saveSecretItem[i]);
 }
 
-for (var i = 1; i <= 8; i++)
+for (var i = 0; i < global.bossItemTotal; i++)
 {
     ds_map_add(saveMap,"saveBossItem["+string(i)+"]",global.saveBossItem[i]);
 }

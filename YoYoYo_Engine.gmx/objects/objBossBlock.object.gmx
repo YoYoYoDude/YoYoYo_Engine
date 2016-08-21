@@ -28,7 +28,7 @@
             <string>//this wall disappears when a boss item is obtained
 
 //set in creation code
-itemNum = 1;
+itemNum = 0;
 </string>
           </argument>
         </arguments>
