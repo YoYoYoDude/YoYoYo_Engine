@@ -44,8 +44,8 @@ global.musicFading = false;     //keeps track of whether the music is being curr
 global.currentGain = 0;     //keeps track of current track gain when a song is being faded out
 
 //get the default window size
-global.windowWidth = view_wview[0];
-global.windowHeight = view_hview[0];
+global.windowWidth = view_wport[0];
+global.windowHeight = view_hport[0];
 
 //keeps track of previous window position/size when display_reset is used for setting vsync
 global.windowXPrev = 0;
@@ -57,7 +57,7 @@ global.controllerMode = false;  //keeps track of whether to use keyboard or cont
 global.controllerDelay = -1;    //sets delay between switching between keyboard/controller so that the player can't use both at the same time
 
 
-display_set_gui_size(view_wview[0],view_hview[0]);  //set the correct gui size for the Draw GUI event
+display_set_gui_size(view_wport[0],view_hport[0]);  //set the correct gui size for the Draw GUI event
 
 randomize();    //make sure the game starts with a random seed for RNG
 

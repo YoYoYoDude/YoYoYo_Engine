@@ -71,7 +71,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(sprite_index, -1, view_wview[0]/2, view_hview[0]/2); 
+            <string>draw_sprite(sprite_index, -1, view_wport[0]/2, view_hport[0]/2);
 </string>
           </argument>
         </arguments>

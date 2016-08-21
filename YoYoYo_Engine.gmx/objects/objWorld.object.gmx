@@ -143,7 +143,7 @@ if (global.gameStarted)
                     
                     instance_deactivate_all(true);  //deactivate everything
                     
-                    global.pauseSurf = surface_create(view_wview[0], view_hview[0]);    //create new surface
+                    global.pauseSurf = surface_create(view_wport[0], view_hport[0]);    //create new surface
                     surface_copy(global.pauseSurf,0,0,application_surface);             //copy current screen to it
                 }
             }
@@ -525,7 +525,7 @@ if (global.gamePaused)  //check if game is paused to draw the pause screen
     draw_set_color(c_black);
     draw_set_alpha(0.4);
     
-    draw_rectangle(-1,-1,view_wview[0],view_hview[0],0);    //darken the paused screen
+    draw_rectangle(-1,-1,view_wport[0],view_hport[0],0);    //darken the paused screen
     
     draw_set_alpha(1);
     
@@ -534,7 +534,7 @@ if (global.gamePaused)  //check if game is paused to draw the pause screen
     draw_set_halign(fa_center);
     draw_set_font(fDefault30);
     
-    draw_text(view_wview[0]/2,view_hview[0]/2 - 24,"PAUSE");
+    draw_text(view_wport[0]/2,view_hport[0]/2 - 24,"PAUSE");
     
     draw_set_halign(fa_left);
     draw_set_font(fDefault18);
