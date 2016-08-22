@@ -515,7 +515,7 @@ else    //flipped
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!place_free(x+hspeed,y))
+            <string>if (!place_free(x+hspeed,y))
 {
     if (global.grav == 1)   //normal
     {
@@ -530,7 +530,7 @@ else    //flipped
     hspeed = 0;
 }
  
-if(!place_free(x,y+vspeed))
+if (!place_free(x,y+vspeed))
 {
     if (global.grav == 1)   //normal
     {
