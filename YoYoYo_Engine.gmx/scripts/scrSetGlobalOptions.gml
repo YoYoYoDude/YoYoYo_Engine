@@ -26,7 +26,7 @@ global.delayBow = false;            //sets whether to delay the player bow's mov
 
 global.secretItemTotal = 8;     //sets how many secret items for the game to save/load
 global.bossItemTotal = 8;       //sets how many boss items for the game to save/load
-global.autosaveSecretItems = true; //sets whether to save secret items immediately when you grab them or if you have to hit a save
+global.autosaveSecretItems = false; //sets whether to save secret items immediately when you grab them or if you have to hit a save
 
 global.controllerEnabled = true;    //sets whether controllers are supported
 global.controllerDelayLength = 5;   //sets the delay in frames in which the player can switch between keyboard/controller (can be set to 0 to disable delay)

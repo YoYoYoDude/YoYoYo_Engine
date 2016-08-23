@@ -30,7 +30,7 @@ yTitle = 136;
 xShiftText = 400;
 yShiftText = 408;
 
-strTitle = "I Wanna Be The Studio Engine#YoYoYo Edition v1.31";
+strTitle = "I Wanna Be The Studio Engine#YoYoYo Edition v1.32";
 strShiftText = "Press Shift to Start";
 
 showShiftText = true;

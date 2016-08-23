@@ -12,7 +12,7 @@ if (savePosition)
     global.savePlayerY = objPlayer.y;
     global.saveGrav = global.grav;
     
-    //check if player is saving inside of a wall or in the ceiling when the player's position is floored
+    //check if player is saving inside of a wall or in the ceiling when the player's position is floored to prevent save locking
     with (objPlayer)
     {
         if (!place_free(floor(global.savePlayerX),global.savePlayerY))

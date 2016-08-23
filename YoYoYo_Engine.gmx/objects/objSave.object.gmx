@@ -129,7 +129,7 @@ if (global.difficulty &gt; 1)  //destroy if on a higher difficulty than hard
 
 if (canSave &amp;&amp; instance_exists(objPlayer) &amp;&amp; global.grav == grav)
 {
-    if !((objPlayer.x &lt; 0 || objPlayer.x &gt; room_width || objPlayer.y &lt; 0 || objPlayer.y &gt; room_height) &amp;&amp; global.edgeDeath)  //make sure the player isn't saving outside the room to prevent save locking
+    if (!((objPlayer.x &lt; 0 || objPlayer.x &gt; room_width || objPlayer.y &lt; 0 || objPlayer.y &gt; room_height) &amp;&amp; global.edgeDeath))  //make sure the player isn't saving outside the room to prevent save locking
     {
         canSave = false;    //make it so that the player can't save again immediately
         alarm[0] = 30;  //set alarm so the player can save again

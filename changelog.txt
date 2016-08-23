@@ -1,3 +1,10 @@
+v1.32 (08/23/16):
+-Added an option to change the number of secret/boss items for the game to use (set to 8 by default)
+-Added an option to autosave secret items when they're grabbed instead of having to save afterward (disabled by default)
+-Changed some view_wview/view_hview to view_wport/view_hport to improve death text/pause screen behavior when changing the camera zoom
+-Changed secret/boss item arrays to start at 0 instead of 1 (by default they go 0-7 instead of 1-8)
+-Fixed a few minor issues
+
 v1.31 (04/30/16):
 -Added global option for whether to use ds_map_secure functions to save (disabled by default)
 

@@ -1,4 +1,4 @@
-Thank you for downloading IWBT Studio Engine YoYoYo Edition v1.31!
+Thank you for downloading IWBT Studio Engine YoYoYo Edition v1.32!
 If you want to report bugs, request features, ask any questions, or check to make sure this is the most recent version, you can check my post on the I Wanna Community forums here: bit.ly/StudioEngineYoYoYo
 If you want to contact me more directly, you can add me on Skype at "smgplayer" or find me on Twitter @YoYoYoDude2
 
