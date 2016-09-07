@@ -9,7 +9,7 @@ global.volumeLevel = clamp(floor(ini_read_real("Settings","Volume_level",100)),0
 audio_master_gain(global.volumeLevel/100);
 
 global.fullscreenMode = ini_read_real("Settings","Fullscreen_mode",false);
-scrSetFullscreen();
+window_set_fullscreen(global.fullscreenMode);
 
 global.smoothingMode = ini_read_real("Settings","Smoothing_mode",false);
 

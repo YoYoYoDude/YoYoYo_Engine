@@ -47,11 +47,12 @@
     </sprites>
     <sprites name="blocks">
       <sprite>sprites\sprBlockMask</sprite>
-      <sprite>sprites\sprMiniBlock</sprite>
+      <sprite>sprites\sprMiniBlockMask</sprite>
       <sprite>sprites\sprSlipBlockMask</sprite>
       <sprite>sprites\sprKillerBlock</sprite>
       <sprite>sprites\sprBlock</sprite>
       <sprite>sprites\sprBlock2</sprite>
+      <sprite>sprites\sprSlideBlock</sprite>
       <sprite>sprites\sprSlideBlockR</sprite>
       <sprite>sprites\sprSlideBlockL</sprite>
       <sprite>sprites\sprSaveBlocker</sprite>
@@ -144,7 +145,6 @@
       <script>scripts\scrGetControllerBind.gml</script>
       <script>scripts\scrToggleMusic.gml</script>
       <script>scripts\scrRestartGame.gml</script>
-      <script>scripts\scrSetFullscreen.gml</script>
       <script>scripts\scrSetVsync.gml</script>
       <script>scripts\scrResetWindowSize.gml</script>
       <script>scripts\scrGetMusic.gml</script>

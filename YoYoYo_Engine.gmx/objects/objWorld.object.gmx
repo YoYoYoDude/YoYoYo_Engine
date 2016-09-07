@@ -340,7 +340,7 @@ if (keyboard_check_pressed(vk_f4) &amp;&amp; !global.gamePaused)    //toggle ful
 {
     global.fullscreenMode = !global.fullscreenMode;
     
-    scrSetFullscreen();
+    window_set_fullscreen(global.fullscreenMode);
     
     scrSaveConfig();    //save fullscreen setting
 }
