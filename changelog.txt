@@ -1,4 +1,4 @@
-v1.40 (09/07/19):
+v1.40 (09/07/16):
 -Now includes a lighter version of the engine which simplifies the engine and cuts out extra resources/features
 -Changed some menu arrays/variables to be more consistent
 -Fixed more minor issues
