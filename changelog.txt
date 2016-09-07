@@ -1,3 +1,8 @@
+v1.40 (09/07/19):
+-Now includes a lighter version of the engine which simplifies the engine and cuts out extra resources/features
+-Changed some menu arrays/variables to be more consistent
+-Fixed more minor issues
+
 v1.32 (08/23/16):
 -Added an option to change the number of secret/boss items for the game to use (set to 8 by default)
 -Added an option to autosave secret items when they're grabbed instead of having to save afterward (disabled by default)
