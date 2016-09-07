@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>select = 1;
+            <string>select = 0;
 xSelector = 120;
 ySelector = 48;
 xSeperation = 560;
@@ -34,30 +34,30 @@ ySeperation = 40;
 settingKey = false;     //sets whether or not a key is getting set
 resetPrompt = false;    //shows the message that controls were reset
 
-strSelect[1] = "Left Button";
-strSelect[2] = "Right Button";
-strSelect[3] = "Up Button";
-strSelect[4] = "Down Button";
-strSelect[5] = "Jump Button";
-strSelect[6] = "Shoot Button";
-strSelect[7] = "Restart Button";
-strSelect[8] = "Skip Button";
-strSelect[9] = "Suicide Button";
-strSelect[10] = "Pause Button";
-strSelect[11] = "Reset Controls";
+strSelect[0] = "Left Button";
+strSelect[1] = "Right Button";
+strSelect[2] = "Up Button";
+strSelect[3] = "Down Button";
+strSelect[4] = "Jump Button";
+strSelect[5] = "Shoot Button";
+strSelect[6] = "Restart Button";
+strSelect[7] = "Skip Button";
+strSelect[8] = "Suicide Button";
+strSelect[9] = "Pause Button";
+strSelect[10] = "Reset Controls";
 
 //get current controls
-strKey[1] = scrGetKeybind(global.leftButton[0]);
-strKey[2] = scrGetKeybind(global.rightButton[0]);
-strKey[3] = scrGetKeybind(global.upButton[0]);
-strKey[4] = scrGetKeybind(global.downButton[0]);
-strKey[5] = scrGetKeybind(global.jumpButton[0]);
-strKey[6] = scrGetKeybind(global.shootButton[0]);
-strKey[7] = scrGetKeybind(global.restartButton[0]);
-strKey[8] = scrGetKeybind(global.skipButton[0]);
-strKey[9] = scrGetKeybind(global.suicideButton[0]);
-strKey[10] = scrGetKeybind(global.pauseButton[0]);
-strKey[11] = "";
+strKey[0] = scrGetKeybind(global.leftButton[0]);
+strKey[1] = scrGetKeybind(global.rightButton[0]);
+strKey[2] = scrGetKeybind(global.upButton[0]);
+strKey[3] = scrGetKeybind(global.downButton[0]);
+strKey[4] = scrGetKeybind(global.jumpButton[0]);
+strKey[5] = scrGetKeybind(global.shootButton[0]);
+strKey[6] = scrGetKeybind(global.restartButton[0]);
+strKey[7] = scrGetKeybind(global.skipButton[0]);
+strKey[8] = scrGetKeybind(global.suicideButton[0]);
+strKey[9] = scrGetKeybind(global.pauseButton[0]);
+strKey[10] = "";
 
 playerIndex = 0;
 </string>
@@ -114,15 +114,15 @@ if (!settingKey)
     {
         audio_play_sound(global.menuSound,0,false);
         select -= 1;
-        if(select &lt; 1)
-            select = 11;
+        if(select &lt; 0)
+            select = 10;
     }
     else if (scrButtonCheckPressed(global.menuDownButton))
     {
         audio_play_sound(global.menuSound,0,false);
         select += 1;
-        if(select &gt; 11)
-            select = 1;
+        if(select &gt; 10)
+            select = 0;
     }
     else if (scrButtonCheckPressed(global.menuBackButton))
     {
@@ -132,7 +132,7 @@ if (!settingKey)
     }
     else if (scrButtonCheckPressed(global.menuAcceptButton))
     {
-        if (select != 11)
+        if (select != 10)
         {
             settingKey = true;
         }
@@ -166,16 +166,16 @@ else
         if (keyChange == 160 || keyChange == 161)   //check if current key pressed is either shift key
             keyChange = 16; //set it to work for both shift keys
         
-        if (select == 1) {global.leftButton[0] = keyChange;}
-        else if (select == 2) {global.rightButton[0] = keyChange;}
-        else if (select == 3) {global.upButton[0] = keyChange;}
-        else if (select == 4) {global.downButton[0] = keyChange;}
-        else if (select == 5) {global.jumpButton[0] = keyChange;}
-        else if (select == 6) {global.shootButton[0] = keyChange;}
-        else if (select == 7) {global.restartButton[0] = keyChange;}
-        else if (select == 8) {global.skipButton[0] = keyChange;}
-        else if (select == 9) {global.suicideButton[0] = keyChange;}
-        else if (select == 10) {global.pauseButton[0] = keyChange;}
+        if (select == 0) {global.leftButton[0] = keyChange;}
+        else if (select == 1) {global.rightButton[0] = keyChange;}
+        else if (select == 2) {global.upButton[0] = keyChange;}
+        else if (select == 3) {global.downButton[0] = keyChange;}
+        else if (select == 4) {global.jumpButton[0] = keyChange;}
+        else if (select == 5) {global.shootButton[0] = keyChange;}
+        else if (select == 6) {global.restartButton[0] = keyChange;}
+        else if (select == 7) {global.skipButton[0] = keyChange;}
+        else if (select == 8) {global.suicideButton[0] = keyChange;}
+        else if (select == 9) {global.pauseButton[0] = keyChange;}
         
         settingKey = false;
     }
@@ -185,18 +185,18 @@ else
     }
 }
 
-//update controls
-strKey[1] = scrGetKeybind(global.leftButton[0]);
-strKey[2] = scrGetKeybind(global.rightButton[0]);
-strKey[3] = scrGetKeybind(global.upButton[0]);
-strKey[4] = scrGetKeybind(global.downButton[0]);
-strKey[5] = scrGetKeybind(global.jumpButton[0]);
-strKey[6] = scrGetKeybind(global.shootButton[0]);
-strKey[7] = scrGetKeybind(global.restartButton[0]);
-strKey[8] = scrGetKeybind(global.skipButton[0]);
-strKey[9] = scrGetKeybind(global.suicideButton[0]);
-strKey[10] = scrGetKeybind(global.pauseButton[0]);
-strKey[11] = "";
+//get current controls
+strKey[0] = scrGetKeybind(global.leftButton[0]);
+strKey[1] = scrGetKeybind(global.rightButton[0]);
+strKey[2] = scrGetKeybind(global.upButton[0]);
+strKey[3] = scrGetKeybind(global.downButton[0]);
+strKey[4] = scrGetKeybind(global.jumpButton[0]);
+strKey[5] = scrGetKeybind(global.shootButton[0]);
+strKey[6] = scrGetKeybind(global.restartButton[0]);
+strKey[7] = scrGetKeybind(global.skipButton[0]);
+strKey[8] = scrGetKeybind(global.suicideButton[0]);
+strKey[9] = scrGetKeybind(global.pauseButton[0]);
+strKey[10] = "";
 </string>
           </argument>
         </arguments>
@@ -222,31 +222,31 @@ strKey[11] = "";
             <string>draw_set_color(c_black);
 draw_set_font(fDefault24);
 
-for(var i = 1; i &lt;= 11; i += 1)
+for(var i = 0; i &lt; 11; i += 1)
 {
     draw_set_halign(fa_left);
-    draw_text(xSelector,ySelector+(i-1)*ySeperation+32,strSelect[i]);
+    draw_text(xSelector,ySelector+i*ySeperation+32,strSelect[i]);
     
     draw_set_halign(fa_right);
     
     if(i == select)
     {
-        draw_sprite(sprPlayerIdle,playerIndex,xSelector-20,ySelector+(i-1)*ySeperation+52);
+        draw_sprite(sprPlayerIdle,playerIndex,xSelector-20,ySelector+i*ySeperation+52);
         
         if (settingKey) //key prompt
         {
-            draw_text(xSelector+xSeperation,ySelector+(i-1)*ySeperation+32,"Press the key to set");
+            draw_text(xSelector+xSeperation,ySelector+i*ySeperation+32,"Press the key to set");
         }
     }
     
     if (!settingKey || i != select)    //shows current key
     {
-        draw_text(xSelector+xSeperation,ySelector+(i-1)*ySeperation+32,strKey[i]);
+        draw_text(xSelector+xSeperation,ySelector+i*ySeperation+32,strKey[i]);
     }
     
-    if (resetPrompt &amp;&amp; i == 11) //reset controls prompt
+    if (resetPrompt &amp;&amp; i == 10) //reset controls prompt
     {
-        draw_text(xSelector+xSeperation,ySelector+(i-1)*ySeperation+32,"Controls reset!");
+        draw_text(xSelector+xSeperation,ySelector+i*ySeperation+32,"Controls reset!");
     }
 }
 

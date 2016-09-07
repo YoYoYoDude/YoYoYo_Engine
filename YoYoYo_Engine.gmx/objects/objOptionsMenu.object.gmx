@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>select = 1;
+            <string>select = 0;
 
 xSelector = 124;
 ySelector = 132;
@@ -78,15 +78,15 @@ if (scrButtonCheckPressed(global.menuUpButton))
 {
     audio_play_sound(global.menuSound,0,false);
     select -= 1;
-    if(select &lt; 1)
-        select = optionsNum;
+    if(select &lt; 0)
+        select = optionsNum-1;
 }
 else if (scrButtonCheckPressed(global.menuDownButton))
 {
     audio_play_sound(global.menuSound,0,false);
     select += 1;
-    if(select &gt; optionsNum)
-        select = 1;
+    if(select &gt; optionsNum-1)
+        select = 0;
 }
 else if (scrButtonCheckPressed(global.menuBackButton))
 {
@@ -97,34 +97,34 @@ else if (scrButtonCheckPressed(global.menuBackButton))
 }
 else if (scrButtonCheckPressed(global.menuAcceptButton))
 {
-    if (select == 1)    //toggle mute music
+    if (select == 0)    //toggle mute music
     {
         scrToggleMusic();
     }
-    else if (select == 3)   //toggle fullscreen
+    else if (select == 2)   //toggle fullscreen
     {
         global.fullscreenMode = !global.fullscreenMode;
         
         window_set_fullscreen(global.fullscreenMode);
     }
-    else if (select == 4)   //toggle smoothing mode
+    else if (select == 3)   //toggle smoothing mode
     {
         global.smoothingMode = !global.smoothingMode;
     }
-    else if (select == 5)   //toggle vsync mode
+    else if (select == 4)   //toggle vsync mode
     {
         global.vsyncMode = !global.vsyncMode;
         
         scrSetVsync();
     }
-    else if (select == 6)   //go to the keyboard controls menu
+    else if (select == 5)   //go to the keyboard controls menu
     {
         scrSaveConfig();    //save changes
         instance_create(x,y,objKeyboardControlsMenu);
         instance_destroy();
         exit;
     }
-    else if (select == 7)   //go to the controller options menu
+    else if (select == 6)   //go to the controller options menu
     {
         scrSaveConfig();    //save changes
         instance_create(x,y,objControllerMenu);
@@ -134,7 +134,7 @@ else if (scrButtonCheckPressed(global.menuAcceptButton))
 }
 
 
-if (select == 2)
+if (select == 1)
 {
     if (scrButtonCheck(global.menuRightButton))  //raise volume
     {
@@ -204,7 +204,7 @@ if (global.vsyncMode)
 else
     draw_text(xSelector+xSeperation,ySelector+(ySeperation*4),"Off");
 
-draw_sprite(sprPlayerIdle,playerIndex,xSelector-16,ySelector+(ySeperation*select)-22);
+draw_sprite(sprPlayerIdle,playerIndex,xSelector-16,ySelector+(ySeperation*select)+26);
 
 scrDrawButtonInfo(false);
 </string>

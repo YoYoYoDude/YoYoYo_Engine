@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>select = 0;
 xSelector = 120;
-ySelector = 64;
+ySelector = 24;
 xSeperation = 560;
 ySeperation = 40;
 
@@ -243,31 +243,31 @@ if (strButton[0] == "-1") strButton[0] = "Disabled";
             <string>draw_set_color(c_black);
 draw_set_font(fDefault24);
 
-for(var i = 0; i &lt;= 11; i += 1)
+for(var i = 0; i &lt; 12; i += 1)
 {
     draw_set_halign(fa_left);
-    draw_text(xSelector,ySelector+(i-1)*ySeperation+32,strSelect[i]);
+    draw_text(xSelector,ySelector+i*ySeperation+32,strSelect[i]);
     
     draw_set_halign(fa_right);
     
     if(i == select)
     {
-        draw_sprite(sprPlayerIdle,playerIndex,xSelector-20,ySelector+(i-1)*ySeperation+52);
+        draw_sprite(sprPlayerIdle,playerIndex,xSelector-20,ySelector+i*ySeperation+52);
         
         if (settingButton) //button prompt
         {
-            draw_text(xSelector+xSeperation,ySelector+(i-1)*ySeperation+32,"Press button to set");
+            draw_text(xSelector+xSeperation,ySelector+i*ySeperation+32,"Press button to set");
         }
     }
     
     if (!settingButton || i != select)    //shows current button
     {
-        draw_text(xSelector+xSeperation,ySelector+(i-1)*ySeperation+32,strButton[i]);
+        draw_text(xSelector+xSeperation,ySelector+i*ySeperation+32,strButton[i]);
     }
     
     if (resetPrompt &amp;&amp; i == 11) //reset controls prompt
     {
-        draw_text(xSelector+xSeperation,ySelector+(i-1)*ySeperation+32,"Controls reset!");
+        draw_text(xSelector+xSeperation,ySelector+i*ySeperation+32,"Controls reset!");
     }
 }
 
@@ -288,7 +288,7 @@ if (global.controllerIndex != -1)
         controllerText += "None";
     }
     
-    draw_text(xSelector+2,ySelector+(11)*ySeperation+34,controllerText);
+    draw_text(xSelector+2,ySelector+(12)*ySeperation+34,controllerText);
     
     draw_set_color(c_black);
 }
