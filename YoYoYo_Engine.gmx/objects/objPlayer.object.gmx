@@ -120,9 +120,9 @@ with (objBow)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//check button presses
-var L = scrButtonCheck(global.leftButton);
-var R = scrButtonCheck(global.rightButton);
+            <string>//check left/right button presses
+var L = (scrButtonCheck(global.leftButton) || (global.directionalTapFix &amp;&amp; scrButtonCheckPressed(global.leftButton)));
+var R = (scrButtonCheck(global.rightButton) || (global.directionalTapFix &amp;&amp; scrButtonCheckPressed(global.rightButton)));
 
 var h = 0;
 
