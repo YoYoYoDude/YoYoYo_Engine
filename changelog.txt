@@ -1,4 +1,8 @@
-v1.41():
+v1.41 (10/13/16):
+-Updated project to GM Studio v1.4.1763
+-Added an option to fix the behavior when tapping left/right for less than 1 frame so that the player moves for 1 frame (by default he doesn't move when this happens)
+-Changed save files to use json_encode/json_decode instead of ds_map_write/ds_map_read to prevent memory leaks
+-Added a check to objWorld to make sure more than one never exists
 
 v1.40 (09/07/16):
 -Now includes a lighter version of the engine which simplifies the engine and cuts out extra resources/features
