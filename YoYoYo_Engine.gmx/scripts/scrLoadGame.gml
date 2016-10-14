@@ -18,8 +18,7 @@ if (loadFile)
     {
         var f = file_text_open_read("Data\save"+string(global.savenum));
         
-        saveMap = ds_map_create();
-        ds_map_read(saveMap,base64_decode(file_text_read_string(f)));
+        saveMap = json_decode(base64_decode(file_text_read_string(f)));
         
         file_text_close(f);
     }
@@ -69,7 +68,7 @@ if (loadFile)
         
         //generate md5 string to compare with
         ds_map_delete(saveMap,"mapMd5");
-        var genMd5 = md5_string_unicode(ds_map_write(saveMap)+global.md5StrAdd);
+        var genMd5 = md5_string_unicode(json_encode(saveMap)+global.md5StrAdd);
         
         if (mapMd5 != genMd5)   //check if md5 hash is invalid
             saveValid = false;
