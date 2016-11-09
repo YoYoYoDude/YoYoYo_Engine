@@ -7,7 +7,7 @@ global.difficulty = 0;  //0 = medium, 1 = hard, 2 = very hard, 3 = impossible
 global.death = 0;
 global.time = 0;
 global.timeMicro = 0;
-global.saveRoom = 0;
+global.saveRoom = "";
 global.savePlayerX = 0;
 global.savePlayerY = 0;
 global.grav = 1;
@@ -60,6 +60,6 @@ global.windowHeightPrev = 0;
 display_set_gui_size(view_wport[0],view_hport[0]);  //set the correct gui size for the Draw GUI event
 
 global.controllerMode = false;  //keeps track of whether to use keyboard or controller
-global.controllerDelay = -1;    //sets delay between switching between keyboard/controller so that the player can't use both at the same time
+global.controllerDelay = -1;    //handles delay between switching between keyboard/controller so that the player can't use both at the same time
 
 randomize();    //make sure the game starts with a random seed for RNG

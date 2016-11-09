@@ -37,9 +37,9 @@ if (loadFile)
         global.savePlayerY = ds_map_find_value(saveMap,"savePlayerY");
         global.saveGrav = ds_map_find_value(saveMap,"saveGrav");
         
-        if (!is_undefined(global.saveRoom))   //check if the saved room loaded properly
+        if (is_string(global.saveRoom))   //check if the saved room loaded properly
         {
-            if (!room_exists(global.saveRoom))  //check if the room index in the save is valid
+            if (!room_exists(asset_get_index(global.saveRoom)))  //check if the room index in the save is valid
                 saveValid = false;
         }
         else
@@ -119,4 +119,4 @@ global.gameClear = global.saveGameClear;
 
 instance_create(global.savePlayerX,global.savePlayerY,objPlayer);
 
-room_goto(global.saveRoom);
+room_goto(asset_get_index(global.saveRoom));

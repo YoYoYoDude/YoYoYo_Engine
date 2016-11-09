@@ -7,7 +7,7 @@ var savePosition = argument0;
 //save the player's current location variables if the script is currently set to (we don't want to save the player's location if we're just updating death/time)
 if (savePosition)
 {    
-    global.saveRoom = room;
+    global.saveRoom = room_get_name(room);
     global.savePlayerX = objPlayer.x;    
     global.savePlayerY = objPlayer.y;
     global.saveGrav = global.grav;
