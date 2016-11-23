@@ -130,8 +130,6 @@ if (showShiftText)
     
     draw_text(xShiftText,yShiftText,"Press "+acceptButton+" to Start");
 }
-
-scrDrawButtonInfo(false);
 </string>
           </argument>
         </arguments>
