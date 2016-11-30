@@ -1,4 +1,8 @@
-v1.42 ():
+v1.42 (11/29/16):
+-Changed global.saveRoom to use room names instead of room indexes
+-Reverted json_encode/decode back to ds_map_write/read (json_encode/decode causes some issues when saving booleans)
+-Removed button text from the start screen
+-Disabled precise collision checking for sprites that don't need it
 
 v1.41 (10/13/16):
 -Updated project to GM Studio v1.4.1763
