@@ -1,4 +1,4 @@
-Thank you for downloading IWBT Studio Engine YoYoYo Edition v1.41!
+Thank you for downloading IWBT Studio Engine YoYoYo Edition v1.42!
 If you want to report bugs, request features, ask any questions, or check to make sure this is the most recent version, you can check my post on the I Wanna Community forums here: bit.ly/StudioEngineYoYoYo
 If you want to contact me more directly, you can add me on Discord "YoYoYoDude#4708" or find me on Twitter @YoYoYoDude2
 
@@ -23,7 +23,7 @@ Features
 -Several options for many things you might want to change for your game (such as enabling/disabling death music) in the "scrSetGlobalOptions" script
 
 Important notes
--To set what music you want a room to play, change the "scrGetMusic" script. You can also place an objPlayMusic object in the room and set the variable "BGM" in its creation code. If you want something to stop music, use "scrStopMusic()".
+-To set what music you want a room to play, change the "scrGetMusic" script. You can also place an objPlayMusic object in the room and set the variable "BGM" in its creation code. If you want something to stop music, use "scrStopMusic".
 -A template room that has all of the correct view settings is included which can be duplicated and modified.
 -If you're using slopes, it's possible that certain gimmicks such as ice blocks might not work properly with them because of how they're coded.
 -Because of how GM Studio saves files, all game saves are stored in "%localappdata%\<GameName>" instead of inside the folder where the game is located. Therefore, it is very important to change your game/project name to something unique before releasing your game to ensure there aren't save conflicts with other games.

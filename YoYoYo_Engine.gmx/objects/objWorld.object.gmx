@@ -517,7 +517,7 @@ if (global.debugOverlay)
     scrDrawTextOutline(20,120,"God mode: "+string(global.noDeath),c_black,c_white);
     scrDrawTextOutline(20,140,"Infinite jump: "+string(global.infJump),c_black,c_white);
     scrDrawTextOutline(20,160,"FPS: "+string(fps),c_black,c_white);
-    //scrDrawTextOutline(20,180,"Real FPS: "+string(fps_real),c_black,c_white);
+    scrDrawTextOutline(20,180,"Real FPS: "+string(fps_real),c_black,c_white);
 }
 </string>
           </argument>
