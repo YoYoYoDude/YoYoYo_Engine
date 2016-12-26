@@ -36,6 +36,9 @@ for (var i = 99; i >= 0; i--)
 global.gameStarted = false;     //determines whether the game is in progress (enables saving, restarting, etc.)
 global.noPause = false;         //sets whether or not to allow pausing (useful for bosses to prevent desync)
 global.autosave = false;        //keeps track of whether or not to autosave the next time the player is created
+global.noDeath = false;         //keeps track of whether to give the player god mode
+global.infJump = false;         //keeps track of whether to give the player infinite jump
+
 global.gamePaused = false;      //keeps track of whether the game is paused or not
 global.pauseSurf = -1;       //stores the screen surface when the game is paused
 global.pauseDelay = 0;      //sets pause delay so that the player can't quickly pause buffer

@@ -8,64 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>xTitle = 400;
-yTitle = 136;
-xShiftText = 400;
-yShiftText = 408;
-
-strTitle = "I Wanna Be The Studio Engine#YoYoYo Edition v1.42";
-strShiftText = "Press Shift to Start";
-
-showShiftText = true;
- 
-alarm[0] = 40;  //swaps between showing the shift text so it animates
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>showShiftText = !showShiftText;
-
-alarm[0] = 40;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -85,51 +27,6 @@ alarm[0] = 40;
             <kind>1</kind>
             <string>if (scrButtonCheckPressed(global.menuAcceptButton))
     room_goto(rMenu);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_set_color(c_black);
-draw_set_font(fDefault30);
-draw_set_halign(fa_center);
-
-draw_text(xTitle,yTitle,strTitle);
-
-if (showShiftText)
-{
-    draw_set_font(fDefault24);
-    
-    var acceptButton;
-    
-    if (!global.controllerMode)
-    {
-        acceptButton = scrGetKeybind(global.menuAcceptButton[0]);
-    }
-    else
-    {
-        acceptButton = scrGetControllerBind(global.menuAcceptButton[1]);
-    }
-    
-    draw_text(xShiftText,yShiftText,"Press "+acceptButton+" to Start");
-}
 </string>
           </argument>
         </arguments>

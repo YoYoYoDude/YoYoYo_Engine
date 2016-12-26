@@ -1,6 +1,6 @@
 //kills the player
 
-if (instance_exists(objPlayer) && !global.noDeath)
+if (instance_exists(objPlayer) && (!global.noDeath && !global.debugNoDeath))
 {
     if (global.gameStarted) //normal death
     {

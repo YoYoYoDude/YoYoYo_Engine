@@ -114,7 +114,7 @@ texture_set_interpolation(global.smoothingMode);
 //controller checks
 if (global.controllerEnabled &amp;&amp; global.controllerIndex != -1)
 {
-    if (!global.controllerMode)  //check if we should to controller mode
+    if (!global.controllerMode)  //check if we should switch to controller mode
     {
         if (keyboard_check_pressed(vk_anykey))
         {
@@ -288,15 +288,15 @@ if (global.debugMode &amp;&amp; global.gameStarted &amp;&amp; !global.gamePaused
     }
     if (keyboard_check_pressed(vk_delete))  //toggles showing the hitbox
     {
-        global.showHitbox = !global.showHitbox;
+        global.debugShowHitbox = !global.debugShowHitbox;
     }
     if (keyboard_check_pressed(vk_home))    //toggles god mode
     {
-        global.noDeath = !global.noDeath;
+        global.debugNoDeath = !global.debugNoDeath;
     }
     if (keyboard_check_pressed(vk_end))     //toggles infinite jump
     {
-        global.infJump = !global.infJump;
+        global.debugInfJump = !global.debugInfJump;
     }
     if (keyboard_check_pressed(vk_pageup) &amp;&amp; room != room_last)  //goes to next room
     {        
@@ -318,12 +318,12 @@ if (global.debugVisuals)
 {
     with (objPlayer)    //sets appearance of the player to show god mode/infinite jump
     {
-        if (global.noDeath)     //makes player slightly transparent when god mode is on
+        if (global.debugNoDeath)     //makes player slightly transparent when god mode is on
             image_alpha = 0.7;
         else
             image_alpha = 1;
         
-        if (global.infJump)     //makes player turn blue when infinite jump is on
+        if (global.debugInfJump)     //makes player turn blue when infinite jump is on
             image_blend = c_blue;
         else
             image_blend = c_white;
@@ -514,8 +514,8 @@ if (global.debugOverlay)
     scrDrawTextOutline(20,60,"Align: "+string(drawAlign),c_black,c_white);
     scrDrawTextOutline(20,80,"Room name: "+room_get_name(room),c_black,c_white);
     scrDrawTextOutline(20,100,"Room number: "+string(room),c_black,c_white);
-    scrDrawTextOutline(20,120,"God mode: "+string(global.noDeath),c_black,c_white);
-    scrDrawTextOutline(20,140,"Infinite jump: "+string(global.infJump),c_black,c_white);
+    scrDrawTextOutline(20,120,"God mode: "+string(global.debugNoDeath),c_black,c_white);
+    scrDrawTextOutline(20,140,"Infinite jump: "+string(global.debugInfJump),c_black,c_white);
     scrDrawTextOutline(20,160,"FPS: "+string(fps),c_black,c_white);
     scrDrawTextOutline(20,180,"Real FPS: "+string(fps_real),c_black,c_white);
 }

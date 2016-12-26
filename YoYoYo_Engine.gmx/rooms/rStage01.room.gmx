@@ -70,14 +70,14 @@
     <instance objName="objBlock" x="384" y="352" name="inst_72C3020C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="352" y="352" name="inst_9450D9CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSaveVHard" x="672" y="224" name="inst_F977E209" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpikeTriggerDown" x="672" y="288" name="inst_50707BB8" locked="0" code="trg = 2;&#xA;v = 10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeTriggerDown" x="672" y="288" name="inst_50707BB8" locked="0" code="trg = 2;&#xA;v = 10;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeTriggerDown" x="704" y="288" name="inst_511A6475" locked="0" code="trg = 2;&#xA;v = 10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlockInvis" x="736" y="256" name="inst_16ADA8C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlockFake" x="352" y="384" name="inst_11CDAEF9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlockFake" x="352" y="416" name="inst_541B339D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlockFake" x="352" y="448" name="inst_FFD4C060" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlockFake" x="352" y="480" name="inst_253B2073" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFreeTrigger" x="704" y="480" name="inst_59DF9C6E" locked="0" code="trg = 2;&#xA;" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFreeTrigger" x="704" y="480" name="inst_59DF9C6E" locked="0" code="trg = 2;" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="640" y="288" name="inst_34A5F00C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="640" y="320" name="inst_E83B3743" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="640" y="352" name="inst_9A396078" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -182,12 +182,12 @@
     <instance objName="objBlockFake" x="1088" y="256" name="inst_8EEC4B44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlockFake" x="1184" y="256" name="inst_C6705F9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFreeTrigger" x="1120" y="224" name="inst_92539DE9" locked="0" code="trg = 1;&#xA;" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpikeTriggerUp" x="1120" y="288" name="inst_5FBB9A5F" locked="0" code="trg = 1;&#xA;v = -8;&#xA;&#xA;depth = 1000001;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeTriggerUp" x="1120" y="288" name="inst_5FBB9A5F" locked="0" code="trg = 1;&#xA;v = -8;&#xA;&#xA;depth = 1000001;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeTriggerUp" x="1152" y="288" name="inst_C0416EBF" locked="0" code="trg = 1;&#xA;v = -8;&#xA;&#xA;depth = 1000001;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeRight" x="992" y="448" name="inst_148C9EBA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeLeft" x="1184" y="448" name="inst_3C581EEB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingPlatform" x="1088" y="448" name="inst_AE3FD709" locked="0" code="hspeed = 2;&#xA;&#xA;sprite_index = sprBlock;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingPlatform" x="1472" y="160" name="inst_DD656E5D" locked="0" code="vspeed = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingPlatform" x="1088" y="448" name="inst_AE3FD709" locked="0" code="hspeed = 2;&#xA;&#xA;sprite_index = sprBlock;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingPlatform" x="1472" y="160" name="inst_DD656E5D" locked="0" code="vspeed = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCherry" x="864" y="288" name="inst_31FC92CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlockInvis" x="288" y="480" name="inst_787B0A49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCherryEnemyTest" x="352" y="288" name="inst_86D53785" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
