@@ -169,7 +169,7 @@ if (global.gameStarted)
                     
                     instance_deactivate_all(true);  //deactivate everything
                     
-                    global.pauseSurf = surface_create(view_wport[0], view_hport[0]);    //create new surface
+                    global.pauseSurf = surface_create(surface_get_width(application_surface),surface_get_height(application_surface));    //create new surface
                     surface_copy(global.pauseSurf,0,0,application_surface);             //copy current screen to it
                 }
             }
@@ -551,7 +551,7 @@ if (global.gamePaused)  //check if game is paused to draw the pause screen
     draw_set_color(c_black);
     draw_set_alpha(0.4);
     
-    draw_rectangle(-1,-1,view_wport[0],view_hport[0],0);    //darken the paused screen
+    draw_rectangle(-1,-1,display_get_gui_width(),display_get_gui_height(),0);    //darken the paused screen
     
     draw_set_alpha(1);
     
@@ -560,7 +560,7 @@ if (global.gamePaused)  //check if game is paused to draw the pause screen
     draw_set_halign(fa_center);
     draw_set_font(fDefault30);
     
-    draw_text(view_wport[0]/2,view_hport[0]/2 - 24,"PAUSE");
+    draw_text(display_get_gui_width()/2,display_get_gui_height()/2 - 24,"PAUSE");
     
     draw_set_halign(fa_left);
     draw_set_font(fDefault18);
@@ -579,6 +579,36 @@ if (global.gamePaused)  //check if game is paused to draw the pause screen
     draw_text(20,516,"Volume: " + string(global.volumeLevel) + "%");
     draw_text(20,541,"Deaths: " + string(global.death));
     draw_text(20,566,"Time: " + timeText);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///draw debug mode text when we're on the title screen
+
+if (global.debugMode &amp;&amp; room == rTitle)
+{
+    draw_set_color(c_red);
+    draw_set_font(fDefault12);
+    draw_set_halign(fa_left);
+    
+    draw_text(34,34,"Debug mode");
 }
 </string>
           </argument>
