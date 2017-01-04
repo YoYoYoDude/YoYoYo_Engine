@@ -1,3 +1,12 @@
+v1.50 (01/04/17):
+-Added global.playerAnimationFix option which fixes the weird player animation inconsistencies when moving around (disabled by default)
+-Added debug mode indicator to the title screen when debug mode is active
+-Changed default death music mode to no music
+-Tweaked main menu cursor so that it stays in the same place after switching between different menus
+-Added support for DirectInput gamepads
+-Added separate debug variables for global.noDeath and global.infJump called global.debugNoDeath and global.debugInfJump
+-Tweaked platform and slip block logic to fix some minor issues
+
 v1.42 (11/29/16):
 -Changed global.saveRoom to use room names instead of room indexes
 -Reverted json_encode/decode back to ds_map_write/read (json_encode/decode causes some issues when saving booleans)
