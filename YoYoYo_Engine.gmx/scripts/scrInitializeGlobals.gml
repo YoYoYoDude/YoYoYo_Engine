@@ -50,6 +50,9 @@ global.gameOverMusic = -1;   //keeps track of game over music instance
 global.musicFading = false;     //keeps track of whether the music is being currently faded out
 global.currentGain = 0;     //keeps track of current track gain when a song is being faded out
 
+global.menuSelectPrev[0] = 0;     //keeps track of the previously selected option when navigating away from the difficulty menu
+global.menuSelectPrev[1] = 0;     //keeps track of the previously selected option when navigating away from the options menu
+
 //get the default window size
 global.windowWidth = surface_get_width(application_surface);
 global.windowHeight = surface_get_height(application_surface);

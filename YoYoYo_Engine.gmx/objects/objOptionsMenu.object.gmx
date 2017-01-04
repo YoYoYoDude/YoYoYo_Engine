@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>select = 0;
+            <string>select = global.menuSelectPrev[1];
 
 xSelector = 124;
 ySelector = 132;
@@ -92,6 +92,7 @@ else if (scrButtonCheckPressed(global.menuBackButton))
 {
     //save changes and go back
     scrSaveConfig();
+    global.menuSelectPrev[1] = 0;
     room_goto(rMenu);
     exit;
 }
@@ -120,6 +121,7 @@ else if (scrButtonCheckPressed(global.menuAcceptButton))
     else if (select == 5)   //go to the keyboard controls menu
     {
         scrSaveConfig();    //save changes
+        global.menuSelectPrev[1] = select;
         instance_create(x,y,objKeyboardControlsMenu);
         instance_destroy();
         exit;
@@ -127,6 +129,7 @@ else if (scrButtonCheckPressed(global.menuAcceptButton))
     else if (select == 6)   //go to the controller options menu
     {
         scrSaveConfig();    //save changes
+        global.menuSelectPrev[1] = select;
         instance_create(x,y,objControllerMenu);
         instance_destroy();
         exit;
