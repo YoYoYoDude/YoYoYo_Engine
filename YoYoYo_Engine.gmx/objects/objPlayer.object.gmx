@@ -199,11 +199,15 @@ if (h != 0)  //player is moving
     if ((h == -1 &amp;&amp; !onVineR) || (h == 1 &amp;&amp; !onVineL))
     {
         if (slipBlockTouching == noone) //not touching a slip block, move immediately at full speed
+        {
             hspeed = maxSpeed * h;
+        }
         else    //touching a slip block, use acceleration
         {
-            if ((h == 1 &amp;&amp; hspeed &lt; maxSpeed) || (h == -1 &amp;&amp; hspeed &gt; -maxSpeed))
-                hspeed += (slipBlockTouching.slip) * h;
+            hspeed += (slipBlockTouching.slip) * h;
+            
+            if (abs(hspeed) &gt; maxSpeed)
+                hspeed = maxSpeed * h;
         }
         
         sprite_index = sprPlayerRunning;

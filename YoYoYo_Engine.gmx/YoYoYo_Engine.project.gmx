@@ -213,8 +213,8 @@
       <object>objects\objPlatform</object>
       <object>objects\objMovingPlatform</object>
       <object>objects\objMovingPlatformNoBounce</object>
-      <object>objects\objBlockFall</object>
       <object>objects\objBlockRise</object>
+      <object>objects\objBlockFall</object>
     </objects>
     <objects name="killers">
       <object>objects\objPlayerKiller</object>

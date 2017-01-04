@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1</depth>
   <persistent>0</persistent>
-  <parentName>objPlatform</parentName>
+  <parentName>objMovingPlatformNoBounce</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="3" enumb="0">
@@ -25,16 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(objPlayer))
+            <string>if (yspeed == 0 &amp;&amp; instance_exists(objPlayer))
 {
     if (place_meeting(x,y-objPlayer.vspeed-(global.grav),objPlayer))
-    {
-        yspeed = -2;
-        objPlayer.y += yspeed;
-    }
+        yspeed = -2;    //touching the player, start rising
 }
 
-y += yspeed;
+event_inherited();  //movement checks
 </string>
           </argument>
         </arguments>

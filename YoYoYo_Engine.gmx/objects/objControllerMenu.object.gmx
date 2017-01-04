@@ -168,14 +168,14 @@ if (!settingButton)
         if (scrButtonCheckPressed(global.menuRightButton))
         {
             global.controllerIndex += 1;
-            if (global.controllerIndex &gt; 3)
+            if (global.controllerIndex &gt; 11)
                 global.controllerIndex = -1;
         }
         else if (scrButtonCheckPressed(global.menuLeftButton))
         {
             global.controllerIndex -= 1;
             if (global.controllerIndex &lt; -1)
-                global.controllerIndex = 3;
+                global.controllerIndex = 11;
         }
     }
 }
