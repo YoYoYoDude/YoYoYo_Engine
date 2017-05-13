@@ -60,8 +60,7 @@ for (var i = 0; i &lt; 3; i++)
         {
             var f = file_text_open_read("Data\save"+string(i+1));
             
-            saveMap = ds_map_create();
-            ds_map_read(saveMap,base64_decode(file_text_read_string(f)));
+            saveMap = json_decode(base64_decode(file_text_read_string(f)));
             
             file_text_close(f);
         }
