@@ -7,7 +7,7 @@ If you're new to fangame development, check out this awesome tutorial made by Kl
 About
 -This is an engine specifically made for GameMaker Studio with all of the weird physics bugs/changes Studio has fixed.
 -This engine assumes you have a reasonable amount of experience with GameMaker and requires some GML knowledge for things like playing music.
--The engine package includes the standard engine and a lite version which simplifies the engine and cuts out extra resources/features for people who want to work with a more bare-bones base.
+-The engine package includes the standard engine and a lite version which cuts out extra resources.
 
 Features
 -Works the same as other standard engines, with cleaner code and annoying bugs like dying through platforms fixed
