@@ -1,3 +1,7 @@
+v1.51 (05/21/17):
+-Changed ds_map_write/read back to json_encode/decode
+-Changed lite version to be the same as the base engine except with less extra resources
+
 v1.50 (01/04/17):
 -Added global.playerAnimationFix option which fixes the weird player animation inconsistencies when moving around (disabled by default)
 -Added debug mode indicator to the title screen when debug mode is active
