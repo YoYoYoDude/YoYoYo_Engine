@@ -1,6 +1,6 @@
 ///sets configurable global options
 
-global.debugMode = false;       //enables debug keys (check objWorld step to see all of them), make sure to set this to "false" before releasing your game
+global.debugMode = true;       //enables debug keys (check objWorld step to see all of them), make sure to set this to "false" before releasing your game
 global.debugVisuals = true;    //enables changing the color/alpha of player when infjump/god mode are toggled, make sure to disable this if you want to change the player's image_alpha or image_blend
 global.debugOverlay = false;    //enables showing the debug text overlay (shows player location, align, etc.)
 global.debugNoDeath = false;    //enables god mode (toggle with Home key)

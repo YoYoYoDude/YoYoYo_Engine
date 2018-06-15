@@ -122,7 +122,9 @@
     <background>background\bTree</background>
     <background>background\bStars</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\path0</path>
+  </paths>
   <scripts name="scripts">
     <scripts name="player">
       <script>scripts\scrPlayerJump.gml</script>
@@ -215,6 +217,7 @@
       <object>objects\objMovingPlatformNoBounce</object>
       <object>objects\objBlockRise</object>
       <object>objects\objBlockFall</object>
+      <object>objects\objMovingPlatform_new</object>
     </objects>
     <objects name="killers">
       <object>objects\objPlayerKiller</object>
