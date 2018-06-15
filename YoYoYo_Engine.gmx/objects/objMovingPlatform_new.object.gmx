@@ -50,43 +50,45 @@ bounce = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var dX = x - xprevious;
-var dY = y - yprevious;
-
-var yOffset = 9;
-
-//if (instance_exists(objPlayer)) if (objPlayer.onPlatform) dY-=objPlayer.vspeed;
-
-var p = instance_place(x-dX,y-dY-1,objPlayer);
-with (p) {
-    show_debug_message("p");
+            <string>if (instance_exists(objPlayer)) {
+    var dX = x - xprevious;
+    var dY = y - yprevious;
     
-    //we're on the platform if we're above/even with the platform or about to rise into it
+    var yOffset = 9;
     
-    //player was standing above the platform last frame or is currently over it
-    var abovePlatform = (yprevious &lt;= other.yprevious - yOffset);   //yprevious &lt;= other.y - yOffset
+    //we're on the platform if we're above/even with the platform or about to rise into it, so check both
+    var abovePlatform = false;
+    var risingIn = false;
     
-    //player was previously below the platform and is now above it
-    var risingIn = (yprevious &gt; other.yprevious - yOffset &amp;&amp; y &lt;= other.y - yOffset); //yprevious &lt;= other.y - yOffset - 1
+    //TODO: this is probably too much of a restrictive check
+    with (collision_rectangle(x,y-16,x+31,y+16,objPlayer,false,true)) {   //instance_place(xprevious,yprevious-1,objPlayer)
+        show_debug_message("p");
+        
+        //player was standing above the platform last frame or is currently over it
+        abovePlatform = (yprevious &lt;= other.yprevious - yOffset);
+        
+        risingIn = (yprevious &gt; other.yprevious - yOffset &amp;&amp; y &lt;= other.y - yOffset);
+    }
     
-    
-    //alternatively:
-    //we're not on the platform if we're below the platform and not about to rise into it
-    
+        
     if (abovePlatform || risingIn) {
         show_debug_message("we in there");
         
-        if (place_free(x,other.y-yOffset)) {
-            y = other.y - yOffset;
+        with (objPlayer) {
+            if (place_free(x,other.y-yOffset)) {
+                y = other.y - yOffset;
+            }
+            if (place_free(x+dX,y)) {
+                x += dX;
+            }
+            
+            vspeed = max(dY,0); //only affect player speed when the platform moves down
+            djump = 1;
+            //onPlatform=true;
         }
-        if (place_free(x+dX,y)) {
-            x += dX;
-        }
-        
-        vspeed = max(dY,0); //only affect player speed when the platform moves down
-        djump = 1;
-        //onPlatform=true;
     }
+    
+    
 }
 
 if (bounce) {

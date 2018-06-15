@@ -496,62 +496,6 @@ if (instance_exists(objSlope) &amp;&amp; hspeed != 0)
           <argument>
             <kind>1</kind>
             <string>///do nothing
-
-/*
-yOffset = 9;
-yThreshold = yOffset - 1;
-
-show_debug_message("y = " + string(y));
-show_debug_message("other.y - yThreshold = " + string(other.y - yThreshold));
-show_debug_message("yprevious = " + string(yprevious));
-
-if (y+vspeed &lt;= other.y - yThreshold || yprevious &lt;= other.y - yThreshold) {
-    show_debug_message("yes");
-    y = other.y - yOffset;
-    vspeed = max(other.vspeed,0);
-    djump = 1;
-}
-*/
-
-//we're on the platform unless we're below the platform and not about to rise up into it
-/*
-if !(y &gt; other.y-9) {
-    show_debug_message("yes");
-    y = other.y - 9;
-    vspeed = max(other.vspeed,0);
-    djump = 1;
-}
-*/
-
-/*
-if (global.grav == 1)   //normal
-{
-    if (y-vspeed/2 &lt;= other.y)
-    {
-        if (other.vspeed &gt;= 0)
-        {
-            y = other.y-9;
-            vspeed = other.vspeed;
-        }
-        
-        onPlatform = true;
-        djump = 1;
-    }
-}
-else    //flipped
-{
-    if (y-vspeed/2 &gt;= other.y+other.sprite_height-1)
-    {
-        if (other.yspeed &lt;= 0)
-        {
-            y = other.y+other.sprite_height+8;
-            vspeed = other.yspeed;
-        }
-        
-        onPlatform = true;
-        djump = 1;
-    }
-}*/
 </string>
           </argument>
         </arguments>
