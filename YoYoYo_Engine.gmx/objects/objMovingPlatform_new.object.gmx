@@ -143,7 +143,7 @@ if (instance_exists(objPlayer)) {
             //show_debug_message("new vspeed = " + string(vspeed));
             
             djump = 1;
-            onPlatform = true;
+            onPlatform = true;  //does onPlatform code need to be modified in the player object?
         }
     }
 }
