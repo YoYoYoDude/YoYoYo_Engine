@@ -495,7 +495,9 @@ if (instance_exists(objSlope) &amp;&amp; hspeed != 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
+            <string>///do nothing
+
+/*
 yOffset = 9;
 yThreshold = yOffset - 1;
 
