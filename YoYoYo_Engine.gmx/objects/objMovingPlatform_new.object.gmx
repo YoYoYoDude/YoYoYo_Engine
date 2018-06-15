@@ -65,12 +65,28 @@ if (instance_exists(objPlayer)) {
     var abovePlatform = false;
     var risingIn = false;
     
-    with (instance_place(x,y-(global.grav),objPlayer)) {
+    var checkThreshold = 2; //TODO: maybe 2 is unnecessary, should probably be 1
+    
+    with (instance_place(x,y-(checkThreshold*global.grav),objPlayer)) {      
         //player was standing above the platform last frame or is currently over it
         if (global.grav == 1) {
             abovePlatform = (yprevious &lt;= other.yprevious - yOffset);
         } else {
-            abovePlatform = (yprevious &gt;= other.yprevious + (other.sprite_height - 1 + yOffset));
+            abovePlatform = (yprevious + 1 &gt;= other.yprevious + (other.sprite_height - 1 + yOffset));   //yprevious + 1 is a bandaid fix, dunno what's going on
+        }
+        
+        show_debug_message("abovePlatform = " + string(abovePlatform));
+    }
+    
+    //turns out xprevious/yprevious might be necessary for platforms that turn around quickly
+    with (instance_place(xprevious,yprevious-(checkThreshold*global.grav),objPlayer)) {
+        //player was standing above the platform last frame or is currently over it
+        if (global.grav == 1) {
+            if (yprevious &lt;= other.yprevious - yOffset)
+                abovePlatform = true;
+        } else {
+            if (yprevious + 1 &gt;= other.yprevious + (other.sprite_height - 1 + yOffset)) //yprevious + 1 is a bandaid fix, dunno what's going on
+                abovePlatform = true;
         }
         
         show_debug_message("abovePlatform = " + string(abovePlatform));
@@ -88,12 +104,14 @@ if (instance_exists(objPlayer)) {
         
         show_debug_message("risingIn = " + string(risingIn));
         
+        /*
         show_debug_message("yprevious = " + string(yprevious));
         show_debug_message("other.yprevious = " + string(other.yprevious));
         show_debug_message("fdsa = " + string(other.yprevious + (other.sprite_height - 1 + yOffset)));
         show_debug_message("y = " + string(y));
         show_debug_message("other.y = " + string(other.y));
         show_debug_message("asdf = " + string(other.y + (other.sprite_height - 1 + yOffset)));
+        */
     }
     
     if (abovePlatform || risingIn) {
@@ -120,9 +138,13 @@ if (instance_exists(objPlayer)) {
                 vspeed = min(dY,0);
             }
             
+            show_debug_message("new vspeed = " + string(vspeed));
+            
             djump = 1;
             onPlatform = true;
         }
+    } else {
+        show_debug_message("zzz");
     }
 }
 
