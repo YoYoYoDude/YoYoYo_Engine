@@ -186,7 +186,6 @@
     <objects name="player">
       <object>objects\objPlayerStart</object>
       <object>objects\objPlayer</object>
-      <object>objects\objBow</object>
       <object>objects\objBullet</object>
       <object>objects\objBloodEmitter</object>
       <object>objects\objBlood</object>
@@ -218,6 +217,7 @@
       <object>objects\objBlockRise</object>
       <object>objects\objBlockFall</object>
       <object>objects\objMovingPlatform_new</object>
+      <object>objects\objBow</object>
     </objects>
     <objects name="killers">
       <object>objects\objPlayerKiller</object>
