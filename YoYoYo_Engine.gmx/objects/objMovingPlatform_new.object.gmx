@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//i think these are fixed but idk
+            <string>//i think these TODO are fixed but idk
 //TODO: there's a strange interaction with very fast moving platforms moving downward at a speed higher than the player's max fall speed where the player can't latch on
 //TODO: there's a bug with fast fall speeds and bouncing platforms (set player max vspeed to 50 check the right-most platform)
 //TODO: the player slides around every once in a while on the path platform
@@ -64,6 +64,8 @@ if (instance_exists(objPlayer)) {
     var risingIn = false;
     
     var checkThreshold = 2; //TODO: maybe 2 is unnecessary, should probably be 1
+    
+    //TODO: rework these "with" statements to just be two collision checks and a "with (objPlayer)"
     
     with (instance_place(x,y-(checkThreshold*global.grav),objPlayer)) {      
         //player was standing above the platform last frame or is currently over it
@@ -92,6 +94,7 @@ if (instance_exists(objPlayer)) {
     }
     
     //TODO: figure out what the bounds of the rectangle should actually be (also maybe we should be using xprevious/yprevious)
+    //this might also require checking around xprevious/yprevious, dunno
     var vertThreshold = 20;
     with (collision_rectangle(x,y-vertThreshold,x+sprite_width-1,y+sprite_height-1+vertThreshold,objPlayer,false,true)) {
         //player was previously below the platform and is now above it
@@ -114,7 +117,7 @@ if (instance_exists(objPlayer)) {
     }
     
     if (abovePlatform || risingIn) {
-        show_debug_message("we in there");
+        //show_debug_message("we in there");
         
         with (objPlayer) {
             if (global.grav == 1) {
