@@ -49,7 +49,6 @@
           <argument>
             <kind>1</kind>
             <string>//TODO: upside down
-//TODO: fix sprite
 
 //TODO: there's a strange interaction with very fast moving platforms moving downward at a speed higher than the player's max fall speed where the player can't latch on
 //TODO: there's a bug with fast fall speeds and bouncing platforms (set player max vspeed to 50 check the right-most platform)
@@ -64,43 +63,52 @@ if (instance_exists(objPlayer)) {
     var abovePlatform = false;
     var risingIn = false;
     
-    with (instance_place(x,y-1,objPlayer)) {    //instance_place(xprevious,yprevious-1,objPlayer)
-        show_debug_message("p");
-        
+    with (instance_place(x,y-(global.grav),objPlayer)) {
         //player was standing above the platform last frame or is currently over it
-        abovePlatform = (yprevious &lt;= other.yprevious - yOffset /*|| y &lt;= other.y - yOffset*/);
-        
-        show_debug_message("yprevious = " + string(yprevious));
-        show_debug_message("other.yprevious - yOffset = " + string(other.yprevious - yOffset));
-        show_debug_message("y = " + string(y));
-        show_debug_message("other.y - yOffset = " + string(other.y - yOffset));
+        if (global.grav == 1) {
+            abovePlatform = (yprevious &lt;= other.yprevious - yOffset);
+        } else {
+            abovePlatform = (yprevious &gt;= other.yprevious + (other.sprite_height - 1 + yOffset));
+        }
     }
     
     //TODO: figure out what the bounds of the rectangle should actually be (also maybe we should be using xprevious/yprevious)
     with (collision_rectangle(x,y-20,x+31,y+20,objPlayer,false,true)) {
-        show_debug_message("q");
-        
         //player was previously below the platform and is now above it
-        risingIn = (yprevious &gt; other.yprevious - yOffset &amp;&amp; y &lt;= other.y - yOffset);
+        if (global.grav == 1) {
+            risingIn = (yprevious &gt; other.yprevious - yOffset &amp;&amp; y &lt;= other.y - yOffset);
+        } else {
+            risingIn = (yprevious &lt; other.yprevious + (other.sprite_height - 1 + yOffset) &amp;&amp; y &gt;= other.y + (other.sprite_height - 1 + yOffset));
+        }
     }
     
     if (abovePlatform || risingIn) {
-        show_debug_message("we in there");
+        //show_debug_message("we in there");
         
         with (objPlayer) {
-            if (place_free(x,other.y-yOffset)) {
-                y = other.y - yOffset;
+            if (global.grav == 1) {
+                if (place_free(x,other.y-yOffset)) {
+                    y = other.y - yOffset;
+                }
+            } else {
+                if (place_free(x,other.y+(other.sprite_height - 1 + yOffset))) {
+                    y = other.y + (other.sprite_height - 1 + yOffset);
+                }
             }
             if (place_free(x+dX,y)) {
                 x += dX;
             }
             
-            vspeed = max(dY,0); //only affects player speed when the platform moves down
+            //only affects player speed when the platform moves down
+            if (global.grav == 1) {
+                vspeed = max(dY,0);
+            } else {
+                vspeed = min(dY,0);
+            }
+            
             djump = 1;
             onPlatform = true;
         }
-    } else {
-        show_debug_message("z");
     }
 }
 
