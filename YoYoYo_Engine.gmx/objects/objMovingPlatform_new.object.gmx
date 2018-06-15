@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>yspeed = 0;
-
-bounce = true;
+            <string>bounce = true;
 </string>
           </argument>
         </arguments>
@@ -64,10 +62,10 @@ bounce = true;
         show_debug_message("p");
         
         //player was standing above the platform last frame or is currently over it
-        //abovePlatform = (yprevious &lt;= other.yprevious - yOffset || y &lt;= other.y - yOffset);
+        abovePlatform = (yprevious &lt;= other.yprevious - yOffset || y &lt;= other.y - yOffset);
         
         //player was over the platform last frame and is now below it
-        abovePlatform = (yprevious &lt;= other.yprevious - yOffset);
+        //abovePlatform = (yprevious &lt;= other.yprevious - yOffset);
         
         show_debug_message("yprevious = " + string(yprevious));
         show_debug_message("other.yprevious - yOffset = " + string(other.yprevious - yOffset));
@@ -75,12 +73,15 @@ bounce = true;
         show_debug_message("other.y - yOffset = " + string(other.y - yOffset));
     }
     
-    with (collision_rectangle(x,y-16,x+31,y+16,objPlayer,false,true)) { //TODO: figure out what the bounds of the rectangle should actually be (also maybe we should be using xprevious/yprevious)
+    with (collision_rectangle(x,y-20,x+31,y+20,objPlayer,false,true)) { //TODO: figure out what the bounds of the rectangle should actually be (also maybe we should be using xprevious/yprevious)
         show_debug_message("q");
         
         //player was previously below the platform and is now above it
         risingIn = (yprevious &gt; other.yprevious - yOffset &amp;&amp; y &lt;= other.y - yOffset);
     }
+    
+    //TODO: there's a strange interaction with very fast moving platforms moving downward at a speed higher than the player's max fall speed where the player can't latch on
+    //TODO: there's a bug with fast fall speeds and bouncing platforms (set player max vspeed to 50 check the right-most platform)
     
     if (abovePlatform || risingIn) {
         show_debug_message("we in there");
@@ -97,6 +98,8 @@ bounce = true;
             djump = 1;
             //onPlatform=true;
         }
+    } else {
+        show_debug_message("z");
     }
 }
 
