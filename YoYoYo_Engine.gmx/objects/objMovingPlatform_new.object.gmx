@@ -53,6 +53,8 @@
 //TODO: there's a strange interaction with very fast moving platforms moving downward at a speed higher than the player's max fall speed where the player can't latch on
 //TODO: there's a bug with fast fall speeds and bouncing platforms (set player max vspeed to 50 check the right-most platform)
 
+//TODO: the player slides around every once in a while on the path platform
+
 if (instance_exists(objPlayer)) {
     var dX = x - xprevious;
     var dY = y - yprevious;
@@ -70,20 +72,32 @@ if (instance_exists(objPlayer)) {
         } else {
             abovePlatform = (yprevious &gt;= other.yprevious + (other.sprite_height - 1 + yOffset));
         }
+        
+        show_debug_message("abovePlatform = " + string(abovePlatform));
     }
     
     //TODO: figure out what the bounds of the rectangle should actually be (also maybe we should be using xprevious/yprevious)
-    with (collision_rectangle(x,y-20,x+31,y+20,objPlayer,false,true)) {
+    var vertThreshold = 20;
+    with (collision_rectangle(x,y-vertThreshold,x+sprite_width-1,y+sprite_height-1+vertThreshold,objPlayer,false,true)) {
         //player was previously below the platform and is now above it
         if (global.grav == 1) {
             risingIn = (yprevious &gt; other.yprevious - yOffset &amp;&amp; y &lt;= other.y - yOffset);
         } else {
             risingIn = (yprevious &lt; other.yprevious + (other.sprite_height - 1 + yOffset) &amp;&amp; y &gt;= other.y + (other.sprite_height - 1 + yOffset));
         }
+        
+        show_debug_message("risingIn = " + string(risingIn));
+        
+        show_debug_message("yprevious = " + string(yprevious));
+        show_debug_message("other.yprevious = " + string(other.yprevious));
+        show_debug_message("fdsa = " + string(other.yprevious + (other.sprite_height - 1 + yOffset)));
+        show_debug_message("y = " + string(y));
+        show_debug_message("other.y = " + string(other.y));
+        show_debug_message("asdf = " + string(other.y + (other.sprite_height - 1 + yOffset)));
     }
     
     if (abovePlatform || risingIn) {
-        //show_debug_message("we in there");
+        show_debug_message("we in there");
         
         with (objPlayer) {
             if (global.grav == 1) {
