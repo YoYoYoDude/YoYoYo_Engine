@@ -60,17 +60,28 @@ bounce = true;
     var abovePlatform = false;
     var risingIn = false;
     
-    //TODO: this is probably too much of a restrictive check
-    with (collision_rectangle(x,y-16,x+31,y+16,objPlayer,false,true)) {   //instance_place(xprevious,yprevious-1,objPlayer)
+    with (instance_place(xprevious,yprevious-1,objPlayer)) {
         show_debug_message("p");
         
         //player was standing above the platform last frame or is currently over it
+        //abovePlatform = (yprevious &lt;= other.yprevious - yOffset || y &lt;= other.y - yOffset);
+        
+        //player was over the platform last frame and is now below it
         abovePlatform = (yprevious &lt;= other.yprevious - yOffset);
         
+        show_debug_message("yprevious = " + string(yprevious));
+        show_debug_message("other.yprevious - yOffset = " + string(other.yprevious - yOffset));
+        show_debug_message("y = " + string(y));
+        show_debug_message("other.y - yOffset = " + string(other.y - yOffset));
+    }
+    
+    with (collision_rectangle(x,y-16,x+31,y+16,objPlayer,false,true)) { //TODO: figure out what the bounds of the rectangle should actually be (also maybe we should be using xprevious/yprevious)
+        show_debug_message("q");
+        
+        //player was previously below the platform and is now above it
         risingIn = (yprevious &gt; other.yprevious - yOffset &amp;&amp; y &lt;= other.y - yOffset);
     }
     
-        
     if (abovePlatform || risingIn) {
         show_debug_message("we in there");
         
@@ -87,8 +98,6 @@ bounce = true;
             //onPlatform=true;
         }
     }
-    
-    
 }
 
 if (bounce) {
