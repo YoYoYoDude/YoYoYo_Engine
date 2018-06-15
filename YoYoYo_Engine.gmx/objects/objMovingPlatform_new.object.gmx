@@ -60,7 +60,7 @@ bounce = true;
     var abovePlatform = false;
     var risingIn = false;
     
-    with (instance_place(xprevious,yprevious-1,objPlayer)) {
+    with (instance_place(x,y-1,objPlayer)) {    //instance_place(xprevious,yprevious-1,objPlayer)
         show_debug_message("p");
         
         //player was standing above the platform last frame or is currently over it
