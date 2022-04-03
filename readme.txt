@@ -1,6 +1,7 @@
 Thank you for downloading IWBT Studio Engine YoYoYo Edition v1.52!
 If you want to report bugs, request features, ask any questions, or check to make sure this is the most recent version, you can check my post on the I Wanna Community forums here: bit.ly/StudioEngineYoYoYo
 If you want to contact me more directly, you can add me on Discord "YoYoYoDude#4708" or find me on Twitter @YoYoYoDude2
+Additionally, thanks to renex for fixing some long-standing engine issues!
 
 If you're new to fangame development, check out this awesome tutorial made by Klazen! http://klazen.com/IWBTG/tutorial/dev_tutorial.html
 

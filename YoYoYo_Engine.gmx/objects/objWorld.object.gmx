@@ -30,7 +30,7 @@
 if (instance_number(object_index) &gt; 1) {
     instance_destroy();
 } else {
-    ///initialize everything
+    //initialize everything
 
     //initialize all variables
     scrInitializeGlobals();

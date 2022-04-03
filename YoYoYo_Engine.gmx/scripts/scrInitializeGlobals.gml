@@ -70,4 +70,4 @@ global.controllerDelay = -1;    //handles delay between switching between keyboa
 
 randomize();    //make sure the game starts with a random seed for RNG
 
-scheduler_resolution_set(1) //make sure 1ms is used from game start
+scheduler_resolution_set(1);    //make sure 1 ms timing is used from game start
