@@ -1,6 +1,6 @@
 v1.52 (04/02/22):
 -Added GMSched to fix frame time issues with newer OSs
--Fixed memory leak problems with game_restart()
+-Fixed leaks with game_restart()
 
 v1.51 (05/21/17):
 -Changed ds_map_write/read back to json_encode/decode

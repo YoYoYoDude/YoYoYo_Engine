@@ -1,10 +1,12 @@
 ///restarts the game
 
-if (surface_exists(global.pauseSurf)) {
+if (surface_exists(global.pauseSurf))
+{
     surface_free(global.pauseSurf);  //free pause surface in case the game is currently paused
 }
 
-with (all) {
+with (all)
+{
     event_perform(ev_other,ev_room_end);  //call room end events to make sure everything is freed properly
 }
 
