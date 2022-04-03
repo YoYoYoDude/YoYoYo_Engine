@@ -69,3 +69,5 @@ global.controllerMode = false;  //keeps track of whether to use keyboard or cont
 global.controllerDelay = -1;    //handles delay between switching between keyboard/controller so that the player can't use both at the same time
 
 randomize();    //make sure the game starts with a random seed for RNG
+
+scheduler_resolution_set(1) //make sure 1ms is used from game start
