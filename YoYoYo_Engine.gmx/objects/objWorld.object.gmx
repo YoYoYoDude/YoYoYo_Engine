@@ -27,8 +27,19 @@
             <kind>1</kind>
             <string>//make sure we never have more than one world object
 
-if (instance_number(object_index) &gt; 1)
+if (instance_number(object_index) &gt; 1) {
     instance_destroy();
+} else {
+    ///initialize everything
+
+    //initialize all variables
+    scrInitializeGlobals();
+    
+    //load the current config file, sets default config if it doesn't exist
+    scrLoadConfig();
+    
+    room_goto_next();
+}
 </string>
           </argument>
         </arguments>
@@ -440,37 +451,6 @@ if (!instance_exists(objPlayMusic))  //make sure the play music object isn't in 
 
 room_speed = 50;    //make sure game is running at the correct frame rate
 scrSetRoomCaption();    //make sure window caption stays updated
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///initialize everything
-
-//initialize all variables
-scrInitializeGlobals();
-
-//load the current config file, sets default config if it doesn't exist
-scrLoadConfig();
-
-room_goto_next();
 </string>
           </argument>
         </arguments>
